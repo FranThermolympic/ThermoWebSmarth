@@ -16,24 +16,169 @@
     <link href="https://cdn.jsdelivr.net/css-toggle-switch/latest/toggle-switch.css" rel="stylesheet" />
     <script src="js/json2.js" type="text/javascript"></script>
 
+    <style>
+        .table-fixed {
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .input-centered {
+            text-align: center;
+        }
+
+        .input-compact {
+            height: 34px;
+        }
+
+        .btn-full {
+            width: 100%;
+            text-align: center;
+        }
+
+        .input-large {
+            height: 40px;
+        }
+
+        .input-summary {
+            height: 45px;
+            vertical-align: middle;
+        }
+
+        .w-4 {
+            width: 4%;
+        }
+
+        .w-8 {
+            width: 8%;
+        }
+
+        .w-5 {
+            width: 5%;
+        }
+
+        .w-10 {
+            width: 10%;
+        }
+
+        .w-14 {
+            width: 14%;
+        }
+
+        .w-15 {
+            width: 15%;
+        }
+
+        .w-9 {
+            width: 9%;
+        }
+
+        .w-16 {
+            width: 16%;
+        }
+
+        .w-17 {
+            width: 17%;
+        }
+
+        .w-11 {
+            width: 11%;
+        }
+
+        .w-12 {
+            width: 12%;
+        }
+
+        .w-22 {
+            width: 22%;
+        }
+
+        .w-18 {
+            width: 18%;
+        }
+
+        .w-20 {
+            width: 20%;
+        }
+
+        .w-21 {
+            width: 21%;
+        }
+
+        .w-25 {
+            width: 25%;
+        }
+
+        .w-30 {
+            width: 30%;
+        }
+
+        .w-33 {
+            width: 33%;
+        }
+
+        .w-32 {
+            width: 32%;
+        }
+
+        .w-34 {
+            width: 34%;
+        }
+
+        .w-40 {
+            width: 40%;
+        }
+
+        .w-42 {
+            width: 42%;
+        }
+
+        .w-43 {
+            width: 43%;
+        }
+
+        .w-27 {
+            width: 27%;
+        }
+
+        .progress-label {
+            white-space: normal;
+        }
+
+        .w-50 {
+            width: 50%;
+        }
+
+        .w-60 {
+            width: 60%;
+        }
+
+        .border-transparent {
+            border-color: transparent;
+        }
+
+        .border-red {
+            border-color: red;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover();
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        function liberar_encargado_NOK() {
+            alert("¡Atención, aún no has rellenado el área de máquina y parámetros! Completa los datos faltantes y vuelve a intentarlo.");
+        }
+    </script>
+
 </head>
 <body>
     <form id="form1" runat="server">
-        <script>
-            $(document).ready(function () {
-                $('[data-toggle="popover"]').popover();
-            });
-        </script>
-        <script>
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip();
-            });
-        </script>
-        <script type="text/javascript">
-            function liberar_encargado_NOK() {
-                alert("¡Atención, aún no has rellenado el área de máquina y parámetros! Completa los datos faltantes y vuelve a intentarlo.");
-            }
-        </script>
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -60,34 +205,34 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="table-responsive">
-                        <table style="table-layout: fixed">
+                        <table class="table-fixed">
                             <tr>
-                                <th style="width: 10%">
-                                    <asp:TextBox ID="tbOrdenTitulo" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Orden:</asp:TextBox>
+                                <th class="w-10">
+                                    <asp:TextBox ID="tbOrdenTitulo" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Orden:</asp:TextBox>
                                 </th>
-                                <td style="width: 10%">
-                                    <asp:TextBox ID="tbOrden" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                <td class="w-10">
+                                    <asp:TextBox ID="tbOrden" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                 </td>
-                                <th style="width: 10%">
-                                    <asp:TextBox ID="tbReferenciaTitulo" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Referencia:</asp:TextBox>
+                                <th class="w-10">
+                                    <asp:TextBox ID="tbReferenciaTitulo" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Referencia:</asp:TextBox>
                                 </th>
-                                <td style="width: 15%">
-                                    <asp:TextBox ID="tbReferencia" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                <td class="w-15">
+                                    <asp:TextBox ID="tbReferencia" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                 </td>
-                                <td style="width: 40%">
-                                    <asp:TextBox ID="tbNombre" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                <td class="w-40">
+                                    <asp:TextBox ID="tbNombre" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                 </td>
-                                <th style="width: 10%">
-                                    <asp:TextBox ID="tbMaquinaTitulo" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Máquina:</asp:TextBox>
+                                <th class="w-10">
+                                    <asp:TextBox ID="tbMaquinaTitulo" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Máquina:</asp:TextBox>
                                 </th>
-                                <td style="width: 5%">
-                                    <asp:TextBox ID="tbMaquina" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                <td class="w-5">
+                                    <asp:TextBox ID="tbMaquina" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                 </td>
-                                <td style="width: 5%">
-                                    <asp:TextBox ID="tbMolde" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                <td class="w-5">
+                                    <asp:TextBox ID="tbMolde" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                 </td>
-                                <td style="width: 5%">
-                                    <asp:TextBox ID="tbFechaCambio" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                <td class="w-5">
+                                    <asp:TextBox ID="tbFechaCambio" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>
@@ -97,56 +242,56 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="table-responsive">
-                        <table style="table-layout: fixed">
+                        <table class="table-fixed">
                             <tr>
-                                <th style="width: 10%">
-                                    <asp:TextBox ID="tbOrdenTitulo2" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false" BackColor="Orange">Orden 2:</asp:TextBox>
+                                <th class="w-10">
+                                    <asp:TextBox ID="tbOrdenTitulo2" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false" BackColor="Orange">Orden 2:</asp:TextBox>
                                 </th>
-                                <td style="width: 10%">
-                                    <asp:TextBox ID="tbOrden2" runat="server" Style="text-align: center; width: 100%" Visible="false" Enabled="false"></asp:TextBox>
+                                <td class="w-10">
+                                    <asp:TextBox ID="tbOrden2" runat="server" CssClass="full-width text-center" Visible="false" Enabled="false"></asp:TextBox>
                                 </td>
-                                <th style="width: 10%">
-                                    <asp:TextBox ID="tbReferenciaTitulo2" runat="server" Style="text-align: center; width: 100%" Visible="false" Enabled="false" BackColor="Orange">Referencia:</asp:TextBox>
+                                <th class="w-10">
+                                    <asp:TextBox ID="tbReferenciaTitulo2" runat="server" CssClass="full-width text-center" Visible="false" Enabled="false" BackColor="Orange">Referencia:</asp:TextBox>
                                 </th>
-                                <td style="width: 15%">
-                                    <asp:TextBox ID="tbReferencia2" runat="server" Style="text-align: center; width: 100%" Visible="false" Enabled="false"></asp:TextBox>
+                                <td class="w-15">
+                                    <asp:TextBox ID="tbReferencia2" runat="server" CssClass="full-width text-center" Visible="false" Enabled="false"></asp:TextBox>
                                 </td>
-                                <td style="width: 40%">
-                                    <asp:TextBox ID="tbNombre2" runat="server" Style="text-align: center; width: 100%" Visible="false" Enabled="false"></asp:TextBox>
+                                <td class="w-40">
+                                    <asp:TextBox ID="tbNombre2" runat="server" CssClass="full-width text-center" Visible="false" Enabled="false"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <th style="width: 10%">
-                                    <asp:TextBox ID="tbOrdenTitulo3" runat="server" Style="text-align: center; width: 100%" Visible="false" Enabled="false" BackColor="Orange">Orden 3:</asp:TextBox>
+                                <th class="w-10">
+                                    <asp:TextBox ID="tbOrdenTitulo3" runat="server" CssClass="full-width text-center" Visible="false" Enabled="false" BackColor="Orange">Orden 3:</asp:TextBox>
                                 </th>
-                                <td style="width: 10%">
-                                    <asp:TextBox ID="tbOrden3" runat="server" Style="text-align: center; width: 100%" Visible="false" Enabled="false"></asp:TextBox>
+                                <td class="w-10">
+                                    <asp:TextBox ID="tbOrden3" runat="server" CssClass="full-width text-center" Visible="false" Enabled="false"></asp:TextBox>
                                 </td>
-                                <th style="width: 10%">
-                                    <asp:TextBox ID="tbReferenciaTitulo3" runat="server" Style="text-align: center; width: 100%" Visible="false" Enabled="false" BackColor="Orange">Referencia:</asp:TextBox>
+                                <th class="w-10">
+                                    <asp:TextBox ID="tbReferenciaTitulo3" runat="server" CssClass="full-width text-center" Visible="false" Enabled="false" BackColor="Orange">Referencia:</asp:TextBox>
                                 </th>
-                                <td style="width: 15%">
-                                    <asp:TextBox ID="tbReferencia3" runat="server" Style="text-align: center; width: 100%" Visible="false" Enabled="false"></asp:TextBox>
+                                <td class="w-15">
+                                    <asp:TextBox ID="tbReferencia3" runat="server" CssClass="full-width text-center" Visible="false" Enabled="false"></asp:TextBox>
                                 </td>
-                                <td style="width: 40%">
-                                    <asp:TextBox ID="tbNombre3" runat="server" Style="text-align: center; width: 100%" Visible="false" Enabled="false"></asp:TextBox>
+                                <td class="w-40">
+                                    <asp:TextBox ID="tbNombre3" runat="server" CssClass="full-width text-center" Visible="false" Enabled="false"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <th style="width: 10%">
-                                    <asp:TextBox ID="tbOrdenTitulo4" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false" BackColor="Orange">Orden 4:</asp:TextBox>
+                                <th class="w-10">
+                                    <asp:TextBox ID="tbOrdenTitulo4" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false" BackColor="Orange">Orden 4:</asp:TextBox>
                                 </th>
-                                <td style="width: 10%">
-                                    <asp:TextBox ID="tbOrden4" runat="server" Style="text-align: center; width: 100%" Visible="false" Enabled="false"></asp:TextBox>
+                                <td class="w-10">
+                                    <asp:TextBox ID="tbOrden4" runat="server" CssClass="full-width text-center" Visible="false" Enabled="false"></asp:TextBox>
                                 </td>
-                                <th style="width: 10%">
-                                    <asp:TextBox ID="tbReferenciaTitulo4" runat="server" Style="text-align: center; width: 100%" Visible="false" Enabled="false" BackColor="Orange">Referencia:</asp:TextBox>
+                                <th class="w-10">
+                                    <asp:TextBox ID="tbReferenciaTitulo4" runat="server" CssClass="full-width text-center" Visible="false" Enabled="false" BackColor="Orange">Referencia:</asp:TextBox>
                                 </th>
-                                <td style="width: 15%">
-                                    <asp:TextBox ID="tbReferencia4" runat="server" Style="text-align: center; width: 100%" Visible="false" Enabled="false"></asp:TextBox>
+                                <td class="w-15">
+                                    <asp:TextBox ID="tbReferencia4" runat="server" CssClass="full-width text-center" Visible="false" Enabled="false"></asp:TextBox>
                                 </td>
-                                <td style="width: 40%">
-                                    <asp:TextBox ID="tbNombre4" runat="server" Style="text-align: center; width: 100%" Visible="false" Enabled="false"></asp:TextBox>
+                                <td class="w-40">
+                                    <asp:TextBox ID="tbNombre4" runat="server" CssClass="full-width text-center" Visible="false" Enabled="false"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>
@@ -157,31 +302,31 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="progress">
-                        <div id="estadocambiadorSN" class="progress-bar progress-bar-danger" runat="server" role="progressbar" style="width: 15%">
+                        <div id="estadocambiadorSN" class="progress-bar progress-bar-danger" runat="server" role="progressbar" class="w-15">
                             Cambiador (Sin Liberar)
                         </div>
-                        <div id="estadocambiadorCOND" class="progress-bar progress-bar-warning" runat="server" role="progressbar" visible="false" style="width: 33%">
+                        <div id="estadocambiadorCOND" class="progress-bar progress-bar-warning" runat="server" role="progressbar" visible="false" class="w-33">
                             Cambiador (Liberado OK condicional)
                         </div>
-                        <div id="estadocambiadorLIBOK" class="progress-bar progress-bar-success" runat="server" role="progressbar" visible="false" style="width: 33%">
+                        <div id="estadocambiadorLIBOK" class="progress-bar progress-bar-success" runat="server" role="progressbar" visible="false" class="w-33">
                             Cambiador (Liberado OK)
                         </div>
-                        <div id="estadoencargadoSN" class="progress-bar progress-bar-danger" runat="server" role="progressbar" style="width: 15%">
+                        <div id="estadoencargadoSN" class="progress-bar progress-bar-danger" runat="server" role="progressbar" class="w-15">
                             Encargado (Sin Liberar)
                         </div>
-                        <div id="estadoencargadoCOND" class="progress-bar progress-bar-warning" runat="server" role="progressbar" visible="false" style="width: 33%">
+                        <div id="estadoencargadoCOND" class="progress-bar progress-bar-warning" runat="server" role="progressbar" visible="false" class="w-33">
                             Encargado (Liberado OK condicional)
                         </div>
-                        <div id="estadoencargadoLIBOK" class="progress-bar progress-bar-success" runat="server" role="progressbar" visible="false" style="width: 33%">
+                        <div id="estadoencargadoLIBOK" class="progress-bar progress-bar-success" runat="server" role="progressbar" visible="false" class="w-33">
                             Encargado (Liberado OK)
                         </div>
-                        <div id="estadocalidadSN" class="progress-bar progress-bar-danger" runat="server" role="progressbar" style="width: 15%">
+                        <div id="estadocalidadSN" class="progress-bar progress-bar-danger" runat="server" role="progressbar" class="w-15">
                             Calidad (Sin Liberar)
                         </div>
-                        <div id="estadocalidadCOND" class="progress-bar progress-bar-warning" runat="server" role="progressbar" visible="false" style="width: 34%">
+                        <div id="estadocalidadCOND" class="progress-bar progress-bar-warning" runat="server" role="progressbar" visible="false" class="w-34">
                             Calidad (Liberado OK condicional)
                         </div>
-                        <div id="estadocalidadLIBOK" class="progress-bar progress-bar-success" runat="server" role="progressbar" visible="false" style="width: 34%">
+                        <div id="estadocalidadLIBOK" class="progress-bar progress-bar-success" runat="server" role="progressbar" visible="false" class="w-34">
                             Calidad (Liberado OK)
                         </div>
                     </div>
@@ -216,50 +361,50 @@
                                 <div class="col-lg-12">
                                     <h2>Personal implicado y formación&nbsp<a href="#" title="Consulta el tablero de polivalencia:" data-toggle="popover" data-placement="top" data-content="Recuerda que el personal asignado a la fabricación debe estar presente y validado en el tablero de polivalencia del producto."><span class="glyphicon glyphicon-question-sign"></span></a></h2>
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 4%">
-                                                    <asp:TextBox ID="TextBox2" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange"></asp:TextBox>
+                                                <th class="w-4">
+                                                    <asp:TextBox ID="TextBox2" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="TituloPosicion" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Posición</asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="TituloPosicion" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Posición</asp:TextBox>
                                                 </th>
-                                                <th style="width: 5%">
-                                                    <asp:TextBox ID="TituloNumOpe" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Nº</asp:TextBox>
+                                                <th class="w-5">
+                                                    <asp:TextBox ID="TituloNumOpe" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Nº</asp:TextBox>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="TituloNomOpe" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Nombre</asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="TituloNomOpe" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Nombre</asp:TextBox>
                                                 </th>
-                                                <th style="width: 10%">
-                                                    <asp:TextBox ID="TituloHorasAcumuladas" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Horas acum.</asp:TextBox>
+                                                <th class="w-10">
+                                                    <asp:TextBox ID="TituloHorasAcumuladas" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Horas acum.</asp:TextBox>
                                                 </th>
-                                                <th style="width: 10%">
-                                                    <asp:TextBox ID="TituloNivel" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Nivel</asp:TextBox>
+                                                <th class="w-10">
+                                                    <asp:TextBox ID="TituloNivel" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Nivel</asp:TextBox>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="TituloRevisionILUO" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Última revisión</asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="TituloRevisionILUO" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Última revisión</asp:TextBox>
                                                 </th>
-                                                <th style="width: 30%">
-                                                    <asp:TextBox ID="ILUONotas" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Notas</asp:TextBox>
+                                                <th class="w-30">
+                                                    <asp:TextBox ID="ILUONotas" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Notas</asp:TextBox>
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 4%">
-                                                    <a href="#" id="BtnRecargaOp1" class="btn btn-info" style="text-align: center; width: 100%" runat="server" onserverclick="ReCargarOperarios" data-toggle="tooltip" title="¡Recuerda que debe estar logueado en BMS!"><span class="glyphicon glyphicon-log-in"></span></a>
+                                                <th class="w-4">
+                                                    <a href="#" id="BtnRecargaOp1" class="btn btn-info" class="btn-full" runat="server" onserverclick="ReCargarOperarios" data-toggle="tooltip" title="¡Recuerda que debe estar logueado en BMS!"><span class="glyphicon glyphicon-log-in"></span></a>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="Operario1Posicion" runat="server" Style="text-align: center; width: 100%; height: 34px" Enabled="false">OPERARIO</asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="Operario1Posicion" runat="server" CssClass="full-width input-centered input-compact" Enabled="false">OPERARIO</asp:TextBox>
                                                 </th>
-                                                <td style="width: 5%">
-                                                    <asp:TextBox ID="Operario1Numero" runat="server" Style="text-align: center; width: 100%; height: 34px" Enabled="false"></asp:TextBox>
+                                                <td class="w-5">
+                                                    <asp:TextBox ID="Operario1Numero" runat="server" CssClass="full-width input-centered input-compact" Enabled="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 15%">
-                                                    <asp:TextBox ID="Operario1Nombre" runat="server" Style="text-align: center; width: 100%; height: 34px" Enabled="false"></asp:TextBox>
+                                                <td class="w-15">
+                                                    <asp:TextBox ID="Operario1Nombre" runat="server" CssClass="full-width input-centered input-compact" Enabled="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 10%">
-                                                    <asp:TextBox ID="Operario1Horas" runat="server" Style="text-align: center; width: 100%; height: 34px" Enabled="false"></asp:TextBox>
+                                                <td class="w-10">
+                                                    <asp:TextBox ID="Operario1Horas" runat="server" CssClass="full-width input-centered input-compact" Enabled="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 10%">
+                                                <td class="w-10">
                                                     <asp:DropDownList ID="Operario1Nivel" runat="server" CssClass="form-control" AutoPostBack="True">
                                                         <asp:ListItem Text="I" Value="I"></asp:ListItem>
                                                         <asp:ListItem Text="L" Value="L"></asp:ListItem>
@@ -267,30 +412,30 @@
                                                         <asp:ListItem Text="O" Value="O"></asp:ListItem>
                                                     </asp:DropDownList>
                                                 </td>
-                                                <td style="width: 15%">
-                                                    <asp:TextBox ID="Operario1UltRevision" runat="server" Style="text-align: center; width: 100%; height: 34px" Enabled="false"></asp:TextBox>
+                                                <td class="w-15">
+                                                    <asp:TextBox ID="Operario1UltRevision" runat="server" CssClass="full-width input-centered input-compact" Enabled="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 30%">
-                                                    <asp:TextBox ID="Operario1Notas" runat="server" Style="text-align: center; width: 100%; height: 34px"></asp:TextBox>
+                                                <td class="w-30">
+                                                    <asp:TextBox ID="Operario1Notas" runat="server" CssClass="full-width input-centered input-compact"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 4%">
-                                                    <a href="#" id="btnRecargarOperario2" class="btn btn-info" runat="server" visible="false" style="text-align: center; width: 100%" onserverclick="ReCargarOperarios" data-toggle="tooltip" title="¡Recuerda que debe estar logueado en BMS!"><span class="glyphicon glyphicon-log-in"></span></a>
+                                                <th class="w-4">
+                                                    <a href="#" id="btnRecargarOperario2" class="btn btn-info" runat="server" visible="false" class="btn-full" onserverclick="ReCargarOperarios" data-toggle="tooltip" title="¡Recuerda que debe estar logueado en BMS!"><span class="glyphicon glyphicon-log-in"></span></a>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="Operario2Posicion" runat="server" Style="text-align: center; width: 100%; height: 34px" Enabled="false" Visible="false">OPERARIO 2</asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="Operario2Posicion" runat="server" CssClass="full-width input-centered input-compact" Enabled="false" Visible="false">OPERARIO 2</asp:TextBox>
                                                 </th>
-                                                <td style="width: 5%">
-                                                    <asp:TextBox ID="Operario2Numero" runat="server" Style="text-align: center; width: 100%; height: 34px" Enabled="false" Visible="false"></asp:TextBox>
+                                                <td class="w-5">
+                                                    <asp:TextBox ID="Operario2Numero" runat="server" CssClass="full-width input-centered input-compact" Enabled="false" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 15%">
-                                                    <asp:TextBox ID="Operario2Nombre" runat="server" Style="text-align: center; width: 100%; height: 34px" Enabled="false" Visible="false"></asp:TextBox>
+                                                <td class="w-15">
+                                                    <asp:TextBox ID="Operario2Nombre" runat="server" CssClass="full-width input-centered input-compact" Enabled="false" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 10%">
-                                                    <asp:TextBox ID="Operario2Horas" runat="server" Style="text-align: center; width: 100%; height: 34px" Enabled="false" Visible="false"></asp:TextBox>
+                                                <td class="w-10">
+                                                    <asp:TextBox ID="Operario2Horas" runat="server" CssClass="full-width input-centered input-compact" Enabled="false" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 10%">
+                                                <td class="w-10">
                                                     <asp:DropDownList ID="Operario2Nivel" runat="server" CssClass="form-control" AutoPostBack="True" Visible="false">
                                                         <asp:ListItem Text="I" Value="I"></asp:ListItem>
                                                         <asp:ListItem Text="L" Value="L"></asp:ListItem>
@@ -298,89 +443,89 @@
                                                         <asp:ListItem Text="O" Value="O"></asp:ListItem>
                                                     </asp:DropDownList>
                                                 </td>
-                                                <td style="width: 15%">
-                                                    <asp:TextBox ID="Operario2UltRevision" runat="server" Style="text-align: center; width: 100%; height: 34px" Enabled="false" Visible="false"></asp:TextBox>
+                                                <td class="w-15">
+                                                    <asp:TextBox ID="Operario2UltRevision" runat="server" CssClass="full-width input-centered input-compact" Enabled="false" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 30%">
-                                                    <asp:TextBox ID="Operario2Notas" runat="server" Style="text-align: center; width: 100%; height: 34px" Visible="false"></asp:TextBox>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th style="width: 4%">
-                                                    <a href="#" id="btnRecargarCambiador2" class="btn btn-info btn-sm" style="text-align: center; width: 100%" runat="server" onserverclick="ReCargarCambiador" data-toggle="tooltip" title="¡Recuerda que debe estar logueado en BMS!"><span class="glyphicon glyphicon-log-in"></span></a>
-                                                </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="CambiadorPosicion" runat="server" Style="text-align: center; width: 100%" Enabled="false">CAMBIADOR</asp:TextBox>
-                                                </th>
-                                                <td style="width: 5%">
-                                                    <asp:TextBox ID="CambiadorNumero" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
-                                                </td>
-                                                <td style="width: 15%">
-                                                    <asp:TextBox ID="CambiadorNombre" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
-                                                </td>
-                                                <td style="width: 10%">
-                                                    <asp:TextBox ID="CambiadorHoras" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
-                                                </td>
-                                                <td style="width: 10%">
-                                                    <asp:TextBox ID="CambiadorNivel" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
-                                                </td>
-                                                <td style="width: 15%">
-                                                    <asp:TextBox ID="CambiadorUltRevision" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
-                                                </td>
-                                                <td style="width: 30%">
-                                                    <asp:TextBox ID="CambiadorNotas" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <td class="w-30">
+                                                    <asp:TextBox ID="Operario2Notas" runat="server" CssClass="full-width input-centered input-compact" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 4%">
-                                                    <a href="#" id="btnRecargarEncargado" class="btn btn-info btn-sm" style="text-align: center; width: 100%" runat="server" onserverclick="ReCargarEncargado" data-toggle="tooltip" title="¡Recuerda que debe estar logueado en BMS!"><span class="glyphicon glyphicon-log-in"></span></a>
+                                                <th class="w-4">
+                                                    <a href="#" id="btnRecargarCambiador2" class="btn btn-info btn-sm" class="btn-full" runat="server" onserverclick="ReCargarCambiador" data-toggle="tooltip" title="¡Recuerda que debe estar logueado en BMS!"><span class="glyphicon glyphicon-log-in"></span></a>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="EncargadoPosicion" runat="server" Style="text-align: center; width: 100%" Enabled="false">ENCARGADO</asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="CambiadorPosicion" runat="server" CssClass="full-width text-center" Enabled="false">CAMBIADOR</asp:TextBox>
                                                 </th>
-                                                <td style="width: 5%">
-                                                    <asp:TextBox ID="EncargadoNumero" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                                <td class="w-5">
+                                                    <asp:TextBox ID="CambiadorNumero" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 15%">
-                                                    <asp:TextBox ID="EncargadoNombre" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                                <td class="w-15">
+                                                    <asp:TextBox ID="CambiadorNombre" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 10%">
-                                                    <asp:TextBox ID="EncargadoHoras" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                                <td class="w-10">
+                                                    <asp:TextBox ID="CambiadorHoras" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 10%">
-                                                    <asp:TextBox ID="EncargadoNivel" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <td class="w-10">
+                                                    <asp:TextBox ID="CambiadorNivel" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 15%">
-                                                    <asp:TextBox ID="EncargadoUltRevision" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <td class="w-15">
+                                                    <asp:TextBox ID="CambiadorUltRevision" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 30%">
-                                                    <asp:TextBox ID="EncargadoNotas" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <td class="w-30">
+                                                    <asp:TextBox ID="CambiadorNotas" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 4%">
-                                                    <a href="#" id="btnRecargarCalidad" class="btn btn-info btn-sm" style="text-align: center; width: 100%" runat="server" onserverclick="ReCargarCalidad" data-toggle="tooltip" title="¡Recuerda que debe estar logueado en BMS!"><span class="glyphicon glyphicon-log-in"></span></a>
+                                                <th class="w-4">
+                                                    <a href="#" id="btnRecargarEncargado" class="btn btn-info btn-sm" class="btn-full" runat="server" onserverclick="ReCargarEncargado" data-toggle="tooltip" title="¡Recuerda que debe estar logueado en BMS!"><span class="glyphicon glyphicon-log-in"></span></a>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="CalidadPosicion" runat="server" Style="text-align: center; width: 100%" Enabled="false">CALIDAD</asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="EncargadoPosicion" runat="server" CssClass="full-width text-center" Enabled="false">ENCARGADO</asp:TextBox>
                                                 </th>
-                                                <td style="width: 5%">
-                                                    <asp:TextBox ID="CalidadNumero" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                                <td class="w-5">
+                                                    <asp:TextBox ID="EncargadoNumero" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 15%">
-                                                    <asp:TextBox ID="CalidadNombre" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                                <td class="w-15">
+                                                    <asp:TextBox ID="EncargadoNombre" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 10%">
-                                                    <asp:TextBox ID="CalidadHoras" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                                <td class="w-10">
+                                                    <asp:TextBox ID="EncargadoHoras" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 10%">
-                                                    <asp:TextBox ID="CalidadNivel" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <td class="w-10">
+                                                    <asp:TextBox ID="EncargadoNivel" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 15%">
-                                                    <asp:TextBox ID="CalidadUltRevision" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <td class="w-15">
+                                                    <asp:TextBox ID="EncargadoUltRevision" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 30%">
-                                                    <asp:TextBox ID="CalidadNotas" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <td class="w-30">
+                                                    <asp:TextBox ID="EncargadoNotas" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="w-4">
+                                                    <a href="#" id="btnRecargarCalidad" class="btn btn-info btn-sm" class="btn-full" runat="server" onserverclick="ReCargarCalidad" data-toggle="tooltip" title="¡Recuerda que debe estar logueado en BMS!"><span class="glyphicon glyphicon-log-in"></span></a>
+                                                </th>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="CalidadPosicion" runat="server" CssClass="full-width text-center" Enabled="false">CALIDAD</asp:TextBox>
+                                                </th>
+                                                <td class="w-5">
+                                                    <asp:TextBox ID="CalidadNumero" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
+                                                </td>
+                                                <td class="w-15">
+                                                    <asp:TextBox ID="CalidadNombre" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
+                                                </td>
+                                                <td class="w-10">
+                                                    <asp:TextBox ID="CalidadHoras" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
+                                                </td>
+                                                <td class="w-10">
+                                                    <asp:TextBox ID="CalidadNivel" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
+                                                </td>
+                                                <td class="w-15">
+                                                    <asp:TextBox ID="CalidadUltRevision" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
+                                                </td>
+                                                <td class="w-30">
+                                                    <asp:TextBox ID="CalidadNotas" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
 
@@ -395,73 +540,73 @@
                                 <div class="col-lg-12">
                                     <h2>Resultados</h2>
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 20%">
-                                                    <asp:TextBox ID="TextBox22" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Estado</asp:TextBox>
+                                                <th class="w-20">
+                                                    <asp:TextBox ID="TextBox22" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Estado</asp:TextBox>
                                                 </th>
-                                                <th style="width: 20%">
-                                                    <asp:TextBox ID="TextBox23" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Proceso</asp:TextBox>
+                                                <th class="w-20">
+                                                    <asp:TextBox ID="TextBox23" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Proceso</asp:TextBox>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="TextBox24" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Fecha de liberación</asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="TextBox24" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Fecha de liberación</asp:TextBox>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="TextBox25" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Fecha de modificación</asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="TextBox25" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Fecha de modificación</asp:TextBox>
                                                 </th>
-                                                <th style="width: 30%">
-                                                    <asp:TextBox ID="TextBox26" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Notas</asp:TextBox>
+                                                <th class="w-30">
+                                                    <asp:TextBox ID="TextBox26" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Notas</asp:TextBox>
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 20%">
-                                                    <asp:TextBox ID="LiberacionCambiador" runat="server" Style="text-align: center; width: 100%" Enabled="false">Sin liberar</asp:TextBox>
+                                                <th class="w-20">
+                                                    <asp:TextBox ID="LiberacionCambiador" runat="server" CssClass="full-width text-center" Enabled="false">Sin liberar</asp:TextBox>
                                                 </th>
-                                                <th style="width: 20%">
-                                                    <asp:TextBox ID="LiberacionCambiadorDept" runat="server" Style="text-align: center; width: 100%" Enabled="false">Cambio de molde</asp:TextBox>
+                                                <th class="w-20">
+                                                    <asp:TextBox ID="LiberacionCambiadorDept" runat="server" CssClass="full-width text-center" Enabled="false">Cambio de molde</asp:TextBox>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="LiberacionCambiadorHoraORI" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="LiberacionCambiadorHoraORI" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="LiberacionCambiadorHora" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="LiberacionCambiadorHora" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 30%">
-                                                    <asp:TextBox ID="LiberacionCambiadorNotas" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
-                                                </th>
-                                            </tr>
-                                            <tr>
-                                                <th style="width: 20%">
-                                                    <asp:TextBox ID="LiberacionEncargado" runat="server" Style="text-align: center; width: 100%" Enabled="false">Sin liberar</asp:TextBox>
-                                                </th>
-                                                <th style="width: 20%">
-                                                    <asp:TextBox ID="LiberacionEncargadoDept" runat="server" Style="text-align: center; width: 100%" Enabled="false">Máquina, parámetros y proceso</asp:TextBox>
-                                                </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="LiberacionEncargadoHoraORI" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
-                                                </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="LiberacionEncargadoHora" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
-                                                </th>
-                                                <th style="width: 30%">
-                                                    <asp:TextBox ID="LiberacionEncargadoNotas" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                                <th class="w-30">
+                                                    <asp:TextBox ID="LiberacionCambiadorNotas" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="LiberacionCalidad" runat="server" Style="text-align: center; width: 100%" Enabled="false">Sin liberar</asp:TextBox>
+                                                <th class="w-20">
+                                                    <asp:TextBox ID="LiberacionEncargado" runat="server" CssClass="full-width text-center" Enabled="false">Sin liberar</asp:TextBox>
                                                 </th>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="LiberacionCalidadDept" runat="server" Style="text-align: center; width: 100%" Enabled="false">Auditoría de calidad</asp:TextBox>
+                                                <th class="w-20">
+                                                    <asp:TextBox ID="LiberacionEncargadoDept" runat="server" CssClass="full-width text-center" Enabled="false">Máquina, parámetros y proceso</asp:TextBox>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="LiberacionCalidadHoraORI" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="LiberacionEncargadoHoraORI" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="LiberacionCalidadHora" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="LiberacionEncargadoHora" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 30%">
-                                                    <asp:TextBox ID="LiberacionCalidadNotas" runat="server" Style="text-align: center; width: 100%" Enabled="false"></asp:TextBox>
+                                                <th class="w-30">
+                                                    <asp:TextBox ID="LiberacionEncargadoNotas" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="LiberacionCalidad" runat="server" CssClass="full-width text-center" Enabled="false">Sin liberar</asp:TextBox>
+                                                </th>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="LiberacionCalidadDept" runat="server" CssClass="full-width text-center" Enabled="false">Auditoría de calidad</asp:TextBox>
+                                                </th>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="LiberacionCalidadHoraORI" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
+                                                </th>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="LiberacionCalidadHora" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
+                                                </th>
+                                                <th class="w-30">
+                                                    <asp:TextBox ID="LiberacionCalidadNotas" runat="server" CssClass="full-width text-center" Enabled="false"></asp:TextBox>
                                                 </th>
                                             </tr>
                                         </table>
@@ -472,7 +617,7 @@
 
                                     <div id="condicionada" class="table-responsive" runat="server">
                                         <h4><strong>Liberación - Acciones en caso de desviación.</strong><a href="#" title="En caso de desviación:" data-toggle="popover" data-placement="top" data-content="Recuerda seleccionar una acción en el desplegable. Esto ayudará a trazar y escalar las acciones de contención posteriores.">&nbsp<span class="glyphicon glyphicon-question-sign"></span></a></h4>
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
                                                 <th>
                                                     <asp:DropDownList ID="LiberacionCondicionada" runat="server" CssClass="form-control" AutoPostBack="True">
@@ -486,13 +631,13 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <asp:TextBox ID="NotaLiberacionCondicionada" runat="server" Style="text-align: center; width: 100%; height: 40px" TextMode="MultiLine"></asp:TextBox>
+                                                    <asp:TextBox ID="NotaLiberacionCondicionada" runat="server" CssClass="full-width input-centered input-large" TextMode="MultiLine"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <br />
-                                                    <asp:TextBox ID="lblValidadPORING" runat="server" Style="text-align: center; width: 100%; background-color: orange" Font-Bold="true" Enabled="false" Visible="false"> Desviación validada por:</asp:TextBox>
+                                                    <asp:TextBox ID="lblValidadPORING" runat="server" CssClass="full-width input-centered" BackColor="Orange" Font-Bold="true" Enabled="false" Visible="false"> Desviación validada por:</asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -503,7 +648,7 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <button id="btnValidarING" runat="server" class="btn btn-info btn-sm" onserverclick="ValidarIngenieria" visible="false" style="width: 100%">Validar producción</button>
+                                                    <button id="btnValidarING" runat="server" class="btn btn-info btn-sm" onserverclick="ValidarIngenieria" visible="false" class="btn-full">Validar producción</button>
                                                 </td>
                                             </tr>
                                         </table>
@@ -521,26 +666,26 @@
                                         <h4><strong>Formación y no conformidades</strong></h4>
                                     </div>
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <td style="width: 50%">
-                                                    <asp:TextBox ID="ResumenFORM1" runat="server" Style="width: 100%; border-color: transparent" Enabled="false" Visible="false">   ENCARGADO: Pendiente consultar no conformidades</asp:TextBox>
+                                                <td class="w-50">
+                                                    <asp:TextBox ID="ResumenFORM1" runat="server" CssClass="full-width border-transparent" Enabled="false" Visible="false">   ENCARGADO: Pendiente consultar no conformidades</asp:TextBox>
                                                 </td>
-                                                <td style="width: 50%">
-                                                    <asp:TextBox ID="ResumenFORM2" runat="server" Style="width: 100%; border-color: transparent" Enabled="false" Visible="false">   ENCARGADO: Pendiente consultar detecciones Gp12</asp:TextBox>
+                                                <td class="w-50">
+                                                    <asp:TextBox ID="ResumenFORM2" runat="server" CssClass="full-width border-transparent" Enabled="false" Visible="false">   ENCARGADO: Pendiente consultar detecciones Gp12</asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 50%">
-                                                    <asp:TextBox ID="ResumenFORM3" runat="server" Style="width: 100%; border-color: transparent" Enabled="false" Visible="false">   CALIDAD: Pendiente consultar con operario no conformidades</asp:TextBox>
+                                                <td class="w-50">
+                                                    <asp:TextBox ID="ResumenFORM3" runat="server" CssClass="full-width border-transparent" Enabled="false" Visible="false">   CALIDAD: Pendiente consultar con operario no conformidades</asp:TextBox>
                                                 </td>
-                                                <td style="width: 50%">
-                                                    <asp:TextBox ID="ResumenFORM4" runat="server" Style="width: 100%; border-color: transparent" Enabled="false" Visible="false">   CALIDAD: Pendiente consultar con operario detecciones Gp12</asp:TextBox>
+                                                <td class="w-50">
+                                                    <asp:TextBox ID="ResumenFORM4" runat="server" CssClass="full-width border-transparent" Enabled="false" Visible="false">   CALIDAD: Pendiente consultar con operario detecciones Gp12</asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td colspan="2" style="width: 100%; border-color: transparent">
-                                                    <asp:TextBox ID="ResumenFORM4ILUO" runat="server" Style="text-align: center; width: 100%; border-color: red" Enabled="false" Visible="false">Uno o más operarios asignados no cuentan con la formación suficiente.</asp:TextBox>
+                                                <td colspan="2" class="full-width border-transparent">
+                                                    <asp:TextBox ID="ResumenFORM4ILUO" runat="server" CssClass="full-width input-centered border-red" Enabled="false" Visible="false">Uno o más operarios asignados no cuentan con la formación suficiente.</asp:TextBox>
                                                 </td>
                                             </tr>
                                         </table>
@@ -550,25 +695,25 @@
                                         <h4><strong>Materias primas y parámetros cargados</strong></h4>
                                     </div>
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <td style="width: 50%">
-                                                    <asp:TextBox ID="ResumenMAT1" runat="server" Style="width: 100%; border-color: transparent" Enabled="false" Visible="false">   MATERIALES: No se ha indicado el lote de algunas materias primas.</asp:TextBox>
+                                                <td class="w-50">
+                                                    <asp:TextBox ID="ResumenMAT1" runat="server" CssClass="full-width border-transparent" Enabled="false" Visible="false">   MATERIALES: No se ha indicado el lote de algunas materias primas.</asp:TextBox>
                                                 </td>
-                                                <td style="width: 50%">
-                                                    <asp:TextBox ID="ResumenMAT2" runat="server" Style="width: 100%; border-color: transparent" Enabled="false" Visible="false">   MATERIALES: No se ha indicado el tiempo de secado o la temperatura.</asp:TextBox>
+                                                <td class="w-50">
+                                                    <asp:TextBox ID="ResumenMAT2" runat="server" CssClass="full-width border-transparent" Enabled="false" Visible="false">   MATERIALES: No se ha indicado el tiempo de secado o la temperatura.</asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 50%">
-                                                    <asp:TextBox ID="ResumenPROD1" runat="server" Style="width: 100%; border-color: transparent" Enabled="false" Visible="false">   PRODUCCIÓN: Existen parámetros fuera de especificación</asp:TextBox>
+                                                <td class="w-50">
+                                                    <asp:TextBox ID="ResumenPROD1" runat="server" CssClass="full-width border-transparent" Enabled="false" Visible="false">   PRODUCCIÓN: Existen parámetros fuera de especificación</asp:TextBox>
                                                 </td>
-                                                <td style="width: 50%">
-                                                    <asp:TextBox ID="ResumenPROD2" runat="server" Style="width: 100%; border-color: transparent" Enabled="false" Visible="false">   No se han dado motivos</asp:TextBox>
+                                                <td class="w-50">
+                                                    <asp:TextBox ID="ResumenPROD2" runat="server" CssClass="full-width border-transparent" Enabled="false" Visible="false">   No se han dado motivos</asp:TextBox>
                                                 </td>
                                             </tr>
-                                            <td colspan="2" style="width: 100%; border-color: transparent">
-                                                <asp:TextBox ID="ResumenPROD3" runat="server" Style="text-align: center; width: 100%; border-color: red" Enabled="false" Visible="false">La ficha de producción no existe o no está digitalizada. (Limpiar y recargar ficha una vez creada)</asp:TextBox>
+                                            <td colspan="2" class="full-width border-transparent">
+                                                <asp:TextBox ID="ResumenPROD3" runat="server" CssClass="full-width input-centered border-red" Enabled="false" Visible="false">La ficha de producción no existe o no está digitalizada. (Limpiar y recargar ficha una vez creada)</asp:TextBox>
                                             </td>
                                             <tr>
                                             </tr>
@@ -580,126 +725,126 @@
                                         <h4><strong>Auditoría de liberación</strong></h4>
                                     </div>
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="ResumenGRAL1" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange" Visible="false">Estándar no conforme</asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="ResumenGRAL1" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange" Visible="false">Estándar no conforme</asp:TextBox>
                                                 </th>
-                                                <th style="width: 42%">
-                                                    <asp:TextBox ID="ResumenGRAL2" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange" Visible="false">Comentarios producción</asp:TextBox>
+                                                <th class="w-42">
+                                                    <asp:TextBox ID="ResumenGRAL2" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange" Visible="false">Comentarios producción</asp:TextBox>
                                                 </th>
-                                                <th style="width: 43%">
-                                                    <asp:TextBox ID="ResumenGRAL3" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange" Visible="false">Comentarios calidad</asp:TextBox>
+                                                <th class="w-43">
+                                                    <asp:TextBox ID="ResumenGRAL3" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange" Visible="false">Comentarios calidad</asp:TextBox>
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="Resumen1" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" Visible="false">1. Máquina y programas</asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="Resumen1" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" Visible="false">1. Máquina y programas</asp:TextBox>
                                                 </th>
-                                                <td style="width: 42%">
-                                                    <asp:TextBox ID="Resumen1ENC" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-42">
+                                                    <asp:TextBox ID="Resumen1ENC" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 43%">
-                                                    <asp:TextBox ID="Resumen1CAL" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-43">
+                                                    <asp:TextBox ID="Resumen1CAL" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="Resumen2" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" Visible="false">2. Conexiones de agua</asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="Resumen2" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" Visible="false">2. Conexiones de agua</asp:TextBox>
                                                 </th>
-                                                <td style="width: 42%">
-                                                    <asp:TextBox ID="Resumen2ENC" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-42">
+                                                    <asp:TextBox ID="Resumen2ENC" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 43%">
-                                                    <asp:TextBox ID="Resumen2CAL" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-43">
+                                                    <asp:TextBox ID="Resumen2CAL" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="Resumen3" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" Visible="false">3. Periféricos y ajuste mecánico</asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="Resumen3" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" Visible="false">3. Periféricos y ajuste mecánico</asp:TextBox>
                                                 </th>
-                                                <td style="width: 42%">
-                                                    <asp:TextBox ID="Resumen3ENC" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-42">
+                                                    <asp:TextBox ID="Resumen3ENC" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 43%">
-                                                    <asp:TextBox ID="Resumen3CAL" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-43">
+                                                    <asp:TextBox ID="Resumen3CAL" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="Resumen4" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" Visible="false">4. Condiciones iniciales</asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="Resumen4" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" Visible="false">4. Condiciones iniciales</asp:TextBox>
                                                 </th>
-                                                <td style="width: 42%">
-                                                    <asp:TextBox ID="Resumen4ENC" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-42">
+                                                    <asp:TextBox ID="Resumen4ENC" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 43%">
-                                                    <asp:TextBox ID="Resumen4CAL" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-43">
+                                                    <asp:TextBox ID="Resumen4CAL" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="Resumen5" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" Visible="false">5. Primeras inyectadas</asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="Resumen5" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" Visible="false">5. Primeras inyectadas</asp:TextBox>
                                                 </th>
-                                                <td style="width: 42%">
-                                                    <asp:TextBox ID="Resumen5ENC" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-42">
+                                                    <asp:TextBox ID="Resumen5ENC" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 43%">
-                                                    <asp:TextBox ID="Resumen5CAL" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-43">
+                                                    <asp:TextBox ID="Resumen5CAL" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="Resumen6" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" Visible="false">6. Pokayokes, galgas de control y máquinas periféricas</asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="Resumen6" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" Visible="false">6. Pokayokes, galgas de control y máquinas periféricas</asp:TextBox>
                                                 </th>
-                                                <td style="width: 42%">
-                                                    <asp:TextBox ID="Resumen6ENC" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-42">
+                                                    <asp:TextBox ID="Resumen6ENC" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 43%">
-                                                    <asp:TextBox ID="Resumen6CAL" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-43">
+                                                    <asp:TextBox ID="Resumen6CAL" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="Resumen7" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" Visible="false">7. Puesto de trabajo</asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="Resumen7" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" Visible="false">7. Puesto de trabajo</asp:TextBox>
                                                 </th>
-                                                <td style="width: 42%">
-                                                    <asp:TextBox ID="Resumen7ENC" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-42">
+                                                    <asp:TextBox ID="Resumen7ENC" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 43%">
-                                                    <asp:TextBox ID="Resumen7CAL" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-43">
+                                                    <asp:TextBox ID="Resumen7CAL" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="Resumen8" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" Visible="false">8. Anti mezclas</asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="Resumen8" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" Visible="false">8. Anti mezclas</asp:TextBox>
                                                 </th>
-                                                <td style="width: 42%">
-                                                    <asp:TextBox ID="Resumen8ENC" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-42">
+                                                    <asp:TextBox ID="Resumen8ENC" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 43%">
-                                                    <asp:TextBox ID="Resumen8CAL" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-43">
+                                                    <asp:TextBox ID="Resumen8CAL" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="Resumen9" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" Visible="false">9. Elementos auxiliares</asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="Resumen9" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" Visible="false">9. Elementos auxiliares</asp:TextBox>
                                                 </th>
-                                                <td style="width: 42%">
-                                                    <asp:TextBox ID="Resumen9ENC" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-42">
+                                                    <asp:TextBox ID="Resumen9ENC" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 43%">
-                                                    <asp:TextBox ID="Resumen9CAL" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-43">
+                                                    <asp:TextBox ID="Resumen9CAL" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="Resumen10" runat="server" Style="text-align: center; width: 100%; height: 45px; vertical-align: central" Enabled="false" Visible="false">10. Control de atributos</asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="Resumen10" runat="server" CssClass="full-width input-centered input-summary" Enabled="false" Visible="false">10. Control de atributos</asp:TextBox>
                                                 </th>
-                                                <td style="width: 42%">
-                                                    <asp:TextBox ID="Resumen10ENC" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-42">
+                                                    <asp:TextBox ID="Resumen10ENC" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 43%">
-                                                    <asp:TextBox ID="Resumen10CAL" runat="server" Style="text-align: center; width: 100%" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
+                                                <td class="w-43">
+                                                    <asp:TextBox ID="Resumen10CAL" runat="server" CssClass="full-width text-center" Enabled="false" TextMode="MultiLine" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                         </table>
@@ -718,37 +863,37 @@
                                 <div class="col-lg-12">
                                     <h2>Materias primas y lotes</h2>
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 10%">
-                                                    <asp:TextBox ID="tituloEnstock" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange"></asp:TextBox>
+                                                <th class="w-10">
+                                                    <asp:TextBox ID="tituloEnstock" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="tituloMATREF" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Referencia</asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="tituloMATREF" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Referencia</asp:TextBox>
                                                 </th>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="tituloMATNOM" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Nombre</asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="tituloMATNOM" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Nombre</asp:TextBox>
                                                 </th>
-                                                <th style="width: 9%">
-                                                    <asp:TextBox ID="tituloMATLOT" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Lote</asp:TextBox>
+                                                <th class="w-9">
+                                                    <asp:TextBox ID="tituloMATLOT" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Lote</asp:TextBox>
                                                 </th>
-                                                <th style="width: 9%">
-                                                    <asp:TextBox ID="tituloMATLOT2" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Lote 2</asp:TextBox>
+                                                <th class="w-9">
+                                                    <asp:TextBox ID="tituloMATLOT2" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Lote 2</asp:TextBox>
                                                 </th>
-                                                <th style="width: 22%">
-                                                    <asp:TextBox ID="tituloREMARK2" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Espec.</asp:TextBox>
+                                                <th class="w-22">
+                                                    <asp:TextBox ID="tituloREMARK2" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Espec.</asp:TextBox>
                                                 </th>
-                                                <th style="width: 10%">
-                                                    <asp:TextBox ID="tituloMATTEMPREAL" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">TªSecadora:</asp:TextBox>
+                                                <th class="w-10">
+                                                    <asp:TextBox ID="tituloMATTEMPREAL" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">TªSecadora:</asp:TextBox>
                                                 </th>
-                                                <th style="width: 10%">
-                                                    <asp:TextBox ID="tituloMATTIEMPREAL" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Tiempo sec.</asp:TextBox>
+                                                <th class="w-10">
+                                                    <asp:TextBox ID="tituloMATTIEMPREAL" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Tiempo sec.</asp:TextBox>
                                                 </th>
-                                                <th style="width: 11%" runat="server" visible="false">
-                                                    <asp:TextBox ID="tituloMATTEMP" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Tiempo sec.</asp:TextBox>
+                                                <th class="w-11" runat="server" visible="false">
+                                                    <asp:TextBox ID="tituloMATTEMP" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Tiempo sec.</asp:TextBox>
                                                 </th>
-                                                <th style="width: 11%" runat="server" visible="false">
-                                                    <asp:TextBox ID="tituloMATTIEMP" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Tiempo sec.:</asp:TextBox>
+                                                <th class="w-11" runat="server" visible="false">
+                                                    <asp:TextBox ID="tituloMATTIEMP" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Tiempo sec.:</asp:TextBox>
                                                 </th>
 
 
@@ -757,239 +902,239 @@
 
                                             </tr>
                                             <tr>
-                                                <th style="width: 10%">
+                                                <th class="w-10">
                                                     <%-- <asp:TextBox ID="MAT1STOCK" runat="server" Style="text-align:center; width:100%" Enabled="false" Visible="false"></asp:TextBox>--%>
-                                                    <a href="#" id="MATSAVE1" class="btn btn-primary btn-sm" style="text-align: center; width: 100%" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
+                                                    <a href="#" id="MATSAVE1" class="btn btn-primary btn-sm" class="btn-full" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
 
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="MAT1REF" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="MAT1REF" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="MAT1NOM" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="MAT1NOM" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="MAT1LOT" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="MAT1LOT" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="MAT1LOT2" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="MAT1LOT2" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <th style="width: 22%">
-                                                    <asp:TextBox ID="MAT1REMARK2" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-22">
+                                                    <asp:TextBox ID="MAT1REMARK2" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 10%">
-                                                    <asp:TextBox ID="MAT1TEMPREAL" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-10">
+                                                    <asp:TextBox ID="MAT1TEMPREAL" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <th style="width: 11%" runat="server" visible="FALSE">
-                                                    <asp:TextBox ID="MAT1TIEMP" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-11" runat="server" visible="FALSE">
+                                                    <asp:TextBox ID="MAT1TIEMP" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
 
-                                                <td style="width: 10%">
-                                                    <asp:TextBox ID="MAT1TIEMPREAL" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-10">
+                                                    <asp:TextBox ID="MAT1TIEMPREAL" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <th style="width: 11%" runat="server" visible="FALSE">
-                                                    <asp:TextBox ID="MAT1TEMP" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-11" runat="server" visible="FALSE">
+                                                    <asp:TextBox ID="MAT1TEMP" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
 
                                             </tr>
                                             <tr>
-                                                <th style="width: 10%">
+                                                <th class="w-10">
                                                     <%-- <asp:TextBox ID="MAT2STOCK" runat="server" Style="text-align:center; width:100%" Enabled="false" Visible="false"></asp:TextBox>--%>
-                                                    <a href="#" id="MATSAVE2" class="btn btn-primary btn-sm" style="text-align: center; width: 100%" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
+                                                    <a href="#" id="MATSAVE2" class="btn btn-primary btn-sm" class="btn-full" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="MAT2REF" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="MAT2REF" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="MAT2NOM" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="MAT2NOM" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="MAT2LOT" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="MAT2LOT" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="MAT2LOT2" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="MAT2LOT2" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <th style="width: 22%">
-                                                    <asp:TextBox ID="MAT2REMARK2" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-22">
+                                                    <asp:TextBox ID="MAT2REMARK2" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 5%">
-                                                    <asp:TextBox ID="MAT2TEMPREAL" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-5">
+                                                    <asp:TextBox ID="MAT2TEMPREAL" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <th style="width: 11%" runat="server" visible="FALSE">
-                                                    <asp:TextBox ID="MAT2TIEMP" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-11" runat="server" visible="FALSE">
+                                                    <asp:TextBox ID="MAT2TIEMP" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 5%">
-                                                    <asp:TextBox ID="MAT2TIEMPREAL" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-5">
+                                                    <asp:TextBox ID="MAT2TIEMPREAL" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <th style="width: 11%" runat="server" visible="FALSE">
-                                                    <asp:TextBox ID="MAT2TEMP" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-11" runat="server" visible="FALSE">
+                                                    <asp:TextBox ID="MAT2TEMP" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
 
                                             </tr>
                                             <tr>
-                                                <th style="width: 10%">
+                                                <th class="w-10">
                                                     <%-- <asp:TextBox ID="MAT3STOCK" runat="server" Style="text-align:center; width:100%" Enabled="false" Visible="false"></asp:TextBox>--%>
-                                                    <a href="#" id="MATSAVE3" class="btn btn-primary btn-sm" style="text-align: center; width: 100%" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
+                                                    <a href="#" id="MATSAVE3" class="btn btn-primary btn-sm" class="btn-full" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
 
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="MAT3REF" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="MAT3REF" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="MAT3NOM" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="MAT3NOM" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="MAT3LOT" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="MAT3LOT" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="MAT3LOT2" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="MAT3LOT2" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <th style="width: 22%">
-                                                    <asp:TextBox ID="MAT3REMARK2" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-22">
+                                                    <asp:TextBox ID="MAT3REMARK2" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 5%">
-                                                    <asp:TextBox ID="MAT3TEMPREAL" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-5">
+                                                    <asp:TextBox ID="MAT3TEMPREAL" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <th style="width: 11%" runat="server" visible="FALSE">
-                                                    <asp:TextBox ID="MAT3TIEMP" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-11" runat="server" visible="FALSE">
+                                                    <asp:TextBox ID="MAT3TIEMP" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 5%">
-                                                    <asp:TextBox ID="MAT3TIEMPREAL" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-5">
+                                                    <asp:TextBox ID="MAT3TIEMPREAL" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <th style="width: 11%" runat="server" visible="FALSE">
-                                                    <asp:TextBox ID="MAT3TEMP" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-11" runat="server" visible="FALSE">
+                                                    <asp:TextBox ID="MAT3TEMP" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
 
                                             </tr>
                                             <tr>
-                                                <th style="width: 10%">
+                                                <th class="w-10">
                                                     <%-- <asp:TextBox ID="COMP1STOCK" runat="server" Style="text-align:center; width:100%" Enabled="false" Visible="false"></asp:TextBox>--%>
-                                                    <a href="#" id="COMPSAVE1" class="btn btn-primary btn-sm" style="text-align: center; width: 100%" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
+                                                    <a href="#" id="COMPSAVE1" class="btn btn-primary btn-sm" class="btn-full" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="COMP1REF" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="COMP1REF" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="COMP1NOM" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="COMP1NOM" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP1LOT" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP1LOT" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP1LOT2" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP1LOT2" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 10%">
-                                                    <a href="#" id="COMPSAVE2" class="btn btn-primary btn-sm" style="text-align: center; width: 100%" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
+                                                <th class="w-10">
+                                                    <a href="#" id="COMPSAVE2" class="btn btn-primary btn-sm" class="btn-full" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
 
                                                     <%-- <asp:TextBox ID="COMP2STOCK" runat="server" Style="text-align:center; width:100%" Enabled="false" Visible="false"></asp:TextBox>--%>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="COMP2REF" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="COMP2REF" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="COMP2NOM" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="COMP2NOM" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP2LOT" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP2LOT" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP2LOT2" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP2LOT2" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 10%">
-                                                    <a href="#" id="COMPSAVE3" class="btn btn-primary btn-sm" style="text-align: center; width: 100%" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
+                                                <th class="w-10">
+                                                    <a href="#" id="COMPSAVE3" class="btn btn-primary btn-sm" class="btn-full" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
 
                                                     <%-- <asp:TextBox ID="COMP3STOCK" runat="server" Style="text-align:center; width:100%" Enabled="false" Visible="false"></asp:TextBox>--%>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="COMP3REF" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="COMP3REF" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="COMP3NOM" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="COMP3NOM" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP3LOT" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP3LOT" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP3LOT2" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP3LOT2" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 10%">
-                                                    <a href="#" id="COMPSAVE4" class="btn btn-primary btn-sm" style="text-align: center; width: 100%" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
+                                                <th class="w-10">
+                                                    <a href="#" id="COMPSAVE4" class="btn btn-primary btn-sm" class="btn-full" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
 
                                                     <%-- <asp:TextBox ID="COMP4STOCK" runat="server" Style="text-align:center; width:100%" Enabled="false" Visible="false"></asp:TextBox>--%>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="COMP4REF" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="COMP4REF" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="COMP4NOM" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="COMP4NOM" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP4LOT" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP4LOT" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP4LOT2" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP4LOT2" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 10%">
-                                                    <a href="#" id="COMPSAVE5" class="btn btn-primary btn-sm" style="text-align: center; width: 100%" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
+                                                <th class="w-10">
+                                                    <a href="#" id="COMPSAVE5" class="btn btn-primary btn-sm" class="btn-full" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
 
                                                     <%--<asp:TextBox ID="COMP5STOCK" runat="server" Style="text-align:center; width:100%" Enabled="false" Visible="false"></asp:TextBox>--%>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="COMP5REF" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="COMP5REF" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="COMP5NOM" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="COMP5NOM" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP5LOT" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP5LOT" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP5LOT2" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP5LOT2" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 10%">
-                                                    <a href="#" id="COMPSAVE6" class="btn btn-primary btn-sm" style="text-align: center; width: 100%" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
+                                                <th class="w-10">
+                                                    <a href="#" id="COMPSAVE6" class="btn btn-primary btn-sm" class="btn-full" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
                                                     <%-- <asp:TextBox ID="COMP6STOCK" runat="server" Style="text-align:center; width:100%" Enabled="false" Visible="false"></asp:TextBox>--%>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="COMP6REF" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="COMP6REF" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="COMP6NOM" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="COMP6NOM" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP6LOT" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP6LOT" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP6LOT2" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP6LOT2" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 10%">
-                                                    <a href="#" id="COMPSAVE7" class="btn btn-primary btn-sm" style="text-align: center; width: 100%" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
+                                                <th class="w-10">
+                                                    <a href="#" id="COMPSAVE7" class="btn btn-primary btn-sm" class="btn-full" runat="server" onserverclick="GuardaMaterial" visible="false"><span class="glyphicon glyphicon-floppy-disk"></span></a>
 
                                                     <%-- <asp:TextBox ID="COMP7STOCK" runat="server" Style="text-align:center; width:100%" Enabled="false" Visible="false"></asp:TextBox>--%>
                                                 </th>
-                                                <th style="width: 15%">
-                                                    <asp:TextBox ID="COMP7REF" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-15">
+                                                    <asp:TextBox ID="COMP7REF" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 25%">
-                                                    <asp:TextBox ID="COMP7NOM" runat="server" Style="text-align: center; width: 100%" Enabled="false" Visible="false"></asp:TextBox>
+                                                <th class="w-25">
+                                                    <asp:TextBox ID="COMP7NOM" runat="server" CssClass="full-width text-center" Enabled="false" Visible="false"></asp:TextBox>
                                                 </th>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP7LOT" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP7LOT" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 9%">
-                                                    <asp:TextBox ID="COMP7LOT2" runat="server" Style="text-align: center; width: 100%" Visible="false"></asp:TextBox>
+                                                <td class="w-9">
+                                                    <asp:TextBox ID="COMP7LOT2" runat="server" CssClass="full-width text-center" Visible="false"></asp:TextBox>
                                                 </td>
                                             </tr>
                                         </table>
@@ -1005,19 +1150,19 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 18%">
-                                                    <asp:TextBox ID="TextBox12" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Evaluación</asp:TextBox>
+                                                <th class="w-18">
+                                                    <asp:TextBox ID="TextBox12" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Evaluación</asp:TextBox>
                                                 </th>
-                                                <th style="width: 17%">
-                                                    <asp:TextBox ID="TextBox13" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Estándar</asp:TextBox>
+                                                <th class="w-17">
+                                                    <asp:TextBox ID="TextBox13" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Estándar</asp:TextBox>
                                                 </th>
-                                                <th style="width: 32%">
-                                                    <asp:TextBox ID="TextBox14" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">¿Qué comprobar?</asp:TextBox>
+                                                <th class="w-32">
+                                                    <asp:TextBox ID="TextBox14" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">¿Qué comprobar?</asp:TextBox>
                                                 </th>
-                                                <th style="width: 33%">
-                                                    <asp:TextBox ID="TextBox15" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Comentarios</asp:TextBox>
+                                                <th class="w-33">
+                                                    <asp:TextBox ID="TextBox15" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Comentarios</asp:TextBox>
                                                 </th>
                                             </tr>
                                         </table>
@@ -1118,33 +1263,33 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 15%">
+                                                <th class="w-15">
                                                     <asp:TextBox ID="TituloMantMolde" runat="server" Style="text-align: center; width: 100%; height: 60px" Enabled="false" BackColor="Orange">Últ. aviso de molde:</asp:TextBox>
                                                 </th>
-                                                <th style="width: 5%">
+                                                <th class="w-5">
                                                     <asp:TextBox ID="tbParteMolde" runat="server" Style="text-align: center; width: 100%; height: 60px" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 27%">
+                                                <th class="w-27">
                                                     <asp:TextBox ID="TbMantMolde" runat="server" Style="text-align: center; width: 100%; height: 60px; vertical-align: middle" Enabled="false" TextMode="MultiLine"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 21%">
+                                                <th class="w-21">
                                                     <asp:TextBox ID="TbRepaMolde" runat="server" Style="text-align: center; width: 100%; height: 60px; vertical-align: middle" Enabled="false" TextMode="MultiLine"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 14%">
+                                                <th class="w-14">
                                                     <asp:TextBox ID="TbEstadoRepMolde" runat="server" Style="text-align: center; width: 100%; height: 60px; vertical-align: middle" Enabled="false" TextMode="MultiLine"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <button type="button" id="BotonAbrirParte" class="btn btn-info" style="text-align: center; width: 100%; height: 60px; vertical-align: middle" runat="server" onserverclick="redireccionaGRAL" target="_blank">Ver parte</button>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <button type="button" id="BotonCrearParte" class="btn btn-danger" style="text-align: center; width: 100%; height: 60px; vertical-align: middle" runat="server" onserverclick="redireccionaGRAL" target="_blank">Crear parte</button>
                                                 </th>
                                             </tr>
                                         </table>
                                     </div>
-                                    <button type="button" class="btn btn-xs btn-default" data-toggle="collapse" data-target="#demo" style="width: 100%"><span class="glyphicon glyphicon-th-list"></span>Ver todos</button>
+                                    <button type="button" class="btn btn-xs btn-default" data-toggle="collapse" data-target="#demo" class="btn-full"><span class="glyphicon glyphicon-th-list"></span>Ver todos</button>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="col-lg-12">
@@ -1193,15 +1338,15 @@
                                 <div class="col-lg-12">
                                     <h3>Notas de liberación&nbsp<a href="#" title="Anota tus consideraciones:" data-toggle="popover" data-placement="top" data-content="Anota aquello que sea reseñable a la liberación, como si falta un formato, un elemento está degradado o si existe una oportunidad de mejora en el proceso."><span class="glyphicon glyphicon-question-sign"></span></a></h3>
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 20%">
+                                                <th class="w-20">
                                                     <asp:TextBox ID="TextBox21" runat="server" Style="text-align: center; width: 100%; height: 35px" Enabled="false" BackColor="Orange">Notas cambiador:</asp:TextBox>
                                                 </th>
-                                                <th style="width: 60%">
+                                                <th class="w-60">
                                                     <asp:TextBox ID="QXFeedbackCambiador" runat="server" Style="text-align: center; width: 100%; height: 35px" TextMode="MultiLine"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 20%">
+                                                <th class="w-20">
                                                     <button id="LiberarCambio" runat="server" type="button" onserverclick="LiberarCambiador" class="btn btn-success btn-md" style="text-align: center; width: 100%; height: 35px">Liberar (Cambiador)</button>
                                                 </th>
                                             </tr>
@@ -1218,19 +1363,19 @@
                                 <div class="col-lg-12">
                                     <h2>Proceso de arranque</h2>
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 18%">
-                                                    <asp:TextBox ID="TextBox16" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Evaluación</asp:TextBox>
+                                                <th class="w-18">
+                                                    <asp:TextBox ID="TextBox16" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Evaluación</asp:TextBox>
                                                 </th>
-                                                <th style="width: 17%">
-                                                    <asp:TextBox ID="TextBox17" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Estándar</asp:TextBox>
+                                                <th class="w-17">
+                                                    <asp:TextBox ID="TextBox17" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Estándar</asp:TextBox>
                                                 </th>
-                                                <th style="width: 32%">
-                                                    <asp:TextBox ID="TextBox18" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">¿Qué comprobar?</asp:TextBox>
+                                                <th class="w-32">
+                                                    <asp:TextBox ID="TextBox18" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">¿Qué comprobar?</asp:TextBox>
                                                 </th>
-                                                <th style="width: 33%">
-                                                    <asp:TextBox ID="TextBox19" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Comentarios</asp:TextBox>
+                                                <th class="w-33">
+                                                    <asp:TextBox ID="TextBox19" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Comentarios</asp:TextBox>
                                                 </th>
                                             </tr>
                                         </table>
@@ -1341,33 +1486,33 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 15%">
+                                                <th class="w-15">
                                                     <asp:TextBox ID="TituloMantMaq" runat="server" Style="text-align: center; width: 100%; height: 60px" Enabled="false" BackColor="Orange">Últ. aviso de máquina:</asp:TextBox>
                                                 </th>
-                                                <th style="width: 5%">
+                                                <th class="w-5">
                                                     <asp:TextBox ID="tbParteMaq" runat="server" Style="text-align: center; width: 100%; height: 60px" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 27%">
+                                                <th class="w-27">
                                                     <asp:TextBox ID="TbMantMaq" runat="server" Style="text-align: center; width: 100%; height: 60px" Enabled="false" TextMode="MultiLine"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 21%">
+                                                <th class="w-21">
                                                     <asp:TextBox ID="TbRepaMaq" runat="server" Style="text-align: center; width: 100%; height: 60px" Enabled="false" TextMode="MultiLine"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 14%">
+                                                <th class="w-14">
                                                     <asp:TextBox ID="TbEstadoRepMaq" runat="server" Style="text-align: center; width: 100%; height: 60px" Enabled="false" TextMode="MultiLine"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <button type="button" id="BotonAbrirParteMaq" class="btn btn-info" style="text-align: center; width: 100%; height: 60px; vertical-align: middle" runat="server" onserverclick="redireccionaGRAL" target="_blank">Ver parte</button>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <button type="button" id="BotonCrearParteMaq" class="btn btn-danger" style="text-align: center; width: 100%; height: 60px; vertical-align: middle" runat="server" onserverclick="redireccionaGRAL" target="_blank">Crear parte</button>
                                                 </th>
                                             </tr>
                                         </table>
                                     </div>
-                                    <button type="button" class="btn btn-xs btn-default" data-toggle="collapse" data-target="#demo2" style="width: 100%"><span class="glyphicon glyphicon-th-list"></span>Ver todos</button>
+                                    <button type="button" class="btn btn-xs btn-default" data-toggle="collapse" data-target="#demo2" class="btn-full"><span class="glyphicon glyphicon-th-list"></span>Ver todos</button>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="col-lg-12">
@@ -1419,118 +1564,118 @@
                                     <asp:TextBox ID="EXISTEFICHA" runat="server" Style="text-align: center; width: 100%; height: 50%" Visible="false">0</asp:TextBox>
                                     <p><strong>TEMPERATURAS (CILINDRO)</strong></p>
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbcarcilindro" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">CÁRACT.</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbBoq" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">BOQ</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbT1" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">T1</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbT2" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">T2</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbT3" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">T3</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbT4" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">T4</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbT5" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">T5</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbT6" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">T6</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbT7" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">T7</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbT8" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">T8</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbT9" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">T9</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbT10" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">T10</asp:TextBox>
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbNOMcilindro" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">NOM.</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thBoq" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thT1" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thT2" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thT3" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
                                                 <th>
                                                     <asp:TextBox ID="thT4" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thT5" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thT6" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thT7" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thT8" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thT9" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thT10" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="TextBox1" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">REAL</asp:TextBox>
                                                 </th>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thBoqREAL" runat="server" Style="text-align: center; width: 100%; height: 50%" content="1"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thT1REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thT2REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thT3REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="thT4REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thT5REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thT6REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thT7REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thT8REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thT9REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thT10REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
                                             </tr>
@@ -1540,217 +1685,217 @@
                                     <br />
                                     <p><strong>TEMPERATURAS (CÁMARA CALIENTE)</strong></p>
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="CARACCAMCALIENTE" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">CÁRACT.</asp:TextBox>
                                                 </th>
 
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="TBZ1" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z1</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="TBZ2" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z2</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="TBZ3" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z3</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="TBZ4" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z4</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="TBZ5" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z5</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="TBZ6" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z6</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="TBZ7" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z7</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="TBZ8" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z8</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="TBZ9" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z9</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="TBZ10" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z10</asp:TextBox>
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbNOMCamCaliente" runat="server" Style="text-align: center; width: 100%; height: 50%; height: 50%" Enabled="false">NOM.</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ1" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ2" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ3" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
                                                 <th>
                                                     <asp:TextBox ID="thZ4" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ5" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ6" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ7" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ8" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ9" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ10" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbREALCamCaliente" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">REAL</asp:TextBox>
                                                 </th>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ1REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ2REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ3REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="thZ4REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ5REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ6REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ7REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ8REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ9REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ10REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbREALCamCaliente2" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">REAL</asp:TextBox>
                                                 </th>
 
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ11REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ12REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ13REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
                                                 <td>
                                                     <asp:TextBox ID="thZ14REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ15REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ16REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ17REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ18REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ19REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td class="w-8">
                                                     <asp:TextBox ID="thZ20REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbNOMCamCaliente2" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">NOM.</asp:TextBox>
                                                 </th>
 
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ11" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ12" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ13" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
                                                 <th>
                                                     <asp:TextBox ID="thZ14" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ15" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ16" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ17" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ18" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ19" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="thZ20" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbcarcilindro2" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">CÁRACT.</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbZ11" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z11</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbZ12" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z12</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbZ13" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z13</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbZ14" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z14</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbZ15" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z15</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbZ16" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z16</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbZ17" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z17</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbZ18" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z18</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbZ19" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z19</asp:TextBox>
                                                 </th>
-                                                <th style="width: 8%">
+                                                <th class="w-8">
                                                     <asp:TextBox ID="tbZ20" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Z20</asp:TextBox>
                                                 </th>
                                             </tr>
@@ -1761,136 +1906,136 @@
                                         <div class="col-lg-6">
                                             <p><strong>ATEMPERADO: PARTE FIJA</strong></p>
                                             <div class="table-responsive">
-                                                <table style="table-layout: fixed; width: 100%">
+                                                <table class="table-fixed">
                                                     <tr>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="ThCircuitoF" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Circuito:</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCircuitoF1" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCircuitoF2" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCircuitoF3" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCircuitoF4" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCircuitoF5" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCircuitoF6" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="TextBox2REAL" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">CARACT.</asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="ThCaudalF" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">Caudal:</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCaudalF1" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCaudalF2" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCaudalF3" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCaudalF4" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCaudalF5" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCaudalF6" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="TextBox3" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">NOM.</asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
 
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="TextBox4" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">Caudal:</asp:TextBox>
                                                         </th>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbCaudalF1REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbCaudalF2REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbCaudalF3REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbCaudalF4REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbCaudalF5REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbCaudalF6REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="ThCaudalFREAL" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">REAL</asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="TextBox5" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">Temp.:</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaF1" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaF2" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaF3" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaF4" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaF5" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaF6" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="ThTemperaturaF" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">NOM.</asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
 
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="ThTemperaturaFREAL" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">Temp.:</asp:TextBox>
                                                         </th>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaF1REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaF2REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaF3REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaF4REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaF5REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaF6REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="ThTemperaturaFRREAL" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">REAL</asp:TextBox>
                                                         </th>
                                                     </tr>
@@ -1901,137 +2046,137 @@
                                         <div class="col-lg-6">
                                             <p><strong>ATEMPERADO: PARTE MÓVIL</strong></p>
                                             <div class="table-responsive">
-                                                <table style="table-layout: fixed; width: 100%">
+                                                <table class="table-fixed">
                                                     <tr>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="ThCircuitoM" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Circuito:</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCircuitoM1" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCircuitoM2" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCircuitoM3" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCircuitoM4" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCircuitoM5" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCircuitoM6" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="TextBox6" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">CARACT.</asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="ThCaudalM" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">Caudal:</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCaudalM1" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCaudalM2" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCaudalM3" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCaudalM4" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCaudalM5" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbCaudalM6" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="TextBox7" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">NOM.</asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
 
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="TextBox8" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">Caudal:</asp:TextBox>
                                                         </th>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbCaudalM1REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbCaudalM2REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbCaudalM3REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbCaudalM4REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbCaudalM5REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbCaudalM6REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="ThCaudalMREAL" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">REAL</asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
 
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="TextBox9" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">Temp.:</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaM1" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaM2" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaM3" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaM4" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaM5" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 12%">
+                                                        <th class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaM6" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="ThTemperaturaM" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">NOM.</asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
 
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="ThTemperaturaMTITULOREAL" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">Temp.:</asp:TextBox>
                                                         </th>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaM1REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaM2REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaM3REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaM4REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaM5REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 12%">
+                                                        <td class="w-12">
                                                             <asp:TextBox ID="TbTemperaturaM6REAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <th style="width: 14%">
+                                                        <th class="w-14">
                                                             <asp:TextBox ID="ThTemperaturaMREAL" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false">REAL</asp:TextBox>
                                                         </th>
                                                     </tr>
@@ -2044,7 +2189,7 @@
                                         <div class="col-lg-8">
                                             <p><strong>POSTPRESIÓN</strong></p>
                                             <div class="table-responsive">
-                                                <table style="table-layout: fixed; width: 100%">
+                                                <table class="table-fixed">
                                                     <tr>
                                                         <th>
                                                             <asp:TextBox ID="tbPasoPresion" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Paso</asp:TextBox>
@@ -2241,54 +2386,54 @@
                                         <div class="col-lg-4">
                                             <p><strong>CONMUTACIÓN</strong></p>
                                             <div class="table-responsive">
-                                                <table style="table-layout: fixed; width: 100%">
+                                                <table class="table-fixed">
                                                     <tr>
-                                                        <th style="width: 50%" colspan="4">
+                                                        <th class="w-50" colspan="4">
                                                             <asp:TextBox ID="tbConmutacionTitulo" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Conmutación</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 50%" colspan="4">
+                                                        <th class="w-50" colspan="4">
                                                             <asp:TextBox ID="tbTiempoPresionTitulo" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Tiempo presión</asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
-                                                        <th style="width: 50%" colspan="4">
+                                                        <th class="w-50" colspan="4">
                                                             <asp:TextBox ID="tbConmutacion" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 50%" colspan="4">
+                                                        <th class="w-50" colspan="4">
                                                             <asp:TextBox ID="tbTiempoPresion" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
-                                                        <td style="width: 50%" colspan="4">
+                                                        <td class="w-50" colspan="4">
                                                             <asp:TextBox ID="tbConmutacionREAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td style="width: 50%" colspan="4">
+                                                        <td class="w-50" colspan="4">
                                                             <asp:TextBox ID="tbTiempoPresionREAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th style="width: 25%">
+                                                        <th class="w-25">
                                                             <asp:TextBox ID="thConmuntaciontolN" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Mín.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 25%">
+                                                        <th class="w-25">
                                                             <asp:TextBox ID="thConmuntaciontolNVal" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 25%">
+                                                        <th class="w-25">
                                                             <asp:TextBox ID="thConmuntaciontolM" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Máx.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 25%">
+                                                        <th class="w-25">
                                                             <asp:TextBox ID="thConmuntaciontolMVal" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 25%">
+                                                        <th class="w-25">
                                                             <asp:TextBox ID="tbTiempoPresiontolN" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Mín.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 25%">
+                                                        <th class="w-25">
                                                             <asp:TextBox ID="tbTiempoPresiontolNVal" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 25%">
+                                                        <th class="w-25">
                                                             <asp:TextBox ID="tbTiempoPresiontolM" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Máx.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 25%">
+                                                        <th class="w-25">
                                                             <asp:TextBox ID="tbTiempoPresiontolMVal" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
                                                     </tr>
@@ -2303,57 +2448,57 @@
                                             <div class="table-responsive">
                                                 <table id="Table2" style="table-layout: fixed; width: 100%" runat="server">
                                                     <tr>
-                                                        <th colspan="2" style="width: 50%">
+                                                        <th colspan="2" class="w-50">
                                                             <asp:TextBox ID="tbTiempoInyeccionTitulo" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Tiempo</asp:TextBox>
                                                         </th>
-                                                        <th colspan="2" style="width: 50%">
+                                                        <th colspan="2" class="w-50">
                                                             <asp:TextBox ID="tbLimitePresionTitulo" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Lim. Presión</asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
-                                                        <th colspan="2" style="width: 50%">
+                                                        <th colspan="2" class="w-50">
                                                             <asp:TextBox ID="tbTiempoInyeccion" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th colspan="2" style="width: 50%">
+                                                        <th colspan="2" class="w-50">
                                                             <asp:TextBox ID="tbLimitePresion" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="2" style="width: 50%">
+                                                        <td colspan="2" class="w-50">
                                                             <asp:TextBox ID="tbTiempoInyeccionREAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td colspan="2" style="width: 50%">
+                                                        <td colspan="2" class="w-50">
                                                             <asp:TextBox ID="tbLimitePresionREAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="tbTiempoInyeccionNVal" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="tbTiempoInyeccionMVal" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="tbLimitePresionNVal" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="tbLimitePresionMVal" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
 
                                                     </tr>
                                                     <tr>
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="tbTiempoInyeccionN" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Mín.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="tbTiempoInyeccionM" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Máx.</asp:TextBox>
                                                         </th>
 
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="tbLimitePresionN" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Mín.</asp:TextBox>
                                                         </th>
 
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="tbLimitePresionM" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Máx.</asp:TextBox>
                                                         </th>
 
@@ -2369,140 +2514,140 @@
                                             <div class="table-responsive">
                                                 <table id="Tabledosificado" style="table-layout: fixed; width: 100%" runat="server">
                                                     <tr>
-                                                        <th colspan="2" style="width: 16%">
+                                                        <th colspan="2" class="w-16">
                                                             <asp:TextBox ID="tbVCarga" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">V. Carga</asp:TextBox>
                                                         </th>
-                                                        <th colspan="2" style="width: 16%">
+                                                        <th colspan="2" class="w-16">
                                                             <asp:TextBox ID="tbCarga" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Carga</asp:TextBox>
                                                         </th>
-                                                        <th colspan="2" style="width: 16%">
+                                                        <th colspan="2" class="w-16">
                                                             <asp:TextBox ID="tbDescom" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Descom.</asp:TextBox>
                                                         </th>
-                                                        <th colspan="2" style="width: 16%">
+                                                        <th colspan="2" class="w-16">
                                                             <asp:TextBox ID="tbContra" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Contrapr.</asp:TextBox>
                                                         </th>
-                                                        <th colspan="2" style="width: 16%">
+                                                        <th colspan="2" class="w-16">
                                                             <asp:TextBox ID="tbTiempoDos" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Tiempo</asp:TextBox>
                                                         </th>
 
-                                                        <th colspan="2" style="width: 16%">
+                                                        <th colspan="2" class="w-16">
                                                             <asp:TextBox ID="tbCojin" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Cojín</asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr id="tr1" runat="server">
-                                                        <th colspan="2" style="width: 16%">
+                                                        <th colspan="2" class="w-16">
                                                             <asp:TextBox ID="thVCarga" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th colspan="2" style="width: 16%">
+                                                        <th colspan="2" class="w-16">
                                                             <asp:TextBox ID="thCarga" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th colspan="2" style="width: 16%">
+                                                        <th colspan="2" class="w-16">
                                                             <asp:TextBox ID="thDescomp" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th colspan="2" style="width: 16%">
+                                                        <th colspan="2" class="w-16">
                                                             <asp:TextBox ID="thContrapr" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th colspan="2" style="width: 16%">
+                                                        <th colspan="2" class="w-16">
                                                             <asp:TextBox ID="thTiempo" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th colspan="2" style="width: 16%">
+                                                        <th colspan="2" class="w-16">
                                                             <asp:TextBox ID="thCojin" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr id="tr4" runat="server">
-                                                        <td colspan="2" style="width: 16%">
+                                                        <td colspan="2" class="w-16">
                                                             <asp:TextBox ID="thVCargaREAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td colspan="2" style="width: 16%">
+                                                        <td colspan="2" class="w-16">
                                                             <asp:TextBox ID="thCargaREAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td colspan="2" style="width: 16%">
+                                                        <td colspan="2" class="w-16">
                                                             <asp:TextBox ID="thDescompREAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td colspan="2" style="width: 16%">
+                                                        <td colspan="2" class="w-16">
                                                             <asp:TextBox ID="thContraprREAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td colspan="2" style="width: 16%">
+                                                        <td colspan="2" class="w-16">
                                                             <asp:TextBox ID="thTiempoREAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td colspan="2" style="width: 16%">
+                                                        <td colspan="2" class="w-16">
                                                             <asp:TextBox ID="thCojinREAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
                                                     </tr>
 
                                                     <tr id="tr2" runat="server">
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TNvcargaval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TMvcargaval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TNcargaval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TMcargaval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TNdescomval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TMdescomval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TNcontrapval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TMcontrapval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TNTiempdosval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TMTiempdosval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TNCojinval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TMCojinval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr id="tr3" runat="server">
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TNvcargavalMIN" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Mín.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TMvcargavalMAX" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Máx.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TNcargavalMINMAX" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Mín.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TMcargavalMAX" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Máx.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TNdescomvalMIN" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Mín.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TMdescomvalMAX" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Máx.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TNcontrapvalMIN" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Mín.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TMcontrapvalMAX" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Máx.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TNTiempdosvalMIN" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Mín.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TMTiempdosvalMAX" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Máx.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TNCojinvalMIN" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Mín.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 8%">
+                                                        <th class="w-8">
                                                             <asp:TextBox ID="TMCojinvalMAX" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Máx.</asp:TextBox>
                                                         </th>
                                                     </tr>
@@ -2514,56 +2659,56 @@
                                             <div class="table-responsive">
                                                 <table id="TableCiclo" style="table-layout: fixed; width: 100%" runat="server">
                                                     <tr>
-                                                        <th colspan="2" style="width: 50%">
+                                                        <th colspan="2" class="w-50">
                                                             <asp:TextBox ID="tbEnfriamiento" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Enfriam.</asp:TextBox>
                                                         </th>
-                                                        <th colspan="2" style="width: 50%">
+                                                        <th colspan="2" class="w-50">
                                                             <asp:TextBox ID="tbCiclo" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Ciclo</asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
-                                                        <th colspan="2" style="width: 50%">
+                                                        <th colspan="2" class="w-50">
                                                             <asp:TextBox ID="thEnfriamiento" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th colspan="2" style="width: 50%">
+                                                        <th colspan="2" class="w-50">
                                                             <asp:TextBox ID="thCiclo" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="2" style="width: 50%">
+                                                        <td colspan="2" class="w-50">
                                                             <asp:TextBox ID="thEnfriamientoREAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
-                                                        <td colspan="2" style="width: 50%">
+                                                        <td colspan="2" class="w-50">
                                                             <asp:TextBox ID="thCicloREAL" runat="server" Style="text-align: center; width: 100%; height: 50%"></asp:TextBox>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="TNEnfriamval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="TMEnfriamval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="TNCicloval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="TMCicloval" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false"></asp:TextBox>
                                                         </th>
                                                     </tr>
                                                     <tr>
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="TNEnfriam" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Mín.</asp:TextBox>
                                                         </th>
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="TMEnfriam" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Máx.</asp:TextBox>
                                                         </th>
 
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="TNCiclo" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Mín.</asp:TextBox>
                                                         </th>
 
-                                                        <th style="width: 50%">
+                                                        <th class="w-50">
                                                             <asp:TextBox ID="TMCiclo" runat="server" Style="text-align: center; width: 100%; height: 50%" Enabled="false" BackColor="Orange">Máx.</asp:TextBox>
                                                         </th>
                                                     </tr>
@@ -2579,12 +2724,12 @@
                                 <br />
                                 <div class="col-lg-12">
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 20%">
+                                                <th class="w-20">
                                                     <asp:TextBox ID="TextBox45" runat="server" Style="text-align: center; width: 100%; height: 35px" Enabled="false" BackColor="Orange">Motivo de cambios:</asp:TextBox>
                                                 </th>
-                                                <th style="width: 50%">
+                                                <th class="w-50">
                                                     <asp:TextBox ID="MotivoCambioParam" runat="server" Style="text-align: center; width: 100%; height: 35px" TextMode="MultiLine" Enabled="true"></asp:TextBox>
                                                 </th>
 
@@ -2616,19 +2761,19 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 18%">
-                                                    <asp:TextBox ID="TextBox27" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Evaluación</asp:TextBox>
+                                                <th class="w-18">
+                                                    <asp:TextBox ID="TextBox27" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Evaluación</asp:TextBox>
                                                 </th>
-                                                <th style="width: 17%">
-                                                    <asp:TextBox ID="TextBox28" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Estándar</asp:TextBox>
+                                                <th class="w-17">
+                                                    <asp:TextBox ID="TextBox28" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Estándar</asp:TextBox>
                                                 </th>
-                                                <th style="width: 32%">
-                                                    <asp:TextBox ID="TextBox29" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">¿Qué comprobar?</asp:TextBox>
+                                                <th class="w-32">
+                                                    <asp:TextBox ID="TextBox29" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">¿Qué comprobar?</asp:TextBox>
                                                 </th>
-                                                <th style="width: 33%">
-                                                    <asp:TextBox ID="TextBox30" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Comentarios</asp:TextBox>
+                                                <th class="w-33">
+                                                    <asp:TextBox ID="TextBox30" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Comentarios</asp:TextBox>
                                                 </th>
                                             </tr>
                                         </table>
@@ -2764,15 +2909,15 @@
                                     <h3>Notas de liberación&nbsp<a href="#" title="Anota tus consideraciones:" data-toggle="popover" data-placement="top" data-content="Anota aquello que sea reseñable a la liberación, como si es un arranque tras parada larga, se deja funcionando en degradado o si existe una oportunidad de mejora en el proceso."><span class="glyphicon glyphicon-question-sign"></span></a></h3>
 
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 20%">
+                                                <th class="w-20">
                                                     <asp:TextBox ID="TextBox20" runat="server" Style="text-align: center; width: 100%; height: 35px" Enabled="false" BackColor="Orange">Notas producción:</asp:TextBox>
                                                 </th>
-                                                <th style="width: 60%">
+                                                <th class="w-60">
                                                     <asp:TextBox ID="QXFeedbackProduccion" runat="server" Style="text-align: center; width: 100%; height: 35px" TextMode="MultiLine"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 20%">
+                                                <th class="w-20">
                                                     <button id="LiberarProduccion" runat="server" type="button" onserverclick="LiberarEncargado" class="btn btn-success btn-md" style="text-align: center; width: 100%; height: 35px">Liberar (Producción)</button>
                                                 </th>
                                             </tr>
@@ -2790,19 +2935,19 @@
                                 <div class="col-lg-12">
                                     <h2>Control de atributos</h2>
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 18%">
-                                                    <asp:TextBox ID="TextBox32" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Evaluación</asp:TextBox>
+                                                <th class="w-18">
+                                                    <asp:TextBox ID="TextBox32" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Evaluación</asp:TextBox>
                                                 </th>
-                                                <th style="width: 17%">
-                                                    <asp:TextBox ID="TextBox33" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Estándar</asp:TextBox>
+                                                <th class="w-17">
+                                                    <asp:TextBox ID="TextBox33" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Estándar</asp:TextBox>
                                                 </th>
-                                                <th style="width: 32%">
-                                                    <asp:TextBox ID="TextBox34" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">¿Qué comprobar?</asp:TextBox>
+                                                <th class="w-32">
+                                                    <asp:TextBox ID="TextBox34" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">¿Qué comprobar?</asp:TextBox>
                                                 </th>
-                                                <th style="width: 33%">
-                                                    <asp:TextBox ID="TextBox35" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Hallazgos</asp:TextBox>
+                                                <th class="w-33">
+                                                    <asp:TextBox ID="TextBox35" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Hallazgos</asp:TextBox>
                                                 </th>
                                             </tr>
                                         </table>
@@ -2869,19 +3014,19 @@
                                 <div class="col-lg-12">
                                     <h2>Auditoría de liberación de serie</h2>
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 18%">
-                                                    <asp:TextBox ID="TextBox36" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Evaluación</asp:TextBox>
+                                                <th class="w-18">
+                                                    <asp:TextBox ID="TextBox36" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Evaluación</asp:TextBox>
                                                 </th>
-                                                <th style="width: 17%">
-                                                    <asp:TextBox ID="TextBox38" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Estándar</asp:TextBox>
+                                                <th class="w-17">
+                                                    <asp:TextBox ID="TextBox38" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Estándar</asp:TextBox>
                                                 </th>
-                                                <th style="width: 32%">
-                                                    <asp:TextBox ID="TextBox39" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">¿Qué comprobar?</asp:TextBox>
+                                                <th class="w-32">
+                                                    <asp:TextBox ID="TextBox39" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">¿Qué comprobar?</asp:TextBox>
                                                 </th>
-                                                <th style="width: 33%">
-                                                    <asp:TextBox ID="TextBox40" runat="server" Style="text-align: center; width: 100%" Enabled="false" BackColor="Orange">Hallazgos</asp:TextBox>
+                                                <th class="w-33">
+                                                    <asp:TextBox ID="TextBox40" runat="server" CssClass="full-width text-center" Enabled="false" BackColor="Orange">Hallazgos</asp:TextBox>
                                                 </th>
                                             </tr>
                                         </table>
@@ -3020,15 +3165,15 @@
                                 <div class="col-lg-12">
                                     <h3>Notas de liberación&nbsp<a href="#" title="Anota tus consideraciones:" data-toggle="popover" data-placement="top" data-content="Anota aquello que sea reseñable a la liberación, como si es una liberación tras parada larga, un elemento está degradado o si existe una oportunidad de mejora en el proceso."><span class="glyphicon glyphicon-question-sign"></span></a></h3>
                                     <div class="table-responsive">
-                                        <table style="table-layout: fixed; width: 100%">
+                                        <table class="table-fixed">
                                             <tr>
-                                                <th style="width: 20%">
+                                                <th class="w-20">
                                                     <asp:TextBox ID="TextBox11" runat="server" Style="text-align: center; width: 100%; height: 35px" Enabled="false" BackColor="Orange">Notas auditor:</asp:TextBox>
                                                 </th>
-                                                <th style="width: 60%">
+                                                <th class="w-60">
                                                     <asp:TextBox ID="QXFeedbackCalidad" runat="server" Style="text-align: center; width: 100%; height: 35px" TextMode="MultiLine"></asp:TextBox>
                                                 </th>
-                                                <th style="width: 20%">
+                                                <th class="w-20">
                                                     <button id="LiberarCalidad" runat="server" type="button" onserverclick="LiberarAUDCalidad" class="btn btn-success btn-md" style="text-align: center; width: 100%; height: 35px">Liberar (Calidad)</button>
                                                 </th>
                                             </tr>
