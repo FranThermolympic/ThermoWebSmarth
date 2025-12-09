@@ -1,0 +1,2842 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A8293787-915A-4CB3-8D06-0B1BD329B33B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ThermoWeb</RootNamespace>
+    <AssemblyName>ThermoWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml.Extensions, Version=2.1.3842.36318, Culture=neutral, PublicKeyToken=bebd372c505097f2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DocumentFormat.OpenXml.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.1\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=2.0.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.Core.2.19.3\lib\netstandard2.0\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Externos\BBDD_TDC.accdb" />
+    <Content Include="AREA_RECHAZO\Area_Rechazo.aspx" />
+    <Content Include="AREA_RECHAZO\GestionScrapGP12.aspx" />
+    <Content Include="AutoCompleteServicio.asmx" />
+    <Content Include="CALIDAD\Alertas_Calidad_Mini.aspx" />
+    <Content Include="CALIDAD\Alertas_Calidad.aspx" />
+    <Content Include="CALIDAD\Alertas_Calidad_LIBERACION.aspx" />
+    <Content Include="CALIDAD\DashboardAlertasCalidad.aspx" />
+    <Content Include="CALIDAD\EtiquetasCalidad.aspx" />
+    <Content Include="CALIDAD\newloading.gif" />
+    <Content Include="CALIDAD\ProductoDetallesCalidad.aspx" />
+    <Content Include="CALIDAD\ILUO_Formularios_I.aspx" />
+    <Content Include="CALIDAD\ListaAlertasCalidad.aspx" />
+    <Content Include="CALIDAD\Metrologia.aspx" />
+    <Content Include="CALIDAD\IndiceCalidad.aspx" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="DOCUMENTAL\css\bootstrap.min.css" />
+    <Content Include="DOCUMENTAL\DashboardVisitas.aspx" />
+    <Content Include="DOCUMENTAL\FichaReferencia.aspx" />
+    <Content Include="DOCUMENTAL\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="DOCUMENTAL\DocumentosLiberacionGP12.aspx" />
+    <Content Include="DOCUMENTAL\DocumentosPlanta.aspx" />
+    <Content Include="DOCUMENTAL\AccesoDocumentalMaquina.aspx" />
+    <Content Include="DOCUMENTAL\EditorAudiovisuales.aspx" />
+    <Content Include="DOCUMENTAL\GestionDocumentalPendientes.aspx" />
+    <Content Include="DOCUMENTAL\loading.gif" />
+    <Content Include="DOCUMENTAL\newloading.gif" />
+    <Content Include="DOCUMENTAL\VISITA.png" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GP12\GP12HistoricoCliente.aspx" />
+    <Content Include="GP12\GP12HistoricoOperario.aspx" />
+    <Content Include="GP12\GP12FAQ.aspx" />
+    <Content Include="GP12\GP12HistoricoOperario_.aspx" />
+    <Content Include="GP12\GP12HistoricoReferenciaLite.aspx" />
+    <Content Include="GP12\PrevisionGP12.aspx" />
+    <Content Include="GP12\OBSOLETOS\GP12HistoricoReferenciaLite_.aspx" />
+    <Content Include="GP12\GP12HistoricoReferencia.aspx" />
+    <Content Include="GP12\GP12KPICAL.aspx" />
+    <Content Include="GP12\GP12Historico.aspx" />
+    <Content Include="GP12\GP12ReferenciasEstado.aspx" />
+    <Content Include="GP12\GP12RegistroComunicaciones.aspx" />
+    <Content Include="Imagenes\GP12\21032_NOK1.png" />
+    <Content Include="index.aspx" />
+    <Content Include="KPI\EditorKPI.aspx" />
+    <Content Include="KPI\ICONOS\FAVICON.ico" />
+    <Content Include="KPI\KPIConsultasDimensiones.aspx" />
+    <Content Include="KPI\KPIConsultasConsumos.aspx" />
+    <Content Include="KPI\KPI_Comunicaciones.aspx" />
+    <Content Include="KPI\KPI_Dashboard_General_Tendencias.aspx" />
+    <Content Include="KPI\KPI_Dashboard_General.aspx" />
+    <Content Include="KPI\KPI_WTOP_Pegamento.aspx" />
+    <Content Include="KPI\KPI_Molidos.aspx" />
+    <Content Include="KPI\KPI_Mantenimiento.aspx" />
+    <Content Include="KPI\KPI_NoConformidades.aspx" />
+    <Content Include="KPI\KPI_GP12.aspx" />
+    <Content Include="KPI\KPIIndice.aspx" />
+    <Content Include="KPI\KPIPrimasBSH.aspx" />
+    <Content Include="KPI\KPIAprovechados.aspx" />
+    <Content Include="KPI\KPILiberaciones.aspx" />
+    <Content Include="KPI\KPI_PDCA.aspx" />
+    <Content Include="KPI\LOGOFONDOTHERMOV2.png" />
+    <Content Include="LIBERACIONES\ConsultaNivelOperario.aspx" />
+    <Content Include="LIBERACIONES\EstadoLiberacion.aspx" />
+    <Content Include="LOGISTICA\ConsultaAlmacen.aspx" />
+    <Content Include="MANTENIMIENTO\EstadoReparacionesMaquina.aspx" />
+    <Content Include="MANTENIMIENTO\00 OBSOLETOS\EstadoReparacionesMoldes_.aspx" />
+    <Content Include="MANTENIMIENTO\EstadoReparacionesMoldes.aspx" />
+    <Content Include="MANTENIMIENTO\00 OBSOLETOS\EstadoReparacionesMaquina_.aspx" />
+    <Content Include="MANTENIMIENTO\GestionPreventivos.aspx" />
+    <Content Include="MANTENIMIENTO\Grey-Background.jpg" />
+    <Content Include="MANTENIMIENTO\ICONOS\FAVICON.ico" />
+    <Content Include="MANTENIMIENTO\InformePerifericos.aspx" />
+    <Content Include="MANTENIMIENTO\InformeMaquinas.aspx" />
+    <Content Include="MANTENIMIENTO\InformeMoldes.aspx" />
+    <Content Include="MANTENIMIENTO\ReparacionMaquinas.aspx" />
+    <Content Include="MANTENIMIENTO\ReparacionMoldes.aspx" />
+    <Content Include="LOGISTICA\FAVICON.ico" />
+    <Content Include="LOGISTICA\Scripts\flashcanvas.js" />
+    <Content Include="LOGISTICA\Scripts\flashcanvas.swf" />
+    <None Include="LOGISTICA\Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="LOGISTICA\Scripts\jquery-1.4.1.js" />
+    <Content Include="LOGISTICA\Scripts\jquery-1.4.1.min.js" />
+    <Content Include="LOGISTICA\Scripts\jquery.signaturepad.css" />
+    <Content Include="LOGISTICA\Scripts\jquery.signaturepad.js" />
+    <Content Include="LOGISTICA\Scripts\jquery.signaturepad.min.js" />
+    <Content Include="LOGISTICA\Scripts\json2.min.js" />
+    <Content Include="LOGISTICA\Scripts\ScrollableGridPlugin.js" />
+    <Content Include="LOGISTICA\GestionAlmacenes.aspx" />
+    <Content Include="LOGISTICA\GestionAlmacenesLITE.aspx" />
+    <Content Include="MATERIALES\FotovoltaicaKPI.aspx" />
+    <Content Include="MATERIALES\GestionMateriales.aspx" />
+    <Content Include="MATERIALES\IndiceMateriales.aspx" />
+    <Content Include="MATERIALES\PrevisionSecado.aspx" />
+    <Content Include="MATERIALES\UbicacionMateriasPrimas.aspx" />
+    <None Include="Service References\Serv_NAVISION\configuration91.svcinfo" />
+    <None Include="Service References\Serv_NAVISION\configuration.svcinfo" />
+    <None Include="Service References\Serv_NAVISION\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\Serv_NAVISION\ThermoWeb.Serv_NAVISION.ChangeLocationItem_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Serv_NAVISION_DEBUG\configuration91.svcinfo" />
+    <None Include="Service References\Serv_NAVISION_DEBUG\configuration.svcinfo" />
+    <None Include="Service References\Serv_NAVISION_DEBUG\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiciosLocalesSmarTH.asmx" />
+    <Content Include="SMARTH_docs\AUDIOVISUAL\HAPPYDONIA.mp4" />
+    <Content Include="SMARTH_docs\AUDIOVISUAL\MAQUINAEPISPF.mp4" />
+    <Content Include="SMARTH_docs\AUDIOVISUAL\VISITALOGOTHERMO.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ICONOSEG.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ICONOTEC.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA1.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA10.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA2.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA3.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA4.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA5.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA50.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA51.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA52.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA53.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA54.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA55.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA56.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA57.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA58.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA59.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA6.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA7.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA8.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ESTANTERIA9.png" />
+    <Content Include="MATERIALES\FAVICON.ico" />
+    <Content Include="MATERIALES\GestionMolinosLITE.aspx" />
+    <Content Include="MATERIALES\GestionMolinos.aspx" />
+    <Content Include="MATERIALES\IndiceMaterialesLITE.aspx" />
+    <Content Include="SMARTH_fonts\INTERNOS\iconenprod.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\MOLINOS GENERAL.PNG" />
+    <Content Include="SMARTH_fonts\INTERNOS\MOLINOS NAVE2.PNG" />
+    <Content Include="SMARTH_fonts\INTERNOS\MOLINOS NAVE3.PNG" />
+    <Content Include="SMARTH_fonts\INTERNOS\MOLINOS NAVE4.PNG" />
+    <Content Include="SMARTH_fonts\INTERNOS\MOLINOS NAVE5.PNG" />
+    <Content Include="SMARTH_fonts\INTERNOS\SILOSGRUPOS.png" />
+    <Content Include="MATERIALES\UbicacionMateriasPrimasLITE.aspx" />
+    <Content Include="SMARTH_fonts\INTERNOS\LOGOEstadoControl.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\notcamera.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\UBIVACIA.png" />
+    <Content Include="PDCA\PDCALite.aspx" />
+    <Content Include="PDCA\Listado_Acciones.aspx" />
+    <Content Include="PDCA\PDCA_Indice.aspx" />
+    <Content Include="PLANIFICACION\Consulta_Pesos.aspx" />
+    <Content Include="PLANIFICACION\EditorListadoPrioridades.aspx" />
+    <Content Include="PLANIFICACION\ListadoPrioridades.aspx" />
+    <Content Include="PRODUCCION\FichasParametros_nuevo.aspx" />
+    <Content Include="PRODUCCION\FichasParametrosListado.aspx" />
+    <Content Include="PRODUCCION\MontajesHistorico.aspx" />
+    <Content Include="PRODUCCION\MontajesExternos.aspx" />
+    <Content Include="PRODUCCION\FichasParametros.aspx" />
+    <Content Include="PRODUCCION\ImpresoraEtiquetas.aspx" />
+    <Content Include="PRODUCCION\IoTRefrigeracion.aspx" />
+    <Content Include="PRODUCCION\Gestion_Ubicaciones_Moldes.aspx" />
+    <Content Include="PRODUCCION\Ficha_Moldes.aspx" />
+    <Content Include="PRODUCCION\IMAGENES\NAVE3 A-C.png" />
+    <Content Include="PRODUCCION\IMAGENES\NAVE3 AA-AC.png" />
+    <Content Include="PRODUCCION\IMAGENES\NAVE3 D-F.png" />
+    <Content Include="PRODUCCION\IMAGENES\NAVE3 G.png" />
+    <Content Include="PRODUCCION\IMAGENES\NAVE3 H-J.png" />
+    <Content Include="PRODUCCION\IMAGENES\NAVE3 K-M.png" />
+    <Content Include="PRODUCCION\IMAGENES\NAVE3 P-N.png" />
+    <Content Include="PRODUCCION\IMAGENES\NAVE3 X1-X3.png" />
+    <Content Include="PRODUCCION\IMAGENES\NAVE3 Z-Y.png" />
+    <Content Include="PRODUCCION\IndiceProduccion.aspx" />
+    <Content Include="PRODUCCION\Listado_Manos_Robot.aspx" />
+    <Content Include="MANTENIMIENTO\MantenimientoIndex.aspx" />
+    <Content Include="MATERIALES\_Scripts\flashcanvas.js" />
+    <Content Include="MATERIALES\_Scripts\flashcanvas.swf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="DOCUMENTAL\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="DOCUMENTAL\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="DOCUMENTAL\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="DOCUMENTAL\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="FPOCS\Etiquetas Listado Equipos_170301.xls" />
+    <Content Include="FPOCS\Etiquetas Listado Equipos_170301F.xls" />
+    <Content Include="FPOCS\FPOC-09-11 v2 S Hoja de Contención.xlsx" />
+    <Content Include="FPOCS\FPOC-12-01 FIT 18.01 Informe 8D-A3 V2.xlsm" />
+    <Content Include="FPOCS\FPOC-12-04 Solicitud de Derogación v2.docx" />
+    <None Include="MATERIALES\_Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="MATERIALES\_Scripts\jquery-1.4.1.js" />
+    <Content Include="MATERIALES\_Scripts\jquery-1.4.1.min.js" />
+    <Content Include="MATERIALES\_Scripts\jquery.signaturepad.css" />
+    <Content Include="MATERIALES\_Scripts\jquery.signaturepad.js" />
+    <Content Include="MATERIALES\_Scripts\jquery.signaturepad.min.js" />
+    <Content Include="MATERIALES\_Scripts\json2.min.js" />
+    <Content Include="MATERIALES\_Scripts\ScrollableGridPlugin.js" />
+    <Content Include="KPIFichasParametros.aspx" />
+    <Content Include="DOCUMENTAL\GestionDocumental.aspx" />
+    <Content Include="DOCUMENTAL\DocumentosGP12.aspx" />
+    <Content Include="FAQ.aspx" />
+    <Content Include="FichasParametros_nuevo.aspx" />
+    <Content Include="GP12\GP12.aspx" />
+    <Content Include="LIBERACIONES\HistoricoLiberacion.aspx" />
+    <Content Include="LIBERACIONES\LiberacionSerie.aspx" />
+    <Content Include="LIBERACIONES\Scripts\flashcanvas.js" />
+    <Content Include="LIBERACIONES\Scripts\flashcanvas.swf" />
+    <Content Include="LIBERACIONES\Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="LIBERACIONES\Scripts\jquery-1.4.1.js" />
+    <Content Include="LIBERACIONES\Scripts\jquery-1.4.1.min.js" />
+    <Content Include="LIBERACIONES\Scripts\jquery.signaturepad.css" />
+    <Content Include="LIBERACIONES\Scripts\jquery.signaturepad.js" />
+    <Content Include="LIBERACIONES\Scripts\jquery.signaturepad.min.js" />
+    <Content Include="LIBERACIONES\Scripts\json2.min.js" />
+    <Content Include="LIBERACIONES\Scripts\ScrollableGridPlugin.js" />
+    <Content Include="ListaFichasParametros.aspx" />
+    <Content Include="FichasParametros.aspx" />
+    <Content Include="Imagenes\areaRechazo.jpg" />
+    <Content Include="Imagenes\logo.png" />
+    <Content Include="Imagenes\Mantenimiento.jpg" />
+    <Content Include="Imagenes\parametros.jpg" />
+    <Content Include="js\jquery-1.4.2.min.js" />
+    <Content Include="js\json2.js" />
+    <Content Include="PDCA\ICONOS\FAVICON.ico" />
+    <Content Include="PDCA\ICONOS\ICONOCALIDAD.png" />
+    <Content Include="PDCA\ICONOS\ICONOMAQUINAS.png" />
+    <Content Include="PDCA\ICONOS\ICONOMOLDES.png" />
+    <Content Include="PDCA\ICONOS\ICONOPARAMETROS.png" />
+    <Content Include="PDCA\MiPDCA.aspx" />
+    <Content Include="PDCA\PDCA_DETALLE.aspx" />
+    <Content Include="PDCA\PDCA.aspx" />
+    <Content Include="PRODUCCION\Tareas_cambiador.aspx" />
+    <Content Include="RRHH\Lista_Operario_Recursos_Pendientes_Firmar.aspx" />
+    <Content Include="RRHH\RRHH_Dashboard.aspx" />
+    <Content Include="RRHH\Firma_Operario_Recursos_Entregados.aspx" />
+    <Content Include="Scripts\flashcanvas.js" />
+    <Content Include="Scripts\flashcanvas.swf" />
+    <Content Include="Scripts\jquery.signaturepad.css" />
+    <Content Include="Scripts\jquery.signaturepad.js" />
+    <Content Include="Scripts\jquery.signaturepad.min.js" />
+    <Content Include="Scripts\json2.min.js" />
+    <Content Include="Scripts\ScrollableGridPlugin.js" />
+    <Content Include="SMARTHLite.Master" />
+    <Content Include="SMARTH_css\bootstrap-grid.css" />
+    <Content Include="SMARTH_css\bootstrap-grid.min.css" />
+    <Content Include="SMARTH_css\bootstrap-grid.rtl.css" />
+    <Content Include="SMARTH_css\bootstrap-grid.rtl.min.css" />
+    <Content Include="SMARTH_css\bootstrap-reboot.css" />
+    <Content Include="SMARTH_css\bootstrap-reboot.min.css" />
+    <Content Include="SMARTH_css\bootstrap-reboot.rtl.css" />
+    <Content Include="SMARTH_css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="SMARTH_css\bootstrap-utilities.css" />
+    <Content Include="SMARTH_css\bootstrap-utilities.min.css" />
+    <Content Include="SMARTH_css\bootstrap-utilities.rtl.css" />
+    <Content Include="SMARTH_css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="SMARTH_css\bootstrap.css" />
+    <Content Include="SMARTH_css\bootstrap.min.css" />
+    <Content Include="SMARTH_css\bootstrap.rtl.css" />
+    <Content Include="SMARTH_css\bootstrap.rtl.min.css" />
+    <Content Include="SMARTH_css\fileinput-rtl.css" />
+    <Content Include="SMARTH_css\fileinput-rtl.min.css" />
+    <Content Include="SMARTH_css\fileinput.css" />
+    <Content Include="SMARTH_css\fileinput.min.css" />
+    <Content Include="SMARTH_css\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="SMARTH_css\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="SMARTH_css\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="SMARTH_css\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="SMARTH_css\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="SMARTH_css\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="SMARTH_css\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="SMARTH_css\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="SMARTH_css\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="SMARTH_css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="SMARTH_css\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="SMARTH_css\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="SMARTH_css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="SMARTH_css\jquery-ui.css" />
+    <Content Include="SMARTH_css\jquery-ui.min.css" />
+    <Content Include="SMARTH_css\jquery-ui.structure.css" />
+    <Content Include="SMARTH_css\jquery-ui.structure.min.css" />
+    <Content Include="SMARTH_css\jquery-ui.theme.css" />
+    <Content Include="SMARTH_css\jquery-ui.theme.min.css" />
+    <Content Include="SMARTH_css\jquery.signature.css" />
+    <Content Include="SMARTH_fonts\alarm-fill.svg" />
+    <Content Include="SMARTH_fonts\alarm.svg" />
+    <Content Include="SMARTH_fonts\align-bottom.svg" />
+    <Content Include="SMARTH_fonts\align-center.svg" />
+    <Content Include="SMARTH_fonts\align-end.svg" />
+    <Content Include="SMARTH_fonts\align-middle.svg" />
+    <Content Include="SMARTH_fonts\align-start.svg" />
+    <Content Include="SMARTH_fonts\align-top.svg" />
+    <Content Include="SMARTH_fonts\alt.svg" />
+    <Content Include="SMARTH_fonts\app-indicator.svg" />
+    <Content Include="SMARTH_fonts\app.svg" />
+    <Content Include="SMARTH_fonts\archive-fill.svg" />
+    <Content Include="SMARTH_fonts\archive.svg" />
+    <Content Include="SMARTH_fonts\arrow-90deg-down.svg" />
+    <Content Include="SMARTH_fonts\arrow-90deg-left.svg" />
+    <Content Include="SMARTH_fonts\arrow-90deg-right.svg" />
+    <Content Include="SMARTH_fonts\arrow-90deg-up.svg" />
+    <Content Include="SMARTH_fonts\arrow-bar-down.svg" />
+    <Content Include="SMARTH_fonts\arrow-bar-left.svg" />
+    <Content Include="SMARTH_fonts\arrow-bar-right.svg" />
+    <Content Include="SMARTH_fonts\arrow-bar-up.svg" />
+    <Content Include="SMARTH_fonts\arrow-clockwise.svg" />
+    <Content Include="SMARTH_fonts\arrow-counterclockwise.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-circle.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-left-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-left-circle.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-left-square-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-left-square.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-left.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-right-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-right-circle.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-right-square-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-right-square.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-right.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-short.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-square-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-square.svg" />
+    <Content Include="SMARTH_fonts\arrow-down-up.svg" />
+    <Content Include="SMARTH_fonts\arrow-down.svg" />
+    <Content Include="SMARTH_fonts\arrow-left-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-left-circle.svg" />
+    <Content Include="SMARTH_fonts\arrow-left-right.svg" />
+    <Content Include="SMARTH_fonts\arrow-left-short.svg" />
+    <Content Include="SMARTH_fonts\arrow-left-square-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-left-square.svg" />
+    <Content Include="SMARTH_fonts\arrow-left.svg" />
+    <Content Include="SMARTH_fonts\arrow-repeat.svg" />
+    <Content Include="SMARTH_fonts\arrow-return-left.svg" />
+    <Content Include="SMARTH_fonts\arrow-return-right.svg" />
+    <Content Include="SMARTH_fonts\arrow-right-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-right-circle.svg" />
+    <Content Include="SMARTH_fonts\arrow-right-short.svg" />
+    <Content Include="SMARTH_fonts\arrow-right-square-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-right-square.svg" />
+    <Content Include="SMARTH_fonts\arrow-right.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-circle.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-left-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-left-circle.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-left-square-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-left-square.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-left.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-right-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-right-circle.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-right-square-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-right-square.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-right.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-short.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-square-fill.svg" />
+    <Content Include="SMARTH_fonts\arrow-up-square.svg" />
+    <Content Include="SMARTH_fonts\arrow-up.svg" />
+    <Content Include="SMARTH_fonts\arrows-angle-contract.svg" />
+    <Content Include="SMARTH_fonts\arrows-angle-expand.svg" />
+    <Content Include="SMARTH_fonts\arrows-collapse.svg" />
+    <Content Include="SMARTH_fonts\arrows-expand.svg" />
+    <Content Include="SMARTH_fonts\arrows-fullscreen.svg" />
+    <Content Include="SMARTH_fonts\arrows-move.svg" />
+    <Content Include="SMARTH_fonts\aspect-ratio-fill.svg" />
+    <Content Include="SMARTH_fonts\aspect-ratio.svg" />
+    <Content Include="SMARTH_fonts\asterisk.svg" />
+    <Content Include="SMARTH_fonts\at.svg" />
+    <Content Include="SMARTH_fonts\award-fill.svg" />
+    <Content Include="SMARTH_fonts\award.svg" />
+    <Content Include="SMARTH_fonts\back.svg" />
+    <Content Include="SMARTH_fonts\backspace-fill.svg" />
+    <Content Include="SMARTH_fonts\backspace-reverse-fill.svg" />
+    <Content Include="SMARTH_fonts\backspace-reverse.svg" />
+    <Content Include="SMARTH_fonts\backspace.svg" />
+    <Content Include="SMARTH_fonts\badge-3d-fill.svg" />
+    <Content Include="SMARTH_fonts\badge-3d.svg" />
+    <Content Include="SMARTH_fonts\badge-4k-fill.svg" />
+    <Content Include="SMARTH_fonts\badge-4k.svg" />
+    <Content Include="SMARTH_fonts\badge-8k-fill.svg" />
+    <Content Include="SMARTH_fonts\badge-8k.svg" />
+    <Content Include="SMARTH_fonts\badge-ad-fill.svg" />
+    <Content Include="SMARTH_fonts\badge-ad.svg" />
+    <Content Include="SMARTH_fonts\badge-ar-fill.svg" />
+    <Content Include="SMARTH_fonts\badge-ar.svg" />
+    <Content Include="SMARTH_fonts\badge-cc-fill.svg" />
+    <Content Include="SMARTH_fonts\badge-cc.svg" />
+    <Content Include="SMARTH_fonts\badge-hd-fill.svg" />
+    <Content Include="SMARTH_fonts\badge-hd.svg" />
+    <Content Include="SMARTH_fonts\badge-tm-fill.svg" />
+    <Content Include="SMARTH_fonts\badge-tm.svg" />
+    <Content Include="SMARTH_fonts\badge-vo-fill.svg" />
+    <Content Include="SMARTH_fonts\badge-vo.svg" />
+    <Content Include="SMARTH_fonts\badge-vr-fill.svg" />
+    <Content Include="SMARTH_fonts\badge-vr.svg" />
+    <Content Include="SMARTH_fonts\badge-wc-fill.svg" />
+    <Content Include="SMARTH_fonts\badge-wc.svg" />
+    <Content Include="SMARTH_fonts\bag-check-fill.svg" />
+    <Content Include="SMARTH_fonts\bag-check.svg" />
+    <Content Include="SMARTH_fonts\bag-dash-fill.svg" />
+    <Content Include="SMARTH_fonts\bag-dash.svg" />
+    <Content Include="SMARTH_fonts\bag-fill.svg" />
+    <Content Include="SMARTH_fonts\bag-plus-fill.svg" />
+    <Content Include="SMARTH_fonts\bag-plus.svg" />
+    <Content Include="SMARTH_fonts\bag-x-fill.svg" />
+    <Content Include="SMARTH_fonts\bag-x.svg" />
+    <Content Include="SMARTH_fonts\bag.svg" />
+    <Content Include="SMARTH_fonts\bank.svg" />
+    <Content Include="SMARTH_fonts\bank2.svg" />
+    <Content Include="SMARTH_fonts\bar-chart-fill.svg" />
+    <Content Include="SMARTH_fonts\bar-chart-line-fill.svg" />
+    <Content Include="SMARTH_fonts\bar-chart-line.svg" />
+    <Content Include="SMARTH_fonts\bar-chart-steps.svg" />
+    <Content Include="SMARTH_fonts\bar-chart.svg" />
+    <Content Include="SMARTH_fonts\basket-fill.svg" />
+    <Content Include="SMARTH_fonts\basket.svg" />
+    <Content Include="SMARTH_fonts\basket2-fill.svg" />
+    <Content Include="SMARTH_fonts\basket2.svg" />
+    <Content Include="SMARTH_fonts\basket3-fill.svg" />
+    <Content Include="SMARTH_fonts\basket3.svg" />
+    <Content Include="SMARTH_fonts\battery-charging.svg" />
+    <Content Include="SMARTH_fonts\battery-full.svg" />
+    <Content Include="SMARTH_fonts\battery-half.svg" />
+    <Content Include="SMARTH_fonts\battery.svg" />
+    <Content Include="SMARTH_fonts\bell-fill.svg" />
+    <Content Include="SMARTH_fonts\bell-slash-fill.svg" />
+    <Content Include="SMARTH_fonts\bell-slash.svg" />
+    <Content Include="SMARTH_fonts\bell.svg" />
+    <Content Include="SMARTH_fonts\bezier.svg" />
+    <Content Include="SMARTH_fonts\bezier2.svg" />
+    <Content Include="SMARTH_fonts\bicycle.svg" />
+    <Content Include="SMARTH_fonts\binoculars-fill.svg" />
+    <Content Include="SMARTH_fonts\binoculars.svg" />
+    <Content Include="SMARTH_fonts\blockquote-left.svg" />
+    <Content Include="SMARTH_fonts\blockquote-right.svg" />
+    <Content Include="SMARTH_fonts\book-fill.svg" />
+    <Content Include="SMARTH_fonts\book-half.svg" />
+    <Content Include="SMARTH_fonts\book.svg" />
+    <Content Include="SMARTH_fonts\bookmark-check-fill.svg" />
+    <Content Include="SMARTH_fonts\bookmark-check.svg" />
+    <Content Include="SMARTH_fonts\bookmark-dash-fill.svg" />
+    <Content Include="SMARTH_fonts\bookmark-dash.svg" />
+    <Content Include="SMARTH_fonts\bookmark-fill.svg" />
+    <Content Include="SMARTH_fonts\bookmark-heart-fill.svg" />
+    <Content Include="SMARTH_fonts\bookmark-heart.svg" />
+    <Content Include="SMARTH_fonts\bookmark-plus-fill.svg" />
+    <Content Include="SMARTH_fonts\bookmark-plus.svg" />
+    <Content Include="SMARTH_fonts\bookmark-star-fill.svg" />
+    <Content Include="SMARTH_fonts\bookmark-star.svg" />
+    <Content Include="SMARTH_fonts\bookmark-x-fill.svg" />
+    <Content Include="SMARTH_fonts\bookmark-x.svg" />
+    <Content Include="SMARTH_fonts\bookmark.svg" />
+    <Content Include="SMARTH_fonts\bookmarks-fill.svg" />
+    <Content Include="SMARTH_fonts\bookmarks.svg" />
+    <Content Include="SMARTH_fonts\bookshelf.svg" />
+    <Content Include="SMARTH_fonts\bootstrap-fill.svg" />
+    <Content Include="SMARTH_fonts\bootstrap-icons.css" />
+    <Content Include="SMARTH_fonts\bootstrap-icons.svg" />
+    <Content Include="SMARTH_fonts\bootstrap-reboot.svg" />
+    <Content Include="SMARTH_fonts\bootstrap.svg" />
+    <Content Include="SMARTH_fonts\border-all.svg" />
+    <Content Include="SMARTH_fonts\border-bottom.svg" />
+    <Content Include="SMARTH_fonts\border-center.svg" />
+    <Content Include="SMARTH_fonts\border-inner.svg" />
+    <Content Include="SMARTH_fonts\border-left.svg" />
+    <Content Include="SMARTH_fonts\border-middle.svg" />
+    <Content Include="SMARTH_fonts\border-outer.svg" />
+    <Content Include="SMARTH_fonts\border-right.svg" />
+    <Content Include="SMARTH_fonts\border-style.svg" />
+    <Content Include="SMARTH_fonts\border-top.svg" />
+    <Content Include="SMARTH_fonts\border-width.svg" />
+    <Content Include="SMARTH_fonts\border.svg" />
+    <Content Include="SMARTH_fonts\bounding-box-circles.svg" />
+    <Content Include="SMARTH_fonts\bounding-box.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-down-left.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-down-right.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-down.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-in-down-left.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-in-down-right.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-in-down.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-in-left.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-in-right.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-in-up-left.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-in-up-right.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-in-up.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-left.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-right.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-up-left.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-up-right.svg" />
+    <Content Include="SMARTH_fonts\box-arrow-up.svg" />
+    <Content Include="SMARTH_fonts\box-seam.svg" />
+    <Content Include="SMARTH_fonts\box.svg" />
+    <Content Include="SMARTH_fonts\boxes.svg" />
+    <Content Include="SMARTH_fonts\braces.svg" />
+    <Content Include="SMARTH_fonts\bricks.svg" />
+    <Content Include="SMARTH_fonts\briefcase-fill.svg" />
+    <Content Include="SMARTH_fonts\briefcase.svg" />
+    <Content Include="SMARTH_fonts\brightness-alt-high-fill.svg" />
+    <Content Include="SMARTH_fonts\brightness-alt-high.svg" />
+    <Content Include="SMARTH_fonts\brightness-alt-low-fill.svg" />
+    <Content Include="SMARTH_fonts\brightness-alt-low.svg" />
+    <Content Include="SMARTH_fonts\brightness-high-fill.svg" />
+    <Content Include="SMARTH_fonts\brightness-high.svg" />
+    <Content Include="SMARTH_fonts\brightness-low-fill.svg" />
+    <Content Include="SMARTH_fonts\brightness-low.svg" />
+    <Content Include="SMARTH_fonts\broadcast-pin.svg" />
+    <Content Include="SMARTH_fonts\broadcast.svg" />
+    <Content Include="SMARTH_fonts\brush-fill.svg" />
+    <Content Include="SMARTH_fonts\brush.svg" />
+    <Content Include="SMARTH_fonts\bucket-fill.svg" />
+    <Content Include="SMARTH_fonts\bucket.svg" />
+    <Content Include="SMARTH_fonts\bug-fill.svg" />
+    <Content Include="SMARTH_fonts\bug.svg" />
+    <Content Include="SMARTH_fonts\building.svg" />
+    <Content Include="SMARTH_fonts\bullseye.svg" />
+    <Content Include="SMARTH_fonts\calculator-fill.svg" />
+    <Content Include="SMARTH_fonts\calculator.svg" />
+    <Content Include="SMARTH_fonts\calendar-check-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar-check.svg" />
+    <Content Include="SMARTH_fonts\calendar-date-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar-date.svg" />
+    <Content Include="SMARTH_fonts\calendar-day-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar-day.svg" />
+    <Content Include="SMARTH_fonts\calendar-event-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar-event.svg" />
+    <Content Include="SMARTH_fonts\calendar-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar-minus-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar-minus.svg" />
+    <Content Include="SMARTH_fonts\calendar-month-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar-month.svg" />
+    <Content Include="SMARTH_fonts\calendar-plus-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar-plus.svg" />
+    <Content Include="SMARTH_fonts\calendar-range-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar-range.svg" />
+    <Content Include="SMARTH_fonts\calendar-week-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar-week.svg" />
+    <Content Include="SMARTH_fonts\calendar-x-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar-x.svg" />
+    <Content Include="SMARTH_fonts\calendar.svg" />
+    <Content Include="SMARTH_fonts\calendar2-check-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar2-check.svg" />
+    <Content Include="SMARTH_fonts\calendar2-date-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar2-date.svg" />
+    <Content Include="SMARTH_fonts\calendar2-day-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar2-day.svg" />
+    <Content Include="SMARTH_fonts\calendar2-event-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar2-event.svg" />
+    <Content Include="SMARTH_fonts\calendar2-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar2-minus-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar2-minus.svg" />
+    <Content Include="SMARTH_fonts\calendar2-month-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar2-month.svg" />
+    <Content Include="SMARTH_fonts\calendar2-plus-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar2-plus.svg" />
+    <Content Include="SMARTH_fonts\calendar2-range-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar2-range.svg" />
+    <Content Include="SMARTH_fonts\calendar2-week-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar2-week.svg" />
+    <Content Include="SMARTH_fonts\calendar2-x-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar2-x.svg" />
+    <Content Include="SMARTH_fonts\calendar2.svg" />
+    <Content Include="SMARTH_fonts\calendar3-event-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar3-event.svg" />
+    <Content Include="SMARTH_fonts\calendar3-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar3-range-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar3-range.svg" />
+    <Content Include="SMARTH_fonts\calendar3-week-fill.svg" />
+    <Content Include="SMARTH_fonts\calendar3-week.svg" />
+    <Content Include="SMARTH_fonts\calendar3.svg" />
+    <Content Include="SMARTH_fonts\calendar4-event.svg" />
+    <Content Include="SMARTH_fonts\calendar4-range.svg" />
+    <Content Include="SMARTH_fonts\calendar4-week.svg" />
+    <Content Include="SMARTH_fonts\calendar4.svg" />
+    <Content Include="SMARTH_fonts\camera-fill.svg" />
+    <Content Include="SMARTH_fonts\camera-reels-fill.svg" />
+    <Content Include="SMARTH_fonts\camera-reels.svg" />
+    <Content Include="SMARTH_fonts\camera-video-fill.svg" />
+    <Content Include="SMARTH_fonts\camera-video-off-fill.svg" />
+    <Content Include="SMARTH_fonts\camera-video-off.svg" />
+    <Content Include="SMARTH_fonts\camera-video.svg" />
+    <Content Include="SMARTH_fonts\camera.svg" />
+    <Content Include="SMARTH_fonts\camera2.svg" />
+    <Content Include="SMARTH_fonts\capslock-fill.svg" />
+    <Content Include="SMARTH_fonts\capslock.svg" />
+    <Content Include="SMARTH_fonts\card-checklist.svg" />
+    <Content Include="SMARTH_fonts\card-heading.svg" />
+    <Content Include="SMARTH_fonts\card-image.svg" />
+    <Content Include="SMARTH_fonts\card-list.svg" />
+    <Content Include="SMARTH_fonts\card-text.svg" />
+    <Content Include="SMARTH_fonts\caret-down-fill.svg" />
+    <Content Include="SMARTH_fonts\caret-down-square-fill.svg" />
+    <Content Include="SMARTH_fonts\caret-down-square.svg" />
+    <Content Include="SMARTH_fonts\caret-down.svg" />
+    <Content Include="SMARTH_fonts\caret-left-fill.svg" />
+    <Content Include="SMARTH_fonts\caret-left-square-fill.svg" />
+    <Content Include="SMARTH_fonts\caret-left-square.svg" />
+    <Content Include="SMARTH_fonts\caret-left.svg" />
+    <Content Include="SMARTH_fonts\caret-right-fill.svg" />
+    <Content Include="SMARTH_fonts\caret-right-square-fill.svg" />
+    <Content Include="SMARTH_fonts\caret-right-square.svg" />
+    <Content Include="SMARTH_fonts\caret-right.svg" />
+    <Content Include="SMARTH_fonts\caret-up-fill.svg" />
+    <Content Include="SMARTH_fonts\caret-up-square-fill.svg" />
+    <Content Include="SMARTH_fonts\caret-up-square.svg" />
+    <Content Include="SMARTH_fonts\caret-up.svg" />
+    <Content Include="SMARTH_fonts\cart-check-fill.svg" />
+    <Content Include="SMARTH_fonts\cart-check.svg" />
+    <Content Include="SMARTH_fonts\cart-dash-fill.svg" />
+    <Content Include="SMARTH_fonts\cart-dash.svg" />
+    <Content Include="SMARTH_fonts\cart-fill.svg" />
+    <Content Include="SMARTH_fonts\cart-plus-fill.svg" />
+    <Content Include="SMARTH_fonts\cart-plus.svg" />
+    <Content Include="SMARTH_fonts\cart-x-fill.svg" />
+    <Content Include="SMARTH_fonts\cart-x.svg" />
+    <Content Include="SMARTH_fonts\cart.svg" />
+    <Content Include="SMARTH_fonts\cart2.svg" />
+    <Content Include="SMARTH_fonts\cart3.svg" />
+    <Content Include="SMARTH_fonts\cart4.svg" />
+    <Content Include="SMARTH_fonts\cash-coin.svg" />
+    <Content Include="SMARTH_fonts\cash-stack.svg" />
+    <Content Include="SMARTH_fonts\cash.svg" />
+    <Content Include="SMARTH_fonts\cast.svg" />
+    <Content Include="SMARTH_fonts\chat-dots-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-dots.svg" />
+    <Content Include="SMARTH_fonts\chat-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-left-dots-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-left-dots.svg" />
+    <Content Include="SMARTH_fonts\chat-left-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-left-quote-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-left-quote.svg" />
+    <Content Include="SMARTH_fonts\chat-left-text-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-left-text.svg" />
+    <Content Include="SMARTH_fonts\chat-left.svg" />
+    <Content Include="SMARTH_fonts\chat-quote-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-quote.svg" />
+    <Content Include="SMARTH_fonts\chat-right-dots-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-right-dots.svg" />
+    <Content Include="SMARTH_fonts\chat-right-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-right-quote-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-right-quote.svg" />
+    <Content Include="SMARTH_fonts\chat-right-text-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-right-text.svg" />
+    <Content Include="SMARTH_fonts\chat-right.svg" />
+    <Content Include="SMARTH_fonts\chat-square-dots-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-square-dots.svg" />
+    <Content Include="SMARTH_fonts\chat-square-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-square-quote-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-square-quote.svg" />
+    <Content Include="SMARTH_fonts\chat-square-text-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-square-text.svg" />
+    <Content Include="SMARTH_fonts\chat-square.svg" />
+    <Content Include="SMARTH_fonts\chat-text-fill.svg" />
+    <Content Include="SMARTH_fonts\chat-text.svg" />
+    <Content Include="SMARTH_fonts\chat.svg" />
+    <Content Include="SMARTH_fonts\check-all.svg" />
+    <Content Include="SMARTH_fonts\check-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\check-circle.svg" />
+    <Content Include="SMARTH_fonts\check-lg.svg" />
+    <Content Include="SMARTH_fonts\check-square-fill.svg" />
+    <Content Include="SMARTH_fonts\check-square.svg" />
+    <Content Include="SMARTH_fonts\check.svg" />
+    <Content Include="SMARTH_fonts\check2-all.svg" />
+    <Content Include="SMARTH_fonts\check2-circle.svg" />
+    <Content Include="SMARTH_fonts\check2-square.svg" />
+    <Content Include="SMARTH_fonts\check2.svg" />
+    <Content Include="SMARTH_fonts\chevron-bar-contract.svg" />
+    <Content Include="SMARTH_fonts\chevron-bar-down.svg" />
+    <Content Include="SMARTH_fonts\chevron-bar-expand.svg" />
+    <Content Include="SMARTH_fonts\chevron-bar-left.svg" />
+    <Content Include="SMARTH_fonts\chevron-bar-right.svg" />
+    <Content Include="SMARTH_fonts\chevron-bar-up.svg" />
+    <Content Include="SMARTH_fonts\chevron-compact-down.svg" />
+    <Content Include="SMARTH_fonts\chevron-compact-left.svg" />
+    <Content Include="SMARTH_fonts\chevron-compact-right.svg" />
+    <Content Include="SMARTH_fonts\chevron-compact-up.svg" />
+    <Content Include="SMARTH_fonts\chevron-contract.svg" />
+    <Content Include="SMARTH_fonts\chevron-double-down.svg" />
+    <Content Include="SMARTH_fonts\chevron-double-left.svg" />
+    <Content Include="SMARTH_fonts\chevron-double-right.svg" />
+    <Content Include="SMARTH_fonts\chevron-double-up.svg" />
+    <Content Include="SMARTH_fonts\chevron-down.svg" />
+    <Content Include="SMARTH_fonts\chevron-expand.svg" />
+    <Content Include="SMARTH_fonts\chevron-left.svg" />
+    <Content Include="SMARTH_fonts\chevron-right.svg" />
+    <Content Include="SMARTH_fonts\chevron-up.svg" />
+    <Content Include="SMARTH_fonts\circle-fill.svg" />
+    <Content Include="SMARTH_fonts\circle-half.svg" />
+    <Content Include="SMARTH_fonts\circle-square.svg" />
+    <Content Include="SMARTH_fonts\circle.svg" />
+    <Content Include="SMARTH_fonts\clipboard-check.svg" />
+    <Content Include="SMARTH_fonts\clipboard-data.svg" />
+    <Content Include="SMARTH_fonts\clipboard-minus.svg" />
+    <Content Include="SMARTH_fonts\clipboard-plus.svg" />
+    <Content Include="SMARTH_fonts\clipboard-x.svg" />
+    <Content Include="SMARTH_fonts\clipboard.svg" />
+    <Content Include="SMARTH_fonts\clock-fill.svg" />
+    <Content Include="SMARTH_fonts\clock-history.svg" />
+    <Content Include="SMARTH_fonts\clock.svg" />
+    <Content Include="SMARTH_fonts\cloud-arrow-down-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-arrow-down.svg" />
+    <Content Include="SMARTH_fonts\cloud-arrow-up-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-arrow-up.svg" />
+    <Content Include="SMARTH_fonts\cloud-check-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-check.svg" />
+    <Content Include="SMARTH_fonts\cloud-download-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-download.svg" />
+    <Content Include="SMARTH_fonts\cloud-drizzle-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-drizzle.svg" />
+    <Content Include="SMARTH_fonts\cloud-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-fog-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-fog.svg" />
+    <Content Include="SMARTH_fonts\cloud-fog2-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-fog2.svg" />
+    <Content Include="SMARTH_fonts\cloud-hail-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-hail.svg" />
+    <Content Include="SMARTH_fonts\cloud-haze-1.svg" />
+    <Content Include="SMARTH_fonts\cloud-haze-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-haze.svg" />
+    <Content Include="SMARTH_fonts\cloud-haze2-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-lightning-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-lightning-rain-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-lightning-rain.svg" />
+    <Content Include="SMARTH_fonts\cloud-lightning.svg" />
+    <Content Include="SMARTH_fonts\cloud-minus-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-minus.svg" />
+    <Content Include="SMARTH_fonts\cloud-moon-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-moon.svg" />
+    <Content Include="SMARTH_fonts\cloud-plus-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-plus.svg" />
+    <Content Include="SMARTH_fonts\cloud-rain-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-rain-heavy-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-rain-heavy.svg" />
+    <Content Include="SMARTH_fonts\cloud-rain.svg" />
+    <Content Include="SMARTH_fonts\cloud-slash-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-slash.svg" />
+    <Content Include="SMARTH_fonts\cloud-sleet-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-sleet.svg" />
+    <Content Include="SMARTH_fonts\cloud-snow-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-snow.svg" />
+    <Content Include="SMARTH_fonts\cloud-sun-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-sun.svg" />
+    <Content Include="SMARTH_fonts\cloud-upload-fill.svg" />
+    <Content Include="SMARTH_fonts\cloud-upload.svg" />
+    <Content Include="SMARTH_fonts\cloud.svg" />
+    <Content Include="SMARTH_fonts\clouds-fill.svg" />
+    <Content Include="SMARTH_fonts\clouds.svg" />
+    <Content Include="SMARTH_fonts\cloudy-fill.svg" />
+    <Content Include="SMARTH_fonts\cloudy.svg" />
+    <Content Include="SMARTH_fonts\code-slash.svg" />
+    <Content Include="SMARTH_fonts\code-square.svg" />
+    <Content Include="SMARTH_fonts\code.svg" />
+    <Content Include="SMARTH_fonts\coin.svg" />
+    <Content Include="SMARTH_fonts\collection-fill.svg" />
+    <Content Include="SMARTH_fonts\collection-play-fill.svg" />
+    <Content Include="SMARTH_fonts\collection-play.svg" />
+    <Content Include="SMARTH_fonts\collection.svg" />
+    <Content Include="SMARTH_fonts\columns-gap.svg" />
+    <Content Include="SMARTH_fonts\columns.svg" />
+    <Content Include="SMARTH_fonts\command.svg" />
+    <Content Include="SMARTH_fonts\compass-fill.svg" />
+    <Content Include="SMARTH_fonts\compass.svg" />
+    <Content Include="SMARTH_fonts\cone-striped.svg" />
+    <Content Include="SMARTH_fonts\cone.svg" />
+    <Content Include="SMARTH_fonts\controller.svg" />
+    <Content Include="SMARTH_fonts\cpu-fill.svg" />
+    <Content Include="SMARTH_fonts\cpu.svg" />
+    <Content Include="SMARTH_fonts\credit-card-2-back-fill.svg" />
+    <Content Include="SMARTH_fonts\credit-card-2-back.svg" />
+    <Content Include="SMARTH_fonts\credit-card-2-front-fill.svg" />
+    <Content Include="SMARTH_fonts\credit-card-2-front.svg" />
+    <Content Include="SMARTH_fonts\credit-card-fill.svg" />
+    <Content Include="SMARTH_fonts\credit-card.svg" />
+    <Content Include="SMARTH_fonts\crop.svg" />
+    <Content Include="SMARTH_fonts\cup-fill.svg" />
+    <Content Include="SMARTH_fonts\cup-straw.svg" />
+    <Content Include="SMARTH_fonts\cup.svg" />
+    <Content Include="SMARTH_fonts\currency-bitcoin.svg" />
+    <Content Include="SMARTH_fonts\currency-dollar.svg" />
+    <Content Include="SMARTH_fonts\currency-euro.svg" />
+    <Content Include="SMARTH_fonts\currency-exchange.svg" />
+    <Content Include="SMARTH_fonts\currency-pound.svg" />
+    <Content Include="SMARTH_fonts\currency-yen.svg" />
+    <Content Include="SMARTH_fonts\cursor-fill.svg" />
+    <Content Include="SMARTH_fonts\cursor-text.svg" />
+    <Content Include="SMARTH_fonts\cursor.svg" />
+    <Content Include="SMARTH_fonts\dash-circle-dotted.svg" />
+    <Content Include="SMARTH_fonts\dash-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\dash-circle.svg" />
+    <Content Include="SMARTH_fonts\dash-lg.svg" />
+    <Content Include="SMARTH_fonts\dash-square-dotted.svg" />
+    <Content Include="SMARTH_fonts\dash-square-fill.svg" />
+    <Content Include="SMARTH_fonts\dash-square.svg" />
+    <Content Include="SMARTH_fonts\dash.svg" />
+    <Content Include="SMARTH_fonts\diagram-2-fill.svg" />
+    <Content Include="SMARTH_fonts\diagram-2.svg" />
+    <Content Include="SMARTH_fonts\diagram-3-fill.svg" />
+    <Content Include="SMARTH_fonts\diagram-3.svg" />
+    <Content Include="SMARTH_fonts\diamond-fill.svg" />
+    <Content Include="SMARTH_fonts\diamond-half.svg" />
+    <Content Include="SMARTH_fonts\diamond.svg" />
+    <Content Include="SMARTH_fonts\dice-1-fill.svg" />
+    <Content Include="SMARTH_fonts\dice-1.svg" />
+    <Content Include="SMARTH_fonts\dice-2-fill.svg" />
+    <Content Include="SMARTH_fonts\dice-2.svg" />
+    <Content Include="SMARTH_fonts\dice-3-fill.svg" />
+    <Content Include="SMARTH_fonts\dice-3.svg" />
+    <Content Include="SMARTH_fonts\dice-4-fill.svg" />
+    <Content Include="SMARTH_fonts\dice-4.svg" />
+    <Content Include="SMARTH_fonts\dice-5-fill.svg" />
+    <Content Include="SMARTH_fonts\dice-5.svg" />
+    <Content Include="SMARTH_fonts\dice-6-fill.svg" />
+    <Content Include="SMARTH_fonts\dice-6.svg" />
+    <Content Include="SMARTH_fonts\disc-fill.svg" />
+    <Content Include="SMARTH_fonts\disc.svg" />
+    <Content Include="SMARTH_fonts\discord.svg" />
+    <Content Include="SMARTH_fonts\display-fill.svg" />
+    <Content Include="SMARTH_fonts\display.svg" />
+    <Content Include="SMARTH_fonts\distribute-horizontal.svg" />
+    <Content Include="SMARTH_fonts\distribute-vertical.svg" />
+    <Content Include="SMARTH_fonts\door-closed-fill.svg" />
+    <Content Include="SMARTH_fonts\door-closed.svg" />
+    <Content Include="SMARTH_fonts\door-open-fill.svg" />
+    <Content Include="SMARTH_fonts\door-open.svg" />
+    <Content Include="SMARTH_fonts\dot.svg" />
+    <Content Include="SMARTH_fonts\download.svg" />
+    <Content Include="SMARTH_fonts\droplet-fill.svg" />
+    <Content Include="SMARTH_fonts\droplet-half.svg" />
+    <Content Include="SMARTH_fonts\droplet.svg" />
+    <Content Include="SMARTH_fonts\earbuds.svg" />
+    <Content Include="SMARTH_fonts\easel-fill.svg" />
+    <Content Include="SMARTH_fonts\easel.svg" />
+    <Content Include="SMARTH_fonts\egg-fill.svg" />
+    <Content Include="SMARTH_fonts\egg-fried.svg" />
+    <Content Include="SMARTH_fonts\egg.svg" />
+    <Content Include="SMARTH_fonts\eject-fill.svg" />
+    <Content Include="SMARTH_fonts\eject.svg" />
+    <Content Include="SMARTH_fonts\emoji-angry-fill.svg" />
+    <Content Include="SMARTH_fonts\emoji-angry.svg" />
+    <Content Include="SMARTH_fonts\emoji-dizzy-fill.svg" />
+    <Content Include="SMARTH_fonts\emoji-dizzy.svg" />
+    <Content Include="SMARTH_fonts\emoji-expressionless-fill.svg" />
+    <Content Include="SMARTH_fonts\emoji-expressionless.svg" />
+    <Content Include="SMARTH_fonts\emoji-frown-fill.svg" />
+    <Content Include="SMARTH_fonts\emoji-frown.svg" />
+    <Content Include="SMARTH_fonts\emoji-heart-eyes-fill.svg" />
+    <Content Include="SMARTH_fonts\emoji-heart-eyes.svg" />
+    <Content Include="SMARTH_fonts\emoji-laughing-fill.svg" />
+    <Content Include="SMARTH_fonts\emoji-laughing.svg" />
+    <Content Include="SMARTH_fonts\emoji-neutral-fill.svg" />
+    <Content Include="SMARTH_fonts\emoji-neutral.svg" />
+    <Content Include="SMARTH_fonts\emoji-smile-fill.svg" />
+    <Content Include="SMARTH_fonts\emoji-smile-upside-down-fill.svg" />
+    <Content Include="SMARTH_fonts\emoji-smile-upside-down.svg" />
+    <Content Include="SMARTH_fonts\emoji-smile.svg" />
+    <Content Include="SMARTH_fonts\emoji-sunglasses-fill.svg" />
+    <Content Include="SMARTH_fonts\emoji-sunglasses.svg" />
+    <Content Include="SMARTH_fonts\emoji-wink-fill.svg" />
+    <Content Include="SMARTH_fonts\emoji-wink.svg" />
+    <Content Include="SMARTH_fonts\envelope-fill.svg" />
+    <Content Include="SMARTH_fonts\envelope-open-fill.svg" />
+    <Content Include="SMARTH_fonts\envelope-open.svg" />
+    <Content Include="SMARTH_fonts\envelope.svg" />
+    <Content Include="SMARTH_fonts\eraser-fill.svg" />
+    <Content Include="SMARTH_fonts\eraser.svg" />
+    <Content Include="SMARTH_fonts\exclamation-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\exclamation-circle.svg" />
+    <Content Include="SMARTH_fonts\exclamation-diamond-fill.svg" />
+    <Content Include="SMARTH_fonts\exclamation-diamond.svg" />
+    <Content Include="SMARTH_fonts\exclamation-lg.svg" />
+    <Content Include="SMARTH_fonts\exclamation-octagon-fill.svg" />
+    <Content Include="SMARTH_fonts\exclamation-octagon.svg" />
+    <Content Include="SMARTH_fonts\exclamation-square-fill.svg" />
+    <Content Include="SMARTH_fonts\exclamation-square.svg" />
+    <Content Include="SMARTH_fonts\exclamation-triangle-fill.svg" />
+    <Content Include="SMARTH_fonts\exclamation-triangle.svg" />
+    <Content Include="SMARTH_fonts\exclamation.svg" />
+    <Content Include="SMARTH_fonts\exclude.svg" />
+    <Content Include="SMARTH_fonts\eye-fill.svg" />
+    <Content Include="SMARTH_fonts\eye-slash-fill.svg" />
+    <Content Include="SMARTH_fonts\eye-slash.svg" />
+    <Content Include="SMARTH_fonts\eye.svg" />
+    <Content Include="SMARTH_fonts\eyedropper.svg" />
+    <Content Include="SMARTH_fonts\eyeglasses.svg" />
+    <Content Include="SMARTH_fonts\facebook.svg" />
+    <Content Include="SMARTH_fonts\file-arrow-down-fill.svg" />
+    <Content Include="SMARTH_fonts\file-arrow-down.svg" />
+    <Content Include="SMARTH_fonts\file-arrow-up-fill.svg" />
+    <Content Include="SMARTH_fonts\file-arrow-up.svg" />
+    <Content Include="SMARTH_fonts\file-bar-graph-fill.svg" />
+    <Content Include="SMARTH_fonts\file-bar-graph.svg" />
+    <Content Include="SMARTH_fonts\file-binary-fill.svg" />
+    <Content Include="SMARTH_fonts\file-binary.svg" />
+    <Content Include="SMARTH_fonts\file-break-fill.svg" />
+    <Content Include="SMARTH_fonts\file-break.svg" />
+    <Content Include="SMARTH_fonts\file-check-fill.svg" />
+    <Content Include="SMARTH_fonts\file-check.svg" />
+    <Content Include="SMARTH_fonts\file-code-fill.svg" />
+    <Content Include="SMARTH_fonts\file-code.svg" />
+    <Content Include="SMARTH_fonts\file-diff-fill.svg" />
+    <Content Include="SMARTH_fonts\file-diff.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-arrow-down-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-arrow-down.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-arrow-up-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-arrow-up.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-bar-graph-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-bar-graph.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-binary-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-binary.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-break-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-break.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-check-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-check.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-code-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-code.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-diff-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-diff.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-easel-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-easel.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-excel-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-excel.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-font-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-font.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-image-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-image.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-lock-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-lock.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-lock2-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-lock2.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-medical-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-medical.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-minus-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-minus.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-music-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-music.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-pdf-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-pdf.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-person-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-person.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-play-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-play.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-plus-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-plus.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-post-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-post.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-ppt-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-ppt.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-richtext-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-richtext.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-ruled-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-ruled.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-slides-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-slides.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-spreadsheet-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-spreadsheet.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-text-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-text.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-word-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-word.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-x-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-x.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-zip-fill.svg" />
+    <Content Include="SMARTH_fonts\file-earmark-zip.svg" />
+    <Content Include="SMARTH_fonts\file-earmark.svg" />
+    <Content Include="SMARTH_fonts\file-easel-fill.svg" />
+    <Content Include="SMARTH_fonts\file-easel.svg" />
+    <Content Include="SMARTH_fonts\file-excel-fill.svg" />
+    <Content Include="SMARTH_fonts\file-excel.svg" />
+    <Content Include="SMARTH_fonts\file-fill.svg" />
+    <Content Include="SMARTH_fonts\file-font-fill.svg" />
+    <Content Include="SMARTH_fonts\file-font.svg" />
+    <Content Include="SMARTH_fonts\file-image-fill.svg" />
+    <Content Include="SMARTH_fonts\file-image.svg" />
+    <Content Include="SMARTH_fonts\file-lock-fill.svg" />
+    <Content Include="SMARTH_fonts\file-lock.svg" />
+    <Content Include="SMARTH_fonts\file-lock2-fill.svg" />
+    <Content Include="SMARTH_fonts\file-lock2.svg" />
+    <Content Include="SMARTH_fonts\file-medical-fill.svg" />
+    <Content Include="SMARTH_fonts\file-medical.svg" />
+    <Content Include="SMARTH_fonts\file-minus-fill.svg" />
+    <Content Include="SMARTH_fonts\file-minus.svg" />
+    <Content Include="SMARTH_fonts\file-music-fill.svg" />
+    <Content Include="SMARTH_fonts\file-music.svg" />
+    <Content Include="SMARTH_fonts\file-pdf-fill.svg" />
+    <Content Include="SMARTH_fonts\file-pdf.svg" />
+    <Content Include="SMARTH_fonts\file-person-fill.svg" />
+    <Content Include="SMARTH_fonts\file-person.svg" />
+    <Content Include="SMARTH_fonts\file-play-fill.svg" />
+    <Content Include="SMARTH_fonts\file-play.svg" />
+    <Content Include="SMARTH_fonts\file-plus-fill.svg" />
+    <Content Include="SMARTH_fonts\file-plus.svg" />
+    <Content Include="SMARTH_fonts\file-post-fill.svg" />
+    <Content Include="SMARTH_fonts\file-post.svg" />
+    <Content Include="SMARTH_fonts\file-ppt-fill.svg" />
+    <Content Include="SMARTH_fonts\file-ppt.svg" />
+    <Content Include="SMARTH_fonts\file-richtext-fill.svg" />
+    <Content Include="SMARTH_fonts\file-richtext.svg" />
+    <Content Include="SMARTH_fonts\file-ruled-fill.svg" />
+    <Content Include="SMARTH_fonts\file-ruled.svg" />
+    <Content Include="SMARTH_fonts\file-slides-fill.svg" />
+    <Content Include="SMARTH_fonts\file-slides.svg" />
+    <Content Include="SMARTH_fonts\file-spreadsheet-fill.svg" />
+    <Content Include="SMARTH_fonts\file-spreadsheet.svg" />
+    <Content Include="SMARTH_fonts\file-text-fill.svg" />
+    <Content Include="SMARTH_fonts\file-text.svg" />
+    <Content Include="SMARTH_fonts\file-word-fill.svg" />
+    <Content Include="SMARTH_fonts\file-word.svg" />
+    <Content Include="SMARTH_fonts\file-x-fill.svg" />
+    <Content Include="SMARTH_fonts\file-x.svg" />
+    <Content Include="SMARTH_fonts\file-zip-fill.svg" />
+    <Content Include="SMARTH_fonts\file-zip.svg" />
+    <Content Include="SMARTH_fonts\file.svg" />
+    <Content Include="SMARTH_fonts\files-alt.svg" />
+    <Content Include="SMARTH_fonts\files.svg" />
+    <Content Include="SMARTH_fonts\film.svg" />
+    <Content Include="SMARTH_fonts\filter-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\filter-circle.svg" />
+    <Content Include="SMARTH_fonts\filter-left.svg" />
+    <Content Include="SMARTH_fonts\filter-right.svg" />
+    <Content Include="SMARTH_fonts\filter-square-fill.svg" />
+    <Content Include="SMARTH_fonts\filter-square.svg" />
+    <Content Include="SMARTH_fonts\filter.svg" />
+    <Content Include="SMARTH_fonts\flag-fill.svg" />
+    <Content Include="SMARTH_fonts\flag.svg" />
+    <Content Include="SMARTH_fonts\flower1.svg" />
+    <Content Include="SMARTH_fonts\flower2.svg" />
+    <Content Include="SMARTH_fonts\flower3.svg" />
+    <Content Include="SMARTH_fonts\folder-check.svg" />
+    <Content Include="SMARTH_fonts\folder-fill.svg" />
+    <Content Include="SMARTH_fonts\folder-minus.svg" />
+    <Content Include="SMARTH_fonts\folder-plus.svg" />
+    <Content Include="SMARTH_fonts\folder-symlink-fill.svg" />
+    <Content Include="SMARTH_fonts\folder-symlink.svg" />
+    <Content Include="SMARTH_fonts\folder-x.svg" />
+    <Content Include="SMARTH_fonts\folder.svg" />
+    <Content Include="SMARTH_fonts\folder2-open.svg" />
+    <Content Include="SMARTH_fonts\folder2.svg" />
+    <Content Include="SMARTH_fonts\fonts.svg" />
+    <Content Include="SMARTH_fonts\forward-fill.svg" />
+    <Content Include="SMARTH_fonts\forward.svg" />
+    <Content Include="SMARTH_fonts\FPOC11_01.png" />
+    <Content Include="SMARTH_fonts\FPOC11_10.png" />
+    <Content Include="SMARTH_fonts\front.svg" />
+    <Content Include="SMARTH_fonts\fuel-pump-diesel-fill.svg" />
+    <Content Include="SMARTH_fonts\fuel-pump-diesel.svg" />
+    <Content Include="SMARTH_fonts\fuel-pump-fill.svg" />
+    <Content Include="SMARTH_fonts\fuel-pump.svg" />
+    <Content Include="SMARTH_fonts\fullscreen-exit.svg" />
+    <Content Include="SMARTH_fonts\fullscreen.svg" />
+    <Content Include="SMARTH_fonts\funnel-fill.svg" />
+    <Content Include="SMARTH_fonts\funnel.svg" />
+    <Content Include="SMARTH_fonts\gear-fill.svg" />
+    <Content Include="SMARTH_fonts\gear-wide-connected.svg" />
+    <Content Include="SMARTH_fonts\gear-wide.svg" />
+    <Content Include="SMARTH_fonts\gear.svg" />
+    <Content Include="SMARTH_fonts\gem.svg" />
+    <Content Include="SMARTH_fonts\gender-ambiguous.svg" />
+    <Content Include="SMARTH_fonts\gender-female.svg" />
+    <Content Include="SMARTH_fonts\gender-male.svg" />
+    <Content Include="SMARTH_fonts\gender-trans.svg" />
+    <Content Include="SMARTH_fonts\geo-alt-fill.svg" />
+    <Content Include="SMARTH_fonts\geo-alt.svg" />
+    <Content Include="SMARTH_fonts\geo-fill.svg" />
+    <Content Include="SMARTH_fonts\geo.svg" />
+    <Content Include="SMARTH_fonts\gift-fill.svg" />
+    <Content Include="SMARTH_fonts\gift.svg" />
+    <Content Include="SMARTH_fonts\github.svg" />
+    <Content Include="SMARTH_fonts\globe.svg" />
+    <Content Include="SMARTH_fonts\globe2.svg" />
+    <Content Include="SMARTH_fonts\google.svg" />
+    <Content Include="SMARTH_fonts\graph-down.svg" />
+    <Content Include="SMARTH_fonts\graph-up.svg" />
+    <Content Include="SMARTH_fonts\grid-1x2-fill.svg" />
+    <Content Include="SMARTH_fonts\grid-1x2.svg" />
+    <Content Include="SMARTH_fonts\grid-3x2-gap-fill.svg" />
+    <Content Include="SMARTH_fonts\grid-3x2-gap.svg" />
+    <Content Include="SMARTH_fonts\grid-3x2.svg" />
+    <Content Include="SMARTH_fonts\grid-3x3-gap-fill.svg" />
+    <Content Include="SMARTH_fonts\grid-3x3-gap.svg" />
+    <Content Include="SMARTH_fonts\grid-3x3.svg" />
+    <Content Include="SMARTH_fonts\grid-fill.svg" />
+    <Content Include="SMARTH_fonts\grid.svg" />
+    <Content Include="SMARTH_fonts\grip-horizontal.svg" />
+    <Content Include="SMARTH_fonts\grip-vertical.svg" />
+    <Content Include="SMARTH_fonts\hammer.svg" />
+    <Content Include="SMARTH_fonts\hand-index-fill.svg" />
+    <Content Include="SMARTH_fonts\hand-index-thumb-fill.svg" />
+    <Content Include="SMARTH_fonts\hand-index-thumb.svg" />
+    <Content Include="SMARTH_fonts\hand-index.svg" />
+    <Content Include="SMARTH_fonts\hand-thumbs-down-fill.svg" />
+    <Content Include="SMARTH_fonts\hand-thumbs-down.svg" />
+    <Content Include="SMARTH_fonts\hand-thumbs-up-fill.svg" />
+    <Content Include="SMARTH_fonts\hand-thumbs-up.svg" />
+    <Content Include="SMARTH_fonts\handbag-fill.svg" />
+    <Content Include="SMARTH_fonts\handbag.svg" />
+    <Content Include="SMARTH_fonts\hash.svg" />
+    <Content Include="SMARTH_fonts\hdd-fill.svg" />
+    <Content Include="SMARTH_fonts\hdd-network-fill.svg" />
+    <Content Include="SMARTH_fonts\hdd-network.svg" />
+    <Content Include="SMARTH_fonts\hdd-rack-fill.svg" />
+    <Content Include="SMARTH_fonts\hdd-rack.svg" />
+    <Content Include="SMARTH_fonts\hdd-stack-fill.svg" />
+    <Content Include="SMARTH_fonts\hdd-stack.svg" />
+    <Content Include="SMARTH_fonts\hdd.svg" />
+    <Content Include="SMARTH_fonts\headphones.svg" />
+    <Content Include="SMARTH_fonts\headset-vr.svg" />
+    <Content Include="SMARTH_fonts\headset.svg" />
+    <Content Include="SMARTH_fonts\heart-fill.svg" />
+    <Content Include="SMARTH_fonts\heart-half.svg" />
+    <Content Include="SMARTH_fonts\heart.svg" />
+    <Content Include="SMARTH_fonts\heptagon-fill.svg" />
+    <Content Include="SMARTH_fonts\heptagon-half.svg" />
+    <Content Include="SMARTH_fonts\heptagon.svg" />
+    <Content Include="SMARTH_fonts\hexagon-fill.svg" />
+    <Content Include="SMARTH_fonts\hexagon-half.svg" />
+    <Content Include="SMARTH_fonts\hexagon.svg" />
+    <Content Include="SMARTH_fonts\hourglass-bottom.svg" />
+    <Content Include="SMARTH_fonts\hourglass-split.svg" />
+    <Content Include="SMARTH_fonts\hourglass-top.svg" />
+    <Content Include="SMARTH_fonts\hourglass.svg" />
+    <Content Include="SMARTH_fonts\house-door-fill.svg" />
+    <Content Include="SMARTH_fonts\house-door.svg" />
+    <Content Include="SMARTH_fonts\house-fill.svg" />
+    <Content Include="SMARTH_fonts\house.svg" />
+    <Content Include="SMARTH_fonts\hr.svg" />
+    <Content Include="SMARTH_fonts\hurricane.svg" />
+    <Content Include="SMARTH_fonts\image-alt.svg" />
+    <Content Include="SMARTH_fonts\image-fill.svg" />
+    <Content Include="SMARTH_fonts\image.svg" />
+    <Content Include="SMARTH_fonts\images.svg" />
+    <Content Include="SMARTH_fonts\inbox-fill.svg" />
+    <Content Include="SMARTH_fonts\inbox.svg" />
+    <Content Include="SMARTH_fonts\inboxes-fill.svg" />
+    <Content Include="SMARTH_fonts\inboxes.svg" />
+    <Content Include="SMARTH_fonts\index.html" />
+    <Content Include="SMARTH_fonts\info-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\info-circle.svg" />
+    <Content Include="SMARTH_fonts\info-lg.svg" />
+    <Content Include="SMARTH_fonts\info-square-fill.svg" />
+    <Content Include="SMARTH_fonts\info-square.svg" />
+    <Content Include="SMARTH_fonts\info.svg" />
+    <Content Include="SMARTH_fonts\input-cursor-text.svg" />
+    <Content Include="SMARTH_fonts\input-cursor.svg" />
+    <Content Include="SMARTH_fonts\instagram.svg" />
+    <Content Include="SMARTH_fonts\INTERNOS\Ciculo100b.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\Ciculo25b.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\Ciculo50b.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\Ciculo75b.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\Circulo0b.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\CirculoNA.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\EtiquetaBloqueo.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\FPOC11_01.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\FPOC11_10.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ICONOCALIDAD.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ICONOMAQUINAS.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ICONOMOLDES.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\ICONOPARAMETROS.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\PDCAPORTADA.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\PRIORIDAD1.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\PRIORIDAD2.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\PRIORIDAD3.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\PRIORIDAD4.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\SMARTHLOGOSM.png" />
+    <Content Include="SMARTH_fonts\INTERNOS\THERMOLOGONEGRO.jpg" />
+    <Content Include="SMARTH_fonts\intersect.svg" />
+    <Content Include="SMARTH_fonts\journal-album.svg" />
+    <Content Include="SMARTH_fonts\journal-arrow-down.svg" />
+    <Content Include="SMARTH_fonts\journal-arrow-up.svg" />
+    <Content Include="SMARTH_fonts\journal-bookmark-fill.svg" />
+    <Content Include="SMARTH_fonts\journal-bookmark.svg" />
+    <Content Include="SMARTH_fonts\journal-check.svg" />
+    <Content Include="SMARTH_fonts\journal-code.svg" />
+    <Content Include="SMARTH_fonts\journal-medical.svg" />
+    <Content Include="SMARTH_fonts\journal-minus.svg" />
+    <Content Include="SMARTH_fonts\journal-plus.svg" />
+    <Content Include="SMARTH_fonts\journal-richtext.svg" />
+    <Content Include="SMARTH_fonts\journal-text.svg" />
+    <Content Include="SMARTH_fonts\journal-x.svg" />
+    <Content Include="SMARTH_fonts\journal.svg" />
+    <Content Include="SMARTH_fonts\journals.svg" />
+    <Content Include="SMARTH_fonts\joystick.svg" />
+    <Content Include="SMARTH_fonts\justify-left.svg" />
+    <Content Include="SMARTH_fonts\justify-right.svg" />
+    <Content Include="SMARTH_fonts\justify.svg" />
+    <Content Include="SMARTH_fonts\kanban-fill.svg" />
+    <Content Include="SMARTH_fonts\kanban.svg" />
+    <Content Include="SMARTH_fonts\key-fill.svg" />
+    <Content Include="SMARTH_fonts\key.svg" />
+    <Content Include="SMARTH_fonts\keyboard-fill.svg" />
+    <Content Include="SMARTH_fonts\keyboard.svg" />
+    <Content Include="SMARTH_fonts\ladder.svg" />
+    <Content Include="SMARTH_fonts\lamp-fill.svg" />
+    <Content Include="SMARTH_fonts\lamp.svg" />
+    <Content Include="SMARTH_fonts\laptop-fill.svg" />
+    <Content Include="SMARTH_fonts\laptop.svg" />
+    <Content Include="SMARTH_fonts\layer-backward.svg" />
+    <Content Include="SMARTH_fonts\layer-forward.svg" />
+    <Content Include="SMARTH_fonts\layers-fill.svg" />
+    <Content Include="SMARTH_fonts\layers-half.svg" />
+    <Content Include="SMARTH_fonts\layers.svg" />
+    <Content Include="SMARTH_fonts\layout-sidebar-inset-reverse.svg" />
+    <Content Include="SMARTH_fonts\layout-sidebar-inset.svg" />
+    <Content Include="SMARTH_fonts\layout-sidebar-reverse.svg" />
+    <Content Include="SMARTH_fonts\layout-sidebar.svg" />
+    <Content Include="SMARTH_fonts\layout-split.svg" />
+    <Content Include="SMARTH_fonts\layout-text-sidebar-reverse.svg" />
+    <Content Include="SMARTH_fonts\layout-text-sidebar.svg" />
+    <Content Include="SMARTH_fonts\layout-text-window-reverse.svg" />
+    <Content Include="SMARTH_fonts\layout-text-window.svg" />
+    <Content Include="SMARTH_fonts\layout-three-columns.svg" />
+    <Content Include="SMARTH_fonts\layout-wtf.svg" />
+    <Content Include="SMARTH_fonts\life-preserver.svg" />
+    <Content Include="SMARTH_fonts\lightbulb-fill.svg" />
+    <Content Include="SMARTH_fonts\lightbulb-off-fill.svg" />
+    <Content Include="SMARTH_fonts\lightbulb-off.svg" />
+    <Content Include="SMARTH_fonts\lightbulb.svg" />
+    <Content Include="SMARTH_fonts\lightning-charge-fill.svg" />
+    <Content Include="SMARTH_fonts\lightning-charge.svg" />
+    <Content Include="SMARTH_fonts\lightning-fill.svg" />
+    <Content Include="SMARTH_fonts\lightning.svg" />
+    <Content Include="SMARTH_fonts\link-45deg.svg" />
+    <Content Include="SMARTH_fonts\link.svg" />
+    <Content Include="SMARTH_fonts\linkedin.svg" />
+    <Content Include="SMARTH_fonts\list-check.svg" />
+    <Content Include="SMARTH_fonts\list-nested.svg" />
+    <Content Include="SMARTH_fonts\list-ol.svg" />
+    <Content Include="SMARTH_fonts\list-stars.svg" />
+    <Content Include="SMARTH_fonts\list-task.svg" />
+    <Content Include="SMARTH_fonts\list-ul.svg" />
+    <Content Include="SMARTH_fonts\list.svg" />
+    <Content Include="SMARTH_fonts\lock-fill.svg" />
+    <Content Include="SMARTH_fonts\lock.svg" />
+    <Content Include="SMARTH_fonts\mailbox.svg" />
+    <Content Include="SMARTH_fonts\mailbox2.svg" />
+    <Content Include="SMARTH_fonts\map-fill.svg" />
+    <Content Include="SMARTH_fonts\map.svg" />
+    <Content Include="SMARTH_fonts\markdown-fill.svg" />
+    <Content Include="SMARTH_fonts\markdown.svg" />
+    <Content Include="SMARTH_fonts\mask.svg" />
+    <Content Include="SMARTH_fonts\mastodon.svg" />
+    <Content Include="SMARTH_fonts\megaphone-fill.svg" />
+    <Content Include="SMARTH_fonts\megaphone.svg" />
+    <Content Include="SMARTH_fonts\menu-app-fill.svg" />
+    <Content Include="SMARTH_fonts\menu-app.svg" />
+    <Content Include="SMARTH_fonts\menu-button-fill.svg" />
+    <Content Include="SMARTH_fonts\menu-button-wide-fill.svg" />
+    <Content Include="SMARTH_fonts\menu-button-wide.svg" />
+    <Content Include="SMARTH_fonts\menu-button.svg" />
+    <Content Include="SMARTH_fonts\menu-down.svg" />
+    <Content Include="SMARTH_fonts\menu-up.svg" />
+    <Content Include="SMARTH_fonts\messenger.svg" />
+    <Content Include="SMARTH_fonts\mic-fill.svg" />
+    <Content Include="SMARTH_fonts\mic-mute-fill.svg" />
+    <Content Include="SMARTH_fonts\mic-mute.svg" />
+    <Content Include="SMARTH_fonts\mic.svg" />
+    <Content Include="SMARTH_fonts\minecart-loaded.svg" />
+    <Content Include="SMARTH_fonts\minecart.svg" />
+    <Content Include="SMARTH_fonts\moisture.svg" />
+    <Content Include="SMARTH_fonts\moon-fill.svg" />
+    <Content Include="SMARTH_fonts\moon-stars-fill.svg" />
+    <Content Include="SMARTH_fonts\moon-stars.svg" />
+    <Content Include="SMARTH_fonts\moon.svg" />
+    <Content Include="SMARTH_fonts\mouse-fill.svg" />
+    <Content Include="SMARTH_fonts\mouse.svg" />
+    <Content Include="SMARTH_fonts\mouse2-fill.svg" />
+    <Content Include="SMARTH_fonts\mouse2.svg" />
+    <Content Include="SMARTH_fonts\mouse3-fill.svg" />
+    <Content Include="SMARTH_fonts\mouse3.svg" />
+    <Content Include="SMARTH_fonts\music-note-beamed.svg" />
+    <Content Include="SMARTH_fonts\music-note-list.svg" />
+    <Content Include="SMARTH_fonts\music-note.svg" />
+    <Content Include="SMARTH_fonts\music-player-fill.svg" />
+    <Content Include="SMARTH_fonts\music-player.svg" />
+    <Content Include="SMARTH_fonts\newspaper.svg" />
+    <Content Include="SMARTH_fonts\node-minus-fill.svg" />
+    <Content Include="SMARTH_fonts\node-minus.svg" />
+    <Content Include="SMARTH_fonts\node-plus-fill.svg" />
+    <Content Include="SMARTH_fonts\node-plus.svg" />
+    <Content Include="SMARTH_fonts\nut-fill.svg" />
+    <Content Include="SMARTH_fonts\nut.svg" />
+    <Content Include="SMARTH_fonts\octagon-fill.svg" />
+    <Content Include="SMARTH_fonts\octagon-half.svg" />
+    <Content Include="SMARTH_fonts\octagon.svg" />
+    <Content Include="SMARTH_fonts\option.svg" />
+    <Content Include="SMARTH_fonts\outlet.svg" />
+    <Content Include="SMARTH_fonts\paint-bucket.svg" />
+    <Content Include="SMARTH_fonts\palette-fill.svg" />
+    <Content Include="SMARTH_fonts\palette.svg" />
+    <Content Include="SMARTH_fonts\palette2.svg" />
+    <Content Include="SMARTH_fonts\paperclip.svg" />
+    <Content Include="SMARTH_fonts\paragraph.svg" />
+    <Content Include="SMARTH_fonts\patch-check-fill.svg" />
+    <Content Include="SMARTH_fonts\patch-check.svg" />
+    <Content Include="SMARTH_fonts\patch-exclamation-fill.svg" />
+    <Content Include="SMARTH_fonts\patch-exclamation.svg" />
+    <Content Include="SMARTH_fonts\patch-minus-fill.svg" />
+    <Content Include="SMARTH_fonts\patch-minus.svg" />
+    <Content Include="SMARTH_fonts\patch-plus-fill.svg" />
+    <Content Include="SMARTH_fonts\patch-plus.svg" />
+    <Content Include="SMARTH_fonts\patch-question-fill.svg" />
+    <Content Include="SMARTH_fonts\patch-question.svg" />
+    <Content Include="SMARTH_fonts\pause-btn-fill.svg" />
+    <Content Include="SMARTH_fonts\pause-btn.svg" />
+    <Content Include="SMARTH_fonts\pause-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\pause-circle.svg" />
+    <Content Include="SMARTH_fonts\pause-fill.svg" />
+    <Content Include="SMARTH_fonts\pause.svg" />
+    <Content Include="SMARTH_fonts\peace-fill.svg" />
+    <Content Include="SMARTH_fonts\peace.svg" />
+    <Content Include="SMARTH_fonts\pen-fill.svg" />
+    <Content Include="SMARTH_fonts\pen.svg" />
+    <Content Include="SMARTH_fonts\pencil-fill.svg" />
+    <Content Include="SMARTH_fonts\pencil-square.svg" />
+    <Content Include="SMARTH_fonts\pencil.svg" />
+    <Content Include="SMARTH_fonts\pentagon-fill.svg" />
+    <Content Include="SMARTH_fonts\pentagon-half.svg" />
+    <Content Include="SMARTH_fonts\pentagon.svg" />
+    <Content Include="SMARTH_fonts\people-fill.svg" />
+    <Content Include="SMARTH_fonts\people.svg" />
+    <Content Include="SMARTH_fonts\percent.svg" />
+    <Content Include="SMARTH_fonts\person-badge-fill.svg" />
+    <Content Include="SMARTH_fonts\person-badge.svg" />
+    <Content Include="SMARTH_fonts\person-bounding-box.svg" />
+    <Content Include="SMARTH_fonts\person-check-fill.svg" />
+    <Content Include="SMARTH_fonts\person-check.svg" />
+    <Content Include="SMARTH_fonts\person-circle.svg" />
+    <Content Include="SMARTH_fonts\person-dash-fill.svg" />
+    <Content Include="SMARTH_fonts\person-dash.svg" />
+    <Content Include="SMARTH_fonts\person-fill.svg" />
+    <Content Include="SMARTH_fonts\person-lines-fill.svg" />
+    <Content Include="SMARTH_fonts\person-plus-fill.svg" />
+    <Content Include="SMARTH_fonts\person-plus.svg" />
+    <Content Include="SMARTH_fonts\person-square.svg" />
+    <Content Include="SMARTH_fonts\person-x-fill.svg" />
+    <Content Include="SMARTH_fonts\person-x.svg" />
+    <Content Include="SMARTH_fonts\person.svg" />
+    <Content Include="SMARTH_fonts\phone-fill.svg" />
+    <Content Include="SMARTH_fonts\phone-landscape-fill.svg" />
+    <Content Include="SMARTH_fonts\phone-landscape.svg" />
+    <Content Include="SMARTH_fonts\phone-vibrate-fill.svg" />
+    <Content Include="SMARTH_fonts\phone-vibrate.svg" />
+    <Content Include="SMARTH_fonts\phone.svg" />
+    <Content Include="SMARTH_fonts\pie-chart-fill.svg" />
+    <Content Include="SMARTH_fonts\pie-chart.svg" />
+    <Content Include="SMARTH_fonts\piggy-bank-fill.svg" />
+    <Content Include="SMARTH_fonts\piggy-bank.svg" />
+    <Content Include="SMARTH_fonts\pin-angle-fill.svg" />
+    <Content Include="SMARTH_fonts\pin-angle.svg" />
+    <Content Include="SMARTH_fonts\pin-fill.svg" />
+    <Content Include="SMARTH_fonts\pin-map-fill.svg" />
+    <Content Include="SMARTH_fonts\pin-map.svg" />
+    <Content Include="SMARTH_fonts\pin.svg" />
+    <Content Include="SMARTH_fonts\pip-fill.svg" />
+    <Content Include="SMARTH_fonts\pip.svg" />
+    <Content Include="SMARTH_fonts\play-btn-fill.svg" />
+    <Content Include="SMARTH_fonts\play-btn.svg" />
+    <Content Include="SMARTH_fonts\play-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\play-circle.svg" />
+    <Content Include="SMARTH_fonts\play-fill.svg" />
+    <Content Include="SMARTH_fonts\play.svg" />
+    <Content Include="SMARTH_fonts\plug-fill.svg" />
+    <Content Include="SMARTH_fonts\plug.svg" />
+    <Content Include="SMARTH_fonts\plus-circle-dotted.svg" />
+    <Content Include="SMARTH_fonts\plus-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\plus-circle.svg" />
+    <Content Include="SMARTH_fonts\plus-lg.svg" />
+    <Content Include="SMARTH_fonts\plus-square-dotted.svg" />
+    <Content Include="SMARTH_fonts\plus-square-fill.svg" />
+    <Content Include="SMARTH_fonts\plus-square.svg" />
+    <Content Include="SMARTH_fonts\plus.svg" />
+    <Content Include="SMARTH_fonts\power.svg" />
+    <Content Include="SMARTH_fonts\printer-fill.svg" />
+    <Content Include="SMARTH_fonts\printer.svg" />
+    <Content Include="SMARTH_fonts\puzzle-fill.svg" />
+    <Content Include="SMARTH_fonts\puzzle.svg" />
+    <Content Include="SMARTH_fonts\question-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\question-circle.svg" />
+    <Content Include="SMARTH_fonts\question-diamond-fill.svg" />
+    <Content Include="SMARTH_fonts\question-diamond.svg" />
+    <Content Include="SMARTH_fonts\question-lg.svg" />
+    <Content Include="SMARTH_fonts\question-octagon-fill.svg" />
+    <Content Include="SMARTH_fonts\question-octagon.svg" />
+    <Content Include="SMARTH_fonts\question-square-fill.svg" />
+    <Content Include="SMARTH_fonts\question-square.svg" />
+    <Content Include="SMARTH_fonts\question.svg" />
+    <Content Include="SMARTH_fonts\rainbow.svg" />
+    <Content Include="SMARTH_fonts\receipt-cutoff.svg" />
+    <Content Include="SMARTH_fonts\receipt.svg" />
+    <Content Include="SMARTH_fonts\reception-0.svg" />
+    <Content Include="SMARTH_fonts\reception-1.svg" />
+    <Content Include="SMARTH_fonts\reception-2.svg" />
+    <Content Include="SMARTH_fonts\reception-3.svg" />
+    <Content Include="SMARTH_fonts\reception-4.svg" />
+    <Content Include="SMARTH_fonts\record-btn-fill.svg" />
+    <Content Include="SMARTH_fonts\record-btn.svg" />
+    <Content Include="SMARTH_fonts\record-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\record-circle.svg" />
+    <Content Include="SMARTH_fonts\record-fill.svg" />
+    <Content Include="SMARTH_fonts\record.svg" />
+    <Content Include="SMARTH_fonts\record2-fill.svg" />
+    <Content Include="SMARTH_fonts\record2.svg" />
+    <Content Include="SMARTH_fonts\recycle.svg" />
+    <Content Include="SMARTH_fonts\reddit.svg" />
+    <Content Include="SMARTH_fonts\reply-all-fill.svg" />
+    <Content Include="SMARTH_fonts\reply-all.svg" />
+    <Content Include="SMARTH_fonts\reply-fill.svg" />
+    <Content Include="SMARTH_fonts\reply.svg" />
+    <Content Include="SMARTH_fonts\rss-fill.svg" />
+    <Content Include="SMARTH_fonts\rss.svg" />
+    <Content Include="SMARTH_fonts\rulers.svg" />
+    <Content Include="SMARTH_fonts\safe-fill.svg" />
+    <Content Include="SMARTH_fonts\safe.svg" />
+    <Content Include="SMARTH_fonts\safe2-fill.svg" />
+    <Content Include="SMARTH_fonts\safe2.svg" />
+    <Content Include="SMARTH_fonts\save-fill.svg" />
+    <Content Include="SMARTH_fonts\save.svg" />
+    <Content Include="SMARTH_fonts\save2-fill.svg" />
+    <Content Include="SMARTH_fonts\save2.svg" />
+    <Content Include="SMARTH_fonts\scissors.svg" />
+    <Content Include="SMARTH_fonts\screwdriver.svg" />
+    <Content Include="SMARTH_fonts\sd-card-fill.svg" />
+    <Content Include="SMARTH_fonts\sd-card.svg" />
+    <Content Include="SMARTH_fonts\search.svg" />
+    <Content Include="SMARTH_fonts\segmented-nav.svg" />
+    <Content Include="SMARTH_fonts\server.svg" />
+    <Content Include="SMARTH_fonts\share-fill.svg" />
+    <Content Include="SMARTH_fonts\share.svg" />
+    <Content Include="SMARTH_fonts\shield-check.svg" />
+    <Content Include="SMARTH_fonts\shield-exclamation.svg" />
+    <Content Include="SMARTH_fonts\shield-fill-check.svg" />
+    <Content Include="SMARTH_fonts\shield-fill-exclamation.svg" />
+    <Content Include="SMARTH_fonts\shield-fill-minus.svg" />
+    <Content Include="SMARTH_fonts\shield-fill-plus.svg" />
+    <Content Include="SMARTH_fonts\shield-fill-x.svg" />
+    <Content Include="SMARTH_fonts\shield-fill.svg" />
+    <Content Include="SMARTH_fonts\shield-lock-fill.svg" />
+    <Content Include="SMARTH_fonts\shield-lock.svg" />
+    <Content Include="SMARTH_fonts\shield-minus.svg" />
+    <Content Include="SMARTH_fonts\shield-plus.svg" />
+    <Content Include="SMARTH_fonts\shield-shaded.svg" />
+    <Content Include="SMARTH_fonts\shield-slash-fill.svg" />
+    <Content Include="SMARTH_fonts\shield-slash.svg" />
+    <Content Include="SMARTH_fonts\shield-x.svg" />
+    <Content Include="SMARTH_fonts\shield.svg" />
+    <Content Include="SMARTH_fonts\shift-fill.svg" />
+    <Content Include="SMARTH_fonts\shift.svg" />
+    <Content Include="SMARTH_fonts\shop-window.svg" />
+    <Content Include="SMARTH_fonts\shop.svg" />
+    <Content Include="SMARTH_fonts\shuffle.svg" />
+    <Content Include="SMARTH_fonts\signpost-2-fill.svg" />
+    <Content Include="SMARTH_fonts\signpost-2.svg" />
+    <Content Include="SMARTH_fonts\signpost-fill.svg" />
+    <Content Include="SMARTH_fonts\signpost-split-fill.svg" />
+    <Content Include="SMARTH_fonts\signpost-split.svg" />
+    <Content Include="SMARTH_fonts\signpost.svg" />
+    <Content Include="SMARTH_fonts\sim-fill.svg" />
+    <Content Include="SMARTH_fonts\sim.svg" />
+    <Content Include="SMARTH_fonts\skip-backward-btn-fill.svg" />
+    <Content Include="SMARTH_fonts\skip-backward-btn.svg" />
+    <Content Include="SMARTH_fonts\skip-backward-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\skip-backward-circle.svg" />
+    <Content Include="SMARTH_fonts\skip-backward-fill.svg" />
+    <Content Include="SMARTH_fonts\skip-backward.svg" />
+    <Content Include="SMARTH_fonts\skip-end-btn-fill.svg" />
+    <Content Include="SMARTH_fonts\skip-end-btn.svg" />
+    <Content Include="SMARTH_fonts\skip-end-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\skip-end-circle.svg" />
+    <Content Include="SMARTH_fonts\skip-end-fill.svg" />
+    <Content Include="SMARTH_fonts\skip-end.svg" />
+    <Content Include="SMARTH_fonts\skip-forward-btn-fill.svg" />
+    <Content Include="SMARTH_fonts\skip-forward-btn.svg" />
+    <Content Include="SMARTH_fonts\skip-forward-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\skip-forward-circle.svg" />
+    <Content Include="SMARTH_fonts\skip-forward-fill.svg" />
+    <Content Include="SMARTH_fonts\skip-forward.svg" />
+    <Content Include="SMARTH_fonts\skip-start-btn-fill.svg" />
+    <Content Include="SMARTH_fonts\skip-start-btn.svg" />
+    <Content Include="SMARTH_fonts\skip-start-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\skip-start-circle.svg" />
+    <Content Include="SMARTH_fonts\skip-start-fill.svg" />
+    <Content Include="SMARTH_fonts\skip-start.svg" />
+    <Content Include="SMARTH_fonts\skype.svg" />
+    <Content Include="SMARTH_fonts\slack.svg" />
+    <Content Include="SMARTH_fonts\slash-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\slash-circle.svg" />
+    <Content Include="SMARTH_fonts\slash-lg.svg" />
+    <Content Include="SMARTH_fonts\slash-square-fill.svg" />
+    <Content Include="SMARTH_fonts\slash-square.svg" />
+    <Content Include="SMARTH_fonts\slash.svg" />
+    <Content Include="SMARTH_fonts\sliders.svg" />
+    <Content Include="SMARTH_fonts\smartwatch.svg" />
+    <Content Include="SMARTH_fonts\snow.svg" />
+    <Content Include="SMARTH_fonts\snow2.svg" />
+    <Content Include="SMARTH_fonts\snow3.svg" />
+    <Content Include="SMARTH_fonts\sort-alpha-down-alt.svg" />
+    <Content Include="SMARTH_fonts\sort-alpha-down.svg" />
+    <Content Include="SMARTH_fonts\sort-alpha-up-alt.svg" />
+    <Content Include="SMARTH_fonts\sort-alpha-up.svg" />
+    <Content Include="SMARTH_fonts\sort-down-alt.svg" />
+    <Content Include="SMARTH_fonts\sort-down.svg" />
+    <Content Include="SMARTH_fonts\sort-numeric-down-alt.svg" />
+    <Content Include="SMARTH_fonts\sort-numeric-down.svg" />
+    <Content Include="SMARTH_fonts\sort-numeric-up-alt.svg" />
+    <Content Include="SMARTH_fonts\sort-numeric-up.svg" />
+    <Content Include="SMARTH_fonts\sort-up-alt.svg" />
+    <Content Include="SMARTH_fonts\sort-up.svg" />
+    <Content Include="SMARTH_fonts\soundwave.svg" />
+    <Content Include="SMARTH_fonts\speaker-fill.svg" />
+    <Content Include="SMARTH_fonts\speaker.svg" />
+    <Content Include="SMARTH_fonts\speedometer.svg" />
+    <Content Include="SMARTH_fonts\speedometer2.svg" />
+    <Content Include="SMARTH_fonts\spellcheck.svg" />
+    <Content Include="SMARTH_fonts\square-fill.svg" />
+    <Content Include="SMARTH_fonts\square-half.svg" />
+    <Content Include="SMARTH_fonts\square.svg" />
+    <Content Include="SMARTH_fonts\stack.svg" />
+    <Content Include="SMARTH_fonts\star-fill.svg" />
+    <Content Include="SMARTH_fonts\star-half.svg" />
+    <Content Include="SMARTH_fonts\star.svg" />
+    <Content Include="SMARTH_fonts\stars.svg" />
+    <Content Include="SMARTH_fonts\stickies-fill.svg" />
+    <Content Include="SMARTH_fonts\stickies.svg" />
+    <Content Include="SMARTH_fonts\sticky-fill.svg" />
+    <Content Include="SMARTH_fonts\sticky.svg" />
+    <Content Include="SMARTH_fonts\stop-btn-fill.svg" />
+    <Content Include="SMARTH_fonts\stop-btn.svg" />
+    <Content Include="SMARTH_fonts\stop-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\stop-circle.svg" />
+    <Content Include="SMARTH_fonts\stop-fill.svg" />
+    <Content Include="SMARTH_fonts\stop.svg" />
+    <Content Include="SMARTH_fonts\stoplights-fill.svg" />
+    <Content Include="SMARTH_fonts\stoplights.svg" />
+    <Content Include="SMARTH_fonts\stopwatch-fill.svg" />
+    <Content Include="SMARTH_fonts\stopwatch.svg" />
+    <Content Include="SMARTH_fonts\subtract.svg" />
+    <Content Include="SMARTH_fonts\suit-club-fill.svg" />
+    <Content Include="SMARTH_fonts\suit-club.svg" />
+    <Content Include="SMARTH_fonts\suit-diamond-fill.svg" />
+    <Content Include="SMARTH_fonts\suit-diamond.svg" />
+    <Content Include="SMARTH_fonts\suit-heart-fill.svg" />
+    <Content Include="SMARTH_fonts\suit-heart.svg" />
+    <Content Include="SMARTH_fonts\suit-spade-fill.svg" />
+    <Content Include="SMARTH_fonts\suit-spade.svg" />
+    <Content Include="SMARTH_fonts\sun-fill.svg" />
+    <Content Include="SMARTH_fonts\sun.svg" />
+    <Content Include="SMARTH_fonts\sunglasses.svg" />
+    <Content Include="SMARTH_fonts\sunrise-fill.svg" />
+    <Content Include="SMARTH_fonts\sunrise.svg" />
+    <Content Include="SMARTH_fonts\sunset-fill.svg" />
+    <Content Include="SMARTH_fonts\sunset.svg" />
+    <Content Include="SMARTH_fonts\symmetry-horizontal.svg" />
+    <Content Include="SMARTH_fonts\symmetry-vertical.svg" />
+    <Content Include="SMARTH_fonts\table.svg" />
+    <Content Include="SMARTH_fonts\tablet-fill.svg" />
+    <Content Include="SMARTH_fonts\tablet-landscape-fill.svg" />
+    <Content Include="SMARTH_fonts\tablet-landscape.svg" />
+    <Content Include="SMARTH_fonts\tablet.svg" />
+    <Content Include="SMARTH_fonts\tag-fill.svg" />
+    <Content Include="SMARTH_fonts\tag.svg" />
+    <Content Include="SMARTH_fonts\tags-fill.svg" />
+    <Content Include="SMARTH_fonts\tags.svg" />
+    <Content Include="SMARTH_fonts\telegram.svg" />
+    <Content Include="SMARTH_fonts\telephone-fill.svg" />
+    <Content Include="SMARTH_fonts\telephone-forward-fill.svg" />
+    <Content Include="SMARTH_fonts\telephone-forward.svg" />
+    <Content Include="SMARTH_fonts\telephone-inbound-fill.svg" />
+    <Content Include="SMARTH_fonts\telephone-inbound.svg" />
+    <Content Include="SMARTH_fonts\telephone-minus-fill.svg" />
+    <Content Include="SMARTH_fonts\telephone-minus.svg" />
+    <Content Include="SMARTH_fonts\telephone-outbound-fill.svg" />
+    <Content Include="SMARTH_fonts\telephone-outbound.svg" />
+    <Content Include="SMARTH_fonts\telephone-plus-fill.svg" />
+    <Content Include="SMARTH_fonts\telephone-plus.svg" />
+    <Content Include="SMARTH_fonts\telephone-x-fill.svg" />
+    <Content Include="SMARTH_fonts\telephone-x.svg" />
+    <Content Include="SMARTH_fonts\telephone.svg" />
+    <Content Include="SMARTH_fonts\terminal-fill.svg" />
+    <Content Include="SMARTH_fonts\terminal.svg" />
+    <Content Include="SMARTH_fonts\text-center.svg" />
+    <Content Include="SMARTH_fonts\text-indent-left.svg" />
+    <Content Include="SMARTH_fonts\text-indent-right.svg" />
+    <Content Include="SMARTH_fonts\text-left.svg" />
+    <Content Include="SMARTH_fonts\text-paragraph.svg" />
+    <Content Include="SMARTH_fonts\text-right.svg" />
+    <Content Include="SMARTH_fonts\textarea-resize.svg" />
+    <Content Include="SMARTH_fonts\textarea-t.svg" />
+    <Content Include="SMARTH_fonts\textarea.svg" />
+    <Content Include="SMARTH_fonts\thermometer-half.svg" />
+    <Content Include="SMARTH_fonts\thermometer-high.svg" />
+    <Content Include="SMARTH_fonts\thermometer-low.svg" />
+    <Content Include="SMARTH_fonts\thermometer-snow.svg" />
+    <Content Include="SMARTH_fonts\thermometer-sun.svg" />
+    <Content Include="SMARTH_fonts\thermometer.svg" />
+    <Content Include="SMARTH_fonts\three-dots-vertical.svg" />
+    <Content Include="SMARTH_fonts\three-dots.svg" />
+    <Content Include="SMARTH_fonts\toggle-off.svg" />
+    <Content Include="SMARTH_fonts\toggle-on.svg" />
+    <Content Include="SMARTH_fonts\toggle2-off.svg" />
+    <Content Include="SMARTH_fonts\toggle2-on.svg" />
+    <Content Include="SMARTH_fonts\toggles.svg" />
+    <Content Include="SMARTH_fonts\toggles2.svg" />
+    <Content Include="SMARTH_fonts\tools.svg" />
+    <Content Include="SMARTH_fonts\tornado.svg" />
+    <Content Include="SMARTH_fonts\translate.svg" />
+    <Content Include="SMARTH_fonts\trash-fill.svg" />
+    <Content Include="SMARTH_fonts\trash.svg" />
+    <Content Include="SMARTH_fonts\trash2-fill.svg" />
+    <Content Include="SMARTH_fonts\trash2.svg" />
+    <Content Include="SMARTH_fonts\tree-fill.svg" />
+    <Content Include="SMARTH_fonts\tree.svg" />
+    <Content Include="SMARTH_fonts\triangle-fill.svg" />
+    <Content Include="SMARTH_fonts\triangle-half.svg" />
+    <Content Include="SMARTH_fonts\triangle.svg" />
+    <Content Include="SMARTH_fonts\trophy-fill.svg" />
+    <Content Include="SMARTH_fonts\trophy.svg" />
+    <Content Include="SMARTH_fonts\tropical-storm.svg" />
+    <Content Include="SMARTH_fonts\truck-flatbed.svg" />
+    <Content Include="SMARTH_fonts\truck.svg" />
+    <Content Include="SMARTH_fonts\tsunami.svg" />
+    <Content Include="SMARTH_fonts\tv-fill.svg" />
+    <Content Include="SMARTH_fonts\tv.svg" />
+    <Content Include="SMARTH_fonts\twitch.svg" />
+    <Content Include="SMARTH_fonts\twitter.svg" />
+    <Content Include="SMARTH_fonts\type-bold.svg" />
+    <Content Include="SMARTH_fonts\type-h1.svg" />
+    <Content Include="SMARTH_fonts\type-h2.svg" />
+    <Content Include="SMARTH_fonts\type-h3.svg" />
+    <Content Include="SMARTH_fonts\type-italic.svg" />
+    <Content Include="SMARTH_fonts\type-strikethrough.svg" />
+    <Content Include="SMARTH_fonts\type-underline.svg" />
+    <Content Include="SMARTH_fonts\type.svg" />
+    <Content Include="SMARTH_fonts\ui-checks-grid.svg" />
+    <Content Include="SMARTH_fonts\ui-checks.svg" />
+    <Content Include="SMARTH_fonts\ui-radios-grid.svg" />
+    <Content Include="SMARTH_fonts\ui-radios.svg" />
+    <Content Include="SMARTH_fonts\umbrella-fill.svg" />
+    <Content Include="SMARTH_fonts\umbrella.svg" />
+    <Content Include="SMARTH_fonts\union.svg" />
+    <Content Include="SMARTH_fonts\unlock-fill.svg" />
+    <Content Include="SMARTH_fonts\unlock.svg" />
+    <Content Include="SMARTH_fonts\upc-scan.svg" />
+    <Content Include="SMARTH_fonts\upc.svg" />
+    <Content Include="SMARTH_fonts\upload.svg" />
+    <Content Include="SMARTH_fonts\vector-pen.svg" />
+    <Content Include="SMARTH_fonts\view-list.svg" />
+    <Content Include="SMARTH_fonts\view-stacked.svg" />
+    <Content Include="SMARTH_fonts\vinyl-fill.svg" />
+    <Content Include="SMARTH_fonts\vinyl.svg" />
+    <Content Include="SMARTH_fonts\voicemail.svg" />
+    <Content Include="SMARTH_fonts\volume-down-fill.svg" />
+    <Content Include="SMARTH_fonts\volume-down.svg" />
+    <Content Include="SMARTH_fonts\volume-mute-fill.svg" />
+    <Content Include="SMARTH_fonts\volume-mute.svg" />
+    <Content Include="SMARTH_fonts\volume-off-fill.svg" />
+    <Content Include="SMARTH_fonts\volume-off.svg" />
+    <Content Include="SMARTH_fonts\volume-up-fill.svg" />
+    <Content Include="SMARTH_fonts\volume-up.svg" />
+    <Content Include="SMARTH_fonts\vr.svg" />
+    <Content Include="SMARTH_fonts\wallet-fill.svg" />
+    <Content Include="SMARTH_fonts\wallet.svg" />
+    <Content Include="SMARTH_fonts\wallet2.svg" />
+    <Content Include="SMARTH_fonts\watch.svg" />
+    <Content Include="SMARTH_fonts\water.svg" />
+    <Content Include="SMARTH_fonts\whatsapp.svg" />
+    <Content Include="SMARTH_fonts\wifi-1.svg" />
+    <Content Include="SMARTH_fonts\wifi-2.svg" />
+    <Content Include="SMARTH_fonts\wifi-off.svg" />
+    <Content Include="SMARTH_fonts\wifi.svg" />
+    <Content Include="SMARTH_fonts\wind.svg" />
+    <Content Include="SMARTH_fonts\window-dock.svg" />
+    <Content Include="SMARTH_fonts\window-sidebar.svg" />
+    <Content Include="SMARTH_fonts\window.svg" />
+    <Content Include="SMARTH_fonts\wrench.svg" />
+    <Content Include="SMARTH_fonts\x-circle-fill.svg" />
+    <Content Include="SMARTH_fonts\x-circle.svg" />
+    <Content Include="SMARTH_fonts\x-diamond-fill.svg" />
+    <Content Include="SMARTH_fonts\x-diamond.svg" />
+    <Content Include="SMARTH_fonts\x-lg.svg" />
+    <Content Include="SMARTH_fonts\x-octagon-fill.svg" />
+    <Content Include="SMARTH_fonts\x-octagon.svg" />
+    <Content Include="SMARTH_fonts\x-square-fill.svg" />
+    <Content Include="SMARTH_fonts\x-square.svg" />
+    <Content Include="SMARTH_fonts\x.svg" />
+    <Content Include="SMARTH_fonts\youtube.svg" />
+    <Content Include="SMARTH_fonts\zoom-in.svg" />
+    <Content Include="SMARTH_fonts\zoom-out.svg" />
+    <Content Include="SMARTH_js\bootstrap.bundle.js" />
+    <Content Include="SMARTH_js\bootstrap.bundle.min.js" />
+    <Content Include="SMARTH_js\bootstrap.esm.js" />
+    <Content Include="SMARTH_js\bootstrap.esm.min.js" />
+    <Content Include="SMARTH_js\bootstrap.js" />
+    <Content Include="SMARTH_js\bootstrap.min.js" />
+    <Content Include="SMARTH_js\fileinput.js" />
+    <Content Include="SMARTH_js\fileinput.min.js" />
+    <Content Include="SMARTH_js\html5-qrcode.min.js" />
+    <Content Include="SMARTH_js\jquery-3.6.0.min.js" />
+    <Content Include="SMARTH_js\jquery-ui-timepicker-addon.css" />
+    <Content Include="SMARTH_js\jquery-ui-timepicker-addon.js" />
+    <Content Include="SMARTH_js\jquery-ui.js" />
+    <Content Include="SMARTH_js\jquery-ui.min.js" />
+    <Content Include="SMARTH_js\jquery.signature.js" />
+    <Content Include="SMARTH_js\jquery.signature.min.js" />
+    <Content Include="SMARTH_js\jquery.ui.touch-punch.js" />
+    <Content Include="SMARTH_js\jquery.ui.touch-punch.min.js" />
+    <Content Include="SMARTH_js\locales\ar.js" />
+    <Content Include="SMARTH_js\locales\az.js" />
+    <Content Include="SMARTH_js\locales\bg.js" />
+    <Content Include="SMARTH_js\locales\ca.js" />
+    <Content Include="SMARTH_js\locales\cr.js" />
+    <Content Include="SMARTH_js\locales\cs.js" />
+    <Content Include="SMARTH_js\locales\da.js" />
+    <Content Include="SMARTH_js\locales\de.js" />
+    <Content Include="SMARTH_js\locales\el.js" />
+    <Content Include="SMARTH_js\locales\es.js" />
+    <Content Include="SMARTH_js\locales\et.js" />
+    <Content Include="SMARTH_js\locales\fa.js" />
+    <Content Include="SMARTH_js\locales\fi.js" />
+    <Content Include="SMARTH_js\locales\fr.js" />
+    <Content Include="SMARTH_js\locales\gl.js" />
+    <Content Include="SMARTH_js\locales\he.js" />
+    <Content Include="SMARTH_js\locales\hu.js" />
+    <Content Include="SMARTH_js\locales\id.js" />
+    <Content Include="SMARTH_js\locales\it.js" />
+    <Content Include="SMARTH_js\locales\ja.js" />
+    <Content Include="SMARTH_js\locales\ka.js" />
+    <Content Include="SMARTH_js\locales\kr.js" />
+    <Content Include="SMARTH_js\locales\kz.js" />
+    <Content Include="SMARTH_js\locales\LANG.js" />
+    <Content Include="SMARTH_js\locales\lt.js" />
+    <Content Include="SMARTH_js\locales\lv.js" />
+    <Content Include="SMARTH_js\locales\nl.js" />
+    <Content Include="SMARTH_js\locales\no.js" />
+    <Content Include="SMARTH_js\locales\pl.js" />
+    <Content Include="SMARTH_js\locales\pt-BR.js" />
+    <Content Include="SMARTH_js\locales\pt.js" />
+    <Content Include="SMARTH_js\locales\ro.js" />
+    <Content Include="SMARTH_js\locales\ru.js" />
+    <Content Include="SMARTH_js\locales\sk.js" />
+    <Content Include="SMARTH_js\locales\sl.js" />
+    <Content Include="SMARTH_js\locales\sr-latn.js" />
+    <Content Include="SMARTH_js\locales\sv.js" />
+    <Content Include="SMARTH_js\locales\th.js" />
+    <Content Include="SMARTH_js\locales\tr.js" />
+    <Content Include="SMARTH_js\locales\uk.js" />
+    <Content Include="SMARTH_js\locales\uz-cyrl.js" />
+    <Content Include="SMARTH_js\locales\uz.js" />
+    <Content Include="SMARTH_js\locales\vi.js" />
+    <Content Include="SMARTH_js\locales\zh-TW.js" />
+    <Content Include="SMARTH_js\locales\zh.js" />
+    <Content Include="SMARTH_js\plugins\piexif.js" />
+    <Content Include="SMARTH_js\plugins\piexif.min.js" />
+    <Content Include="SMARTH_js\plugins\sortable.js" />
+    <Content Include="SMARTH_js\plugins\sortable.min.js" />
+    <Content Include="Styles\bootstrap.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="SMARTH_fonts\bootstrap-icons.json" />
+    <Content Include="SMARTH_fonts\bootstrap-icons.woff" />
+    <Content Include="SMARTH_fonts\bootstrap-icons.woff2" />
+    <Content Include="SMARTH_fonts\fonts\bootstrap-icons.woff" />
+    <Content Include="SMARTH_fonts\fonts\bootstrap-icons.woff2" />
+    <Content Include="SMARTH_css\bootstrap-grid.css.map" />
+    <Content Include="SMARTH_css\bootstrap-grid.min.css.map" />
+    <Content Include="SMARTH_css\bootstrap-grid.rtl.css.map" />
+    <Content Include="SMARTH_css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="SMARTH_css\bootstrap-reboot.css.map" />
+    <Content Include="SMARTH_css\bootstrap-reboot.min.css.map" />
+    <Content Include="SMARTH_css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="SMARTH_css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="SMARTH_css\bootstrap-utilities.css.map" />
+    <Content Include="SMARTH_css\bootstrap-utilities.min.css.map" />
+    <Content Include="SMARTH_css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="SMARTH_css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="SMARTH_css\bootstrap.css.map" />
+    <Content Include="SMARTH_css\bootstrap.min.css.map" />
+    <Content Include="SMARTH_css\bootstrap.rtl.css.map" />
+    <Content Include="SMARTH_css\bootstrap.rtl.min.css.map" />
+    <Content Include="SMARTH_js\bootstrap.bundle.js.map" />
+    <Content Include="SMARTH_js\bootstrap.bundle.min.js.map" />
+    <Content Include="SMARTH_js\bootstrap.esm.js.map" />
+    <Content Include="SMARTH_js\bootstrap.esm.min.js.map" />
+    <Content Include="SMARTH_js\bootstrap.js.map" />
+    <Content Include="SMARTH_js\bootstrap.min.js.map" />
+    <Content Include="SMARTH_js\jquery-3.6.0.min.map" />
+    <Content Include="SMARTH_js\jquery.signature.js.bak" />
+    <Content Include="SMARTH_js\jquery.signature.min.map" />
+    <Content Include="SMARTH.Master" />
+    <Content Include="FileUploadHandler.ashx" />
+    <Content Include="SMARTH_docs\POCS\POC.11 Estado Control Ed. 11.pdf" />
+    <Content Include="Service References\Serv_NAVISION\ThermoWeb.Serv_NAVISION.ActualizaLinPedCompra_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Serv_NAVISION\ThermoWeb.Serv_NAVISION.CierraPedidoCompra_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Serv_NAVISION\ThermoWeb.Serv_NAVISION.GeneraAlbaranVentaDesdePedido_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Serv_NAVISION\ThermoWeb.Serv_NAVISION.GetProducto_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Serv_NAVISION\ThermoWeb.Serv_NAVISION.GrabarLineaServicio_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Serv_NAVISION\ThermoWeb.Serv_NAVISION.ReadStockLocation_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Serv_NAVISION\ThermoWeb.Serv_NAVISION.ReadStock_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Serv_NAVISION\WSFunctionsAPP.wsdl" />
+    <Content Include="Service References\Serv_NAVISION_DEBUG\ThermoWeb.Serv_NAVISION_DEBUG.ActualizaLinPedCompra_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Serv_NAVISION_DEBUG\ThermoWeb.Serv_NAVISION_DEBUG.ChangeLocationItem_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Serv_NAVISION_DEBUG\ThermoWeb.Serv_NAVISION_DEBUG.CierraPedidoCompra_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Serv_NAVISION_DEBUG\ThermoWeb.Serv_NAVISION_DEBUG.GeneraAlbaranVentaDesdePedido_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Serv_NAVISION_DEBUG\ThermoWeb.Serv_NAVISION_DEBUG.GetProducto_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Serv_NAVISION_DEBUG\ThermoWeb.Serv_NAVISION_DEBUG.GrabarLineaServicio_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Serv_NAVISION_DEBUG\ThermoWeb.Serv_NAVISION_DEBUG.ReadStockLocation_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\Serv_NAVISION_DEBUG\ThermoWeb.Serv_NAVISION_DEBUG.ReadStock_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\Serv_NAVISION_DEBUG\WSFunctionsAPP.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Data\Conexion_SMARTH.cs" />
+    <Compile Include="AREA_RECHAZO\Area_Rechazo.aspx.cs">
+      <DependentUpon>Area_Rechazo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AREA_RECHAZO\Area_Rechazo.aspx.designer.cs">
+      <DependentUpon>Area_Rechazo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AREA_RECHAZO\GestionScrapGP12.aspx.cs">
+      <DependentUpon>GestionScrapGP12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AREA_RECHAZO\GestionScrapGP12.aspx.designer.cs">
+      <DependentUpon>GestionScrapGP12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AutoCompleteServicio.asmx.cs">
+      <DependentUpon>AutoCompleteServicio.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CALIDAD\Alertas_Calidad_Mini.aspx.cs">
+      <DependentUpon>Alertas_Calidad_Mini.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALIDAD\Alertas_Calidad_Mini.aspx.designer.cs">
+      <DependentUpon>Alertas_Calidad_Mini.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\Alertas_Calidad.aspx.cs">
+      <DependentUpon>Alertas_Calidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALIDAD\Alertas_Calidad.aspx.designer.cs">
+      <DependentUpon>Alertas_Calidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\Alertas_Calidad_LIBERACION.aspx.cs">
+      <DependentUpon>Alertas_Calidad_LIBERACION.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALIDAD\Alertas_Calidad_LIBERACION.aspx.designer.cs">
+      <DependentUpon>Alertas_Calidad_LIBERACION.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\Conexion_CALIDAD.cs" />
+    <Compile Include="CALIDAD\DashboardAlertasCalidad.aspx.cs">
+      <DependentUpon>DashboardAlertasCalidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALIDAD\DashboardAlertasCalidad.aspx.designer.cs">
+      <DependentUpon>DashboardAlertasCalidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\EtiquetasCalidad.aspx.cs">
+      <DependentUpon>EtiquetasCalidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALIDAD\EtiquetasCalidad.aspx.designer.cs">
+      <DependentUpon>EtiquetasCalidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\ProductoDetallesCalidad.aspx.cs">
+      <DependentUpon>ProductoDetallesCalidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALIDAD\ProductoDetallesCalidad.aspx.designer.cs">
+      <DependentUpon>ProductoDetallesCalidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\ILUO_Formularios_I.aspx.cs">
+      <DependentUpon>ILUO_Formularios_I.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALIDAD\ILUO_Formularios_I.aspx.designer.cs">
+      <DependentUpon>ILUO_Formularios_I.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\ListaAlertasCalidad.aspx.cs">
+      <DependentUpon>ListaAlertasCalidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALIDAD\ListaAlertasCalidad.aspx.designer.cs">
+      <DependentUpon>ListaAlertasCalidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\Metrologia.aspx.cs">
+      <DependentUpon>Metrologia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALIDAD\Metrologia.aspx.designer.cs">
+      <DependentUpon>Metrologia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\IndiceCalidad.aspx.cs">
+      <DependentUpon>IndiceCalidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CALIDAD\IndiceCalidad.aspx.designer.cs">
+      <DependentUpon>IndiceCalidad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Conexion.cs" />
+    <Compile Include="DOCUMENTAL\DashboardVisitas.aspx.cs">
+      <DependentUpon>DashboardVisitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DOCUMENTAL\DashboardVisitas.aspx.designer.cs">
+      <DependentUpon>DashboardVisitas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DOCUMENTAL\DocumentosLiberacionGP12.aspx.cs">
+      <DependentUpon>DocumentosLiberacionGP12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DOCUMENTAL\DocumentosLiberacionGP12.aspx.designer.cs">
+      <DependentUpon>DocumentosLiberacionGP12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DOCUMENTAL\DocumentosPlanta.aspx.cs">
+      <DependentUpon>DocumentosPlanta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DOCUMENTAL\DocumentosPlanta.aspx.designer.cs">
+      <DependentUpon>DocumentosPlanta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DOCUMENTAL\FichaReferencia.aspx.cs">
+      <DependentUpon>FichaReferencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DOCUMENTAL\FichaReferencia.aspx.designer.cs">
+      <DependentUpon>FichaReferencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DOCUMENTAL\AccesoDocumentalMaquina.aspx.cs">
+      <DependentUpon>AccesoDocumentalMaquina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DOCUMENTAL\AccesoDocumentalMaquina.aspx.designer.cs">
+      <DependentUpon>AccesoDocumentalMaquina.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DOCUMENTAL\EditorAudiovisuales.aspx.cs">
+      <DependentUpon>EditorAudiovisuales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DOCUMENTAL\EditorAudiovisuales.aspx.designer.cs">
+      <DependentUpon>EditorAudiovisuales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DOCUMENTAL\GestionDocumentalPendientes.aspx.cs">
+      <DependentUpon>GestionDocumentalPendientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DOCUMENTAL\GestionDocumentalPendientes.aspx.designer.cs">
+      <DependentUpon>GestionDocumentalPendientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GP12\GP12HistoricoOperario_.aspx.cs">
+      <DependentUpon>GP12HistoricoOperario_.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GP12\GP12HistoricoOperario_.aspx.designer.cs">
+      <DependentUpon>GP12HistoricoOperario_.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GP12\GP12HistoricoReferenciaLite.aspx.cs">
+      <DependentUpon>GP12HistoricoReferenciaLite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GP12\GP12HistoricoReferenciaLite.aspx.designer.cs">
+      <DependentUpon>GP12HistoricoReferenciaLite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GP12\PrevisionGP12.aspx.cs">
+      <DependentUpon>PrevisionGP12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GP12\PrevisionGP12.aspx.designer.cs">
+      <DependentUpon>PrevisionGP12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GP12\OBSOLETOS\GP12HistoricoReferenciaLite_.aspx.cs">
+      <DependentUpon>GP12HistoricoReferenciaLite_.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GP12\OBSOLETOS\GP12HistoricoReferenciaLite_.aspx.designer.cs">
+      <DependentUpon>GP12HistoricoReferenciaLite_.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GP12\GP12HistoricoReferencia.aspx.cs">
+      <DependentUpon>GP12HistoricoReferencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GP12\GP12HistoricoReferencia.aspx.designer.cs">
+      <DependentUpon>GP12HistoricoReferencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GP12\GP12KPICAL.aspx.cs">
+      <DependentUpon>GP12KPICAL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GP12\GP12KPICAL.aspx.designer.cs">
+      <DependentUpon>GP12KPICAL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GP12\GP12Historico.aspx.cs">
+      <DependentUpon>GP12Historico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GP12\GP12Historico.aspx.designer.cs">
+      <DependentUpon>GP12Historico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GP12\GP12ReferenciasEstado.aspx.cs">
+      <DependentUpon>GP12ReferenciasEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GP12\GP12ReferenciasEstado.aspx.designer.cs">
+      <DependentUpon>GP12ReferenciasEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GP12\GP12RegistroComunicaciones.aspx.cs">
+      <DependentUpon>GP12RegistroComunicaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GP12\GP12RegistroComunicaciones.aspx.designer.cs">
+      <DependentUpon>GP12RegistroComunicaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\EditorKPI.aspx.cs">
+      <DependentUpon>EditorKPI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\EditorKPI.aspx.designer.cs">
+      <DependentUpon>EditorKPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPIConsultasDimensiones.aspx.cs">
+      <DependentUpon>KPIConsultasDimensiones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPIConsultasDimensiones.aspx.designer.cs">
+      <DependentUpon>KPIConsultasDimensiones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPIConsultasConsumos.aspx.cs">
+      <DependentUpon>KPIConsultasConsumos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPIConsultasConsumos.aspx.designer.cs">
+      <DependentUpon>KPIConsultasConsumos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPI_Comunicaciones.aspx.cs">
+      <DependentUpon>KPI_Comunicaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPI_Comunicaciones.aspx.designer.cs">
+      <DependentUpon>KPI_Comunicaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPI_Dashboard_General_Tendencias.aspx.cs">
+      <DependentUpon>KPI_Dashboard_General_Tendencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPI_Dashboard_General_Tendencias.aspx.designer.cs">
+      <DependentUpon>KPI_Dashboard_General_Tendencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPI_Dashboard_General.aspx.cs">
+      <DependentUpon>KPI_Dashboard_General.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPI_Dashboard_General.aspx.designer.cs">
+      <DependentUpon>KPI_Dashboard_General.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPI_WTOP_Pegamento.aspx.cs">
+      <DependentUpon>KPI_WTOP_Pegamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPI_WTOP_Pegamento.aspx.designer.cs">
+      <DependentUpon>KPI_WTOP_Pegamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPI_Molidos.aspx.cs">
+      <DependentUpon>KPI_Molidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPI_Molidos.aspx.designer.cs">
+      <DependentUpon>KPI_Molidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPI_Mantenimiento.aspx.cs">
+      <DependentUpon>KPI_Mantenimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPI_Mantenimiento.aspx.designer.cs">
+      <DependentUpon>KPI_Mantenimiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPI_NoConformidades.aspx.cs">
+      <DependentUpon>KPI_NoConformidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPI_NoConformidades.aspx.designer.cs">
+      <DependentUpon>KPI_NoConformidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPI_GP12.aspx.cs">
+      <DependentUpon>KPI_GP12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPI_GP12.aspx.designer.cs">
+      <DependentUpon>KPI_GP12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPIIndice.aspx.cs">
+      <DependentUpon>KPIIndice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPIIndice.aspx.designer.cs">
+      <DependentUpon>KPIIndice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPI_PDCA.aspx.cs">
+      <DependentUpon>KPI_PDCA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPI_PDCA.aspx.designer.cs">
+      <DependentUpon>KPI_PDCA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LIBERACIONES\EstadoLiberacion.aspx.cs">
+      <DependentUpon>EstadoLiberacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LIBERACIONES\EstadoLiberacion.aspx.designer.cs">
+      <DependentUpon>EstadoLiberacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\ConsultaAlmacen.aspx.cs">
+      <DependentUpon>ConsultaAlmacen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LOGISTICA\ConsultaAlmacen.aspx.designer.cs">
+      <DependentUpon>ConsultaAlmacen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\EstadoReparacionesMaquina.aspx.cs">
+      <DependentUpon>EstadoReparacionesMaquina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\EstadoReparacionesMaquina.aspx.designer.cs">
+      <DependentUpon>EstadoReparacionesMaquina.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\00 OBSOLETOS\EstadoReparacionesMoldes_.aspx.cs">
+      <DependentUpon>EstadoReparacionesMoldes_.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\00 OBSOLETOS\EstadoReparacionesMoldes_.aspx.designer.cs">
+      <DependentUpon>EstadoReparacionesMoldes_.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\EstadoReparacionesMoldes.aspx.cs">
+      <DependentUpon>EstadoReparacionesMoldes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\EstadoReparacionesMoldes.aspx.designer.cs">
+      <DependentUpon>EstadoReparacionesMoldes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\00 OBSOLETOS\EstadoReparacionesMaquina_.aspx.cs">
+      <DependentUpon>EstadoReparacionesMaquina_.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\00 OBSOLETOS\EstadoReparacionesMaquina_.aspx.designer.cs">
+      <DependentUpon>EstadoReparacionesMaquina_.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\GestionPreventivos.aspx.cs">
+      <DependentUpon>GestionPreventivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\GestionPreventivos.aspx.designer.cs">
+      <DependentUpon>GestionPreventivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\InformePerifericos.aspx.cs">
+      <DependentUpon>InformePerifericos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\InformePerifericos.aspx.designer.cs">
+      <DependentUpon>InformePerifericos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\InformeMaquinas.aspx.cs">
+      <DependentUpon>InformeMaquinas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\InformeMaquinas.aspx.designer.cs">
+      <DependentUpon>InformeMaquinas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\InformeMoldes.aspx.cs">
+      <DependentUpon>InformeMoldes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\InformeMoldes.aspx.designer.cs">
+      <DependentUpon>InformeMoldes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\ReparacionMaquinas.aspx.cs">
+      <DependentUpon>ReparacionMaquinas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\ReparacionMaquinas.aspx.designer.cs">
+      <DependentUpon>ReparacionMaquinas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\ReparacionMoldes.aspx.cs">
+      <DependentUpon>ReparacionMoldes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\ReparacionMoldes.aspx.designer.cs">
+      <DependentUpon>ReparacionMoldes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\GestionAlmacenes.aspx.cs">
+      <DependentUpon>GestionAlmacenes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LOGISTICA\GestionAlmacenes.aspx.designer.cs">
+      <DependentUpon>GestionAlmacenes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\GestionAlmacenesLITE.aspx.cs">
+      <DependentUpon>GestionAlmacenesLITE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LOGISTICA\GestionAlmacenesLITE.aspx.designer.cs">
+      <DependentUpon>GestionAlmacenesLITE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MATERIALES\GestionMolinosLITE.aspx.cs">
+      <DependentUpon>GestionMolinosLITE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MATERIALES\GestionMolinosLITE.aspx.designer.cs">
+      <DependentUpon>GestionMolinosLITE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MATERIALES\GestionMolinos.aspx.cs">
+      <DependentUpon>GestionMolinos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MATERIALES\GestionMolinos.aspx.designer.cs">
+      <DependentUpon>GestionMolinos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MATERIALES\FotovoltaicaKPI.aspx.cs">
+      <DependentUpon>FotovoltaicaKPI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MATERIALES\FotovoltaicaKPI.aspx.designer.cs">
+      <DependentUpon>FotovoltaicaKPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MATERIALES\IndiceMateriales.aspx.cs">
+      <DependentUpon>IndiceMateriales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MATERIALES\IndiceMateriales.aspx.designer.cs">
+      <DependentUpon>IndiceMateriales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MATERIALES\IndiceMaterialesLITE.aspx.cs">
+      <DependentUpon>IndiceMaterialesLITE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MATERIALES\IndiceMaterialesLITE.aspx.designer.cs">
+      <DependentUpon>IndiceMaterialesLITE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MATERIALES\GestionMateriales.aspx.cs">
+      <DependentUpon>GestionMateriales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MATERIALES\GestionMateriales.aspx.designer.cs">
+      <DependentUpon>GestionMateriales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MATERIALES\PrevisionSecado.aspx.cs">
+      <DependentUpon>PrevisionSecado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MATERIALES\PrevisionSecado.aspx.designer.cs">
+      <DependentUpon>PrevisionSecado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MATERIALES\UbicacionMateriasPrimas.aspx.cs">
+      <DependentUpon>UbicacionMateriasPrimas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MATERIALES\UbicacionMateriasPrimas.aspx.designer.cs">
+      <DependentUpon>UbicacionMateriasPrimas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MATERIALES\UbicacionMateriasPrimasLITE.aspx.cs">
+      <DependentUpon>UbicacionMateriasPrimasLITE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MATERIALES\UbicacionMateriasPrimasLITE.aspx.designer.cs">
+      <DependentUpon>UbicacionMateriasPrimasLITE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PDCA\PDCALite.aspx.cs">
+      <DependentUpon>PDCALite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PDCA\PDCALite.aspx.designer.cs">
+      <DependentUpon>PDCALite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PDCA\Listado_Acciones.aspx.cs">
+      <DependentUpon>Listado_Acciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PDCA\Listado_Acciones.aspx.designer.cs">
+      <DependentUpon>Listado_Acciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PDCA\PDCA_Indice.aspx.cs">
+      <DependentUpon>PDCA_Indice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PDCA\PDCA_Indice.aspx.designer.cs">
+      <DependentUpon>PDCA_Indice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PLANIFICACION\Consulta_Pesos.aspx.cs">
+      <DependentUpon>Consulta_Pesos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PLANIFICACION\Consulta_Pesos.aspx.designer.cs">
+      <DependentUpon>Consulta_Pesos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PLANIFICACION\EditorListadoPrioridades.aspx.cs">
+      <DependentUpon>EditorListadoPrioridades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PLANIFICACION\EditorListadoPrioridades.aspx.designer.cs">
+      <DependentUpon>EditorListadoPrioridades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PLANIFICACION\ListadoPrioridades.aspx.cs">
+      <DependentUpon>ListadoPrioridades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PLANIFICACION\ListadoPrioridades.aspx.designer.cs">
+      <DependentUpon>ListadoPrioridades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCCION\FichasParametros_nuevo.aspx.cs">
+      <DependentUpon>FichasParametros_nuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRODUCCION\FichasParametros_nuevo.aspx.designer.cs">
+      <DependentUpon>FichasParametros_nuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCCION\FichasParametrosListado.aspx.cs">
+      <DependentUpon>FichasParametrosListado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRODUCCION\FichasParametrosListado.aspx.designer.cs">
+      <DependentUpon>FichasParametrosListado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCCION\MontajesHistorico.aspx.cs">
+      <DependentUpon>MontajesHistorico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRODUCCION\MontajesHistorico.aspx.designer.cs">
+      <DependentUpon>MontajesHistorico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCCION\MontajesExternos.aspx.cs">
+      <DependentUpon>MontajesExternos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRODUCCION\MontajesExternos.aspx.designer.cs">
+      <DependentUpon>MontajesExternos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCCION\FichasParametros.aspx.cs">
+      <DependentUpon>FichasParametros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRODUCCION\FichasParametros.aspx.designer.cs">
+      <DependentUpon>FichasParametros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCCION\ImpresoraEtiquetas.aspx.cs">
+      <DependentUpon>ImpresoraEtiquetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRODUCCION\ImpresoraEtiquetas.aspx.designer.cs">
+      <DependentUpon>ImpresoraEtiquetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCCION\IoTRefrigeracion.aspx.cs">
+      <DependentUpon>IoTRefrigeracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRODUCCION\IoTRefrigeracion.aspx.designer.cs">
+      <DependentUpon>IoTRefrigeracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCCION\Gestion_Ubicaciones_Moldes.aspx.cs">
+      <DependentUpon>Gestion_Ubicaciones_Moldes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRODUCCION\Gestion_Ubicaciones_Moldes.aspx.designer.cs">
+      <DependentUpon>Gestion_Ubicaciones_Moldes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCCION\Ficha_Moldes.aspx.cs">
+      <DependentUpon>Ficha_Moldes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRODUCCION\Ficha_Moldes.aspx.designer.cs">
+      <DependentUpon>Ficha_Moldes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCCION\IndiceProduccion.aspx.cs">
+      <DependentUpon>IndiceProduccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRODUCCION\IndiceProduccion.aspx.designer.cs">
+      <DependentUpon>IndiceProduccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCCION\Listado_Manos_Robot.aspx.cs">
+      <DependentUpon>Listado_Manos_Robot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRODUCCION\Listado_Manos_Robot.aspx.designer.cs">
+      <DependentUpon>Listado_Manos_Robot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\ConexionMantenimiento.cs" />
+    <Compile Include="MANTENIMIENTO\MantenimientoIndex.aspx.cs">
+      <DependentUpon>MantenimientoIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MANTENIMIENTO\MantenimientoIndex.aspx.designer.cs">
+      <DependentUpon>MantenimientoIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PDCA\Conexion_PDCA.cs" />
+    <Compile Include="GP12\GP12HistoricoCliente.aspx.cs">
+      <DependentUpon>GP12HistoricoCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GP12\GP12HistoricoCliente.aspx.designer.cs">
+      <DependentUpon>GP12HistoricoCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GP12\GP12HistoricoOperario.aspx.cs">
+      <DependentUpon>GP12HistoricoOperario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GP12\GP12HistoricoOperario.aspx.designer.cs">
+      <DependentUpon>GP12HistoricoOperario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GP12\GP12FAQ.aspx.cs">
+      <DependentUpon>GP12FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\Conexion_KPI.cs" />
+    <Compile Include="KPI\KPIPrimasBSH.aspx.cs">
+      <DependentUpon>KPIPrimasBSH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPIPrimasBSH.aspx.designer.cs">
+      <DependentUpon>KPIPrimasBSH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPIAprovechados.aspx.cs">
+      <DependentUpon>KPIAprovechados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPIAprovechados.aspx.designer.cs">
+      <DependentUpon>KPIAprovechados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\KPILiberaciones.aspx.cs">
+      <DependentUpon>KPILiberaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\KPILiberaciones.aspx.designer.cs">
+      <DependentUpon>KPILiberaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LIBERACIONES\ConsultaNivelOperario.aspx.cs">
+      <DependentUpon>ConsultaNivelOperario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LIBERACIONES\ConsultaNivelOperario.aspx.designer.cs">
+      <DependentUpon>ConsultaNivelOperario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MATERIALES\Conexion_MATERIALES.cs" />
+    <Compile Include="LIBERACIONES\Conexion_LIBERACIONES.cs" />
+    <Compile Include="KPIFichasParametros.aspx.cs">
+      <DependentUpon>KPIFichasParametros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPIFichasParametros.aspx.designer.cs">
+      <DependentUpon>KPIFichasParametros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DOCUMENTAL\Conexion_DOCUMENTAL.cs" />
+    <Compile Include="DOCUMENTAL\GestionDocumental.aspx.cs">
+      <DependentUpon>GestionDocumental.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DOCUMENTAL\GestionDocumental.aspx.designer.cs">
+      <DependentUpon>GestionDocumental.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DOCUMENTAL\DocumentosGP12.aspx.cs">
+      <DependentUpon>DocumentosGP12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DOCUMENTAL\DocumentosGP12.aspx.designer.cs">
+      <DependentUpon>DocumentosGP12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FichasParametros.aspx.designer.cs">
+      <DependentUpon>FichasParametros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FichasParametros_nuevo.aspx.cs">
+      <DependentUpon>FichasParametros_nuevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FichasParametros_nuevo.aspx.designer.cs">
+      <DependentUpon>FichasParametros_nuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GP12\Conexion_GP12.cs" />
+    <Compile Include="GP12\GP12.aspx.cs">
+      <DependentUpon>GP12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GP12\GP12.aspx.designer.cs">
+      <DependentUpon>GP12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LIBERACIONES\HistoricoLiberacion.aspx.cs">
+      <DependentUpon>HistoricoLiberacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LIBERACIONES\HistoricoLiberacion.aspx.designer.cs">
+      <DependentUpon>HistoricoLiberacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LIBERACIONES\LiberacionSerie.aspx.cs">
+      <DependentUpon>LiberacionSerie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LIBERACIONES\LiberacionSerie.aspx.designer.cs">
+      <DependentUpon>LiberacionSerie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaFichasParametros.aspx.cs">
+      <DependentUpon>ListaFichasParametros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FichasParametros.aspx.cs">
+      <DependentUpon>FichasParametros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FolderBrowserDialog.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ListaFichasParametros.aspx.designer.cs">
+      <DependentUpon>ListaFichasParametros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileUploadHandler.ashx.cs">
+      <DependentUpon>FileUploadHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="PDCA\MiPDCA.aspx.cs">
+      <DependentUpon>MiPDCA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PDCA\MiPDCA.aspx.designer.cs">
+      <DependentUpon>MiPDCA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PDCA\PDCA_DETALLE.aspx.cs">
+      <DependentUpon>PDCA_DETALLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PDCA\PDCA_DETALLE.aspx.designer.cs">
+      <DependentUpon>PDCA_DETALLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PDCA\PDCA.aspx.cs">
+      <DependentUpon>PDCA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PDCA\PDCA.aspx.designer.cs">
+      <DependentUpon>PDCA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCCION\Tareas_cambiador.aspx.cs">
+      <DependentUpon>Tareas_cambiador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PRODUCCION\Tareas_cambiador.aspx.designer.cs">
+      <DependentUpon>Tareas_cambiador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PLANIFICACION\Conexion_PLANIFICACION.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RRHH\Lista_Operario_Recursos_Pendientes_Firmar.aspx.cs">
+      <DependentUpon>Lista_Operario_Recursos_Pendientes_Firmar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RRHH\Lista_Operario_Recursos_Pendientes_Firmar.aspx.designer.cs">
+      <DependentUpon>Lista_Operario_Recursos_Pendientes_Firmar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RRHH\RRHH_Dashboard.aspx.cs">
+      <DependentUpon>RRHH_Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RRHH\RRHH_Dashboard.aspx.designer.cs">
+      <DependentUpon>RRHH_Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RRHH\Firma_Operario_Recursos_Entregados.aspx.cs">
+      <DependentUpon>Firma_Operario_Recursos_Entregados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RRHH\Firma_Operario_Recursos_Entregados.aspx.designer.cs">
+      <DependentUpon>Firma_Operario_Recursos_Entregados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Serv_NAVISION\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\Serv_NAVISION_DEBUG\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosLocalesSmarTH.asmx.cs">
+      <DependentUpon>ServiciosLocalesSmarTH.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SMARTHLite.Master.cs">
+      <DependentUpon>SMARTHLite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMARTHLite.Master.designer.cs">
+      <DependentUpon>SMARTHLite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SMARTH.Master.cs">
+      <DependentUpon>SMARTH.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SMARTH.Master.designer.cs">
+      <DependentUpon>SMARTH.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="00 - OBSOLETOS\" />
+    <Folder Include="AREA_RECHAZO\00 Obsoletos\" />
+    <Folder Include="CALIDAD\OBSOLETOS\" />
+    <Folder Include="DOCUMENTAL\OBSOLETOS\" />
+    <Folder Include="KPI\OBSOLETOS\" />
+    <Folder Include="LIBERACIONES\OBSOLETO\" />
+    <Folder Include="MATERIALES\OBSOLETOS\" />
+    <Folder Include="PLANIFICACION\OBSOLETO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\FichaReferencia_vacia.xlsx" />
+    <Content Include="packages.config" />
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Serv_NAVISION\" />
+    <WCFMetadataStorage Include="Service References\Serv_NAVISION_DEBUG\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>14653</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,98 @@
+
+In most ways is easier to work directly in small physical modification of the hand attached to the robot than the program itself. 
+
+Practical cases that I can think about without more info:
+
+•	You can search for the teaching side in the creation of the program, but looking to create a piece of hard/HMI with a common interface for different brand of robots. Each one brand/type usually has its own HMI and setup languages. The potential here could be to have an all-purpose HMI and make it easier for programing on different robots from different brands and years. Instead of requiring a brand-guy technician, or a heavily trained personnel to create those programs, you will open the road to do this kind of things for common folks in production, and you can add new features for make it easier (current controllers are usually limited only to a touchpad and two sticks)
+
+•	Second case I can think is the setup of a robot/multiple robots but in a less standardized workplace, and use state of the art technology to modify the program on the fly. I mean, something like six-axis robot with a camera attached searching for a specific part in a budget full of equal parts. Once it find it, then modifying in real time the position of its axis to be able to handle the part, perform some actions on it (like assembly something or looking for defects using a second vision device or whatever) and then making a choice (scrap it, put it in a box that is not all the time in the same exact place or that has other parts inside…). Most of the industry and engineering companies are working on this now, as most of the companies are looking to avoid the use of add-hoc machines in the lines like vibratory devices or zero-alignment structures to sort the parts.
+
+In our case we have room for both kind of solutions.
+
+
+
+
+
+
+
+
+
+
+^XA^[L,0^FS^XZ
+^XA
+~TA000~JSN^MUD^PON^PMN^LH0,0^JMA^PR8,8~SD15^JUS^LRN^CI0
+^MMT
+^LS0^LT0
+^FWR^FPH
+^MTD
+^PW559^MNM^ML1817
+^BY2,3
+^CWM,E:HELV_NAR.TTF
+^FX Horizontal Lines^FS
+^FX Horizontal Line^FS
+^FO507,0^GB0,1615,2^FS
+^FO408,0^GB0,1615,2^FS
+^FO234,0^GB0,1615,2^FS
+^FX Horizontal Line^FS
+^FO348,961^GB0,254,2^FS
+^FO291,961^GB0,254,2^FS
+^FO174,807^GB0,807,2^FS
+^FO117,807^GB0,807,2^FS
+^FO60,807^GB0,807,2^FS
+^FX Vertical Lines^FS
+^FX Vertical Line^FS
+^FO507,538^GB53,0,2^FS
+^FO408,807^GB98,0,2^FS
+^FO0,807^GB234,0,2^FS
+^FO174,961^GB234,0,2^FS
+^FO507,999^GB53,0,2^FS
+^FO60,1215^GB57,0,2^FS
+^FO234,1215^GB174,0,2^FS
+^FX Vertical Line^FS
+^FX Fixed Texts^FS
+^FO539,12^AMR19,19^FB523,1,,L^FDSHIP TO^FS
+^FO467,12^AMR19,19^FB784,2,,L^FDDOCUMENT\&NO^FS
+^FO368,12^AMR19,19^FB938,2,,L^FDPART\&NUMBER (P)^FS
+^FO213,12^AMR19,19^FB784,1,,L^FDLABEL NO (S)^FS
+^FO520,542^AMR19,19^FB461,2,,L^FDUNLOADING\&POINT^FS
+^FO467,811^AMR19,19^FB784,2,,L^FDDESTINATION\&POINT^FS
+^FO213,811^AMR19,19^FB231,1,,L^FDNO OF BOXES^FS
+^FO153,811^AMR19,19^FB784,1,,L^FDLOGISTIC REFERENCE(30S)^FS
+^FO96,811^AMR19,19^FB308,1,,L^FDBATCH NO (H)^FS
+^FO4,811^AMR38,38^FB77,1,,C^FDOP:^FS
+^FO539,1003^AMR19,19^FB600,1,,L^FDSHIP FROM^FS
+^FO387,965^AMR19,19^FB246,1,,L^FDNET WEIGHT^FS
+^FO327,965^AMR19,19^FB246,1,,L^FDGROSS WEIGHT^FS
+^FO270,965^AMR19,19^FB246,1,,L^FDDATE^FS
+^FO213,965^AMR19,19^FB630,1,,L^FDDESCRIPTION^FS
+^FO77,1219^AMR19,19^FB477,2,,L^FDREV.\&NO^FS
+^FO387,1219^AMR19,19^FB384,1,,L^FDQUANTITY (Q)^FS
+^FO7,1538^AMR15,15^FB46,1,,C^FDETI9^FS
+^FX Variable texts^FS
+^FO503,12^AMR38,38^FB523,1,,C^FDVALENCIA MOD. PUERTAS^FS
+^FO503,542^AMR38,38^FB454,1,,C^FD1165-R363^FS
+^FO503,1003^AMR38,38^FB592,1,,C^FDTHERMOLYMPICSL^FS
+^FO434,12^AMR46,46^FB784,1,,R^FD.^FS
+^FO434,811^AMR46,46^FB784,1,,C^FD40^FS
+^FO267,20^AMR46,46^BCR,68,N,N,N,N^FD>:PKT1BV044L06AB3JA6^FS
+^FO206,472^AMR130,130^FB392,1,,C^FDVC19^FS
+^FO351,984^AMR38,38^FB231,1,,C^FD0.0 KGM^FS
+^FO291,984^AMR38,38^FB231,1,,C^FD0.0 KGM^FS
+^FO233,984^AMR46,46^FB231,1,,C^FDD210723^FS
+^FO293,1215^AMR91,91^FB400,1,,C^FD32^FS
+^FO242,1269^BCR,45,N,N,N,N^FD>:Q32^FS
+^FO45,115^AMR38,38^BCR,98,N,N,N,N^FD>:S000067959^FS
+^FO177,807^AMR38,38^FB154,1,,C^FD1^FS
+^FO169,961^AMR46,46^FB650,1,,C^FDV408 BIN MAT STORAGE BIN^FS
+^FO117,807^AMR38,38^FB308,1,,C^FD62061136^FS
+^FO128,1134^BCR,38,N,N,N,N^FD>:30S62061136^FS
+^FO60,811^AMR38,38^FB115,1,,C^FD69585^FS
+^FO60,1222^AMR38,38^FB396,1,,C^FD-^FS
+^FO4,884^AMR38,38^FB246,1,,C^FD  ^FS
+^FO4,1246^AMR38,38^FB154,1,,C^FD14:36^FS
+^FO19,577^BXR,4,200,48,48^FD[]>_1E06_1D12PGTL3_1D9K01_1D3LTHERMOLYMPICSL_1D4LSPAIN_1D8V40_1D2L1165-R363_1DV0122196030_1DQ32_1D3QPC_1D2Q0_1DPKT1BV044L06AB3JA6_1D1JUN0122196030000067959_1DBCONVEYER_1D2P-_1E_04^FS
+^FO4,1130^AMR38,38^FB154,1,,C^FDHOUR:^FS
+^FO350,123^AMR46,46^FB477,1,,L^FDKT1BV044L06AB3JA6^FS
+^FO159,115^AMR38,38^FB692,1,,L^FD000067959^FS
+^FO72,930^BCR,38,N,N,N,N^FD>:H69585^FS
+^XZ

@@ -1,0 +1,115 @@
+C:\Users\programacion\Desktop\PROYECTOS\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.Properties.Resources.resources
+C:\Users\programacion\Desktop\PROYECTOS\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.GenerateResource.Cache
+C:\Users\programacion\Desktop\PROYECTOS\ThermoWeb\ThermoWeb\bin\ThermoWeb.dll
+C:\Users\programacion\Desktop\PROYECTOS\ThermoWeb\ThermoWeb\bin\ThermoWeb.pdb
+C:\Users\programacion\Desktop\PROYECTOS\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.dll
+C:\Users\programacion\Desktop\PROYECTOS\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.pdb
+C:\Users\programacion\Desktop\PROYECTOS\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csprojResolveAssemblyReference.cache
+C:\Users\programacion\Desktop\PROYECTOS\THERMOWEB\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.Properties.Resources.resources
+C:\Users\programacion\Desktop\PROYECTOS\THERMOWEB\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.GenerateResource.Cache
+C:\Users\programacion\Desktop\PROYECTOS\THERMOWEB\ThermoWeb\ThermoWeb\bin\ThermoWeb.dll
+C:\Users\programacion\Desktop\PROYECTOS\THERMOWEB\ThermoWeb\ThermoWeb\bin\ThermoWeb.pdb
+C:\Users\programacion\Desktop\PROYECTOS\THERMOWEB\ThermoWeb\ThermoWeb\bin\DocumentFormat.OpenXml.Extensions.xml
+C:\Users\programacion\Desktop\PROYECTOS\THERMOWEB\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.dll
+C:\Users\programacion\Desktop\PROYECTOS\THERMOWEB\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.pdb
+C:\Users\programacion\Desktop\PROYECTOS\THERMOWEB\ThermoWeb\ThermoWeb\bin\EPPlus.dll
+C:\Users\programacion\Desktop\PROYECTOS\THERMOWEB\ThermoWeb\ThermoWeb\bin\EPPlus.xml
+C:\Users\programacion\Desktop\PROYECTOS\THERMOWEB\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csprojResolveAssemblyReference.cache
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\bin\ThermoWeb.dll
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\bin\ThermoWeb.pdb
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\bin\EPPlus.dll
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\bin\DocumentFormat.OpenXml.Extensions.xml
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\bin\EPPlus.xml
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.Properties.Resources.resources
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.GenerateResource.Cache
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.dll
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.pdb
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\bin\ThermoWeb.dll.config
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\bin\DocumentFormat.OpenXml.xml
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.CoreCompileInputs.cache
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.CopyComplete
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\bin\DocumentFormat.OpenXml.dll
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.AssemblyReference.cache
+N:\BMS\01 PROGRAMACION\ThermoWeb\ThermoWeb\bin\Oracle.ManagedDataAccess.dll
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\bin\ThermoWeb.dll.config
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\bin\ThermoWeb.dll
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\bin\ThermoWeb.pdb
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\bin\DocumentFormat.OpenXml.dll
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\bin\EPPlus.dll
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\bin\Oracle.ManagedDataAccess.dll
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\bin\DocumentFormat.OpenXml.xml
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\bin\EPPlus.xml
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.Properties.Resources.resources
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.GenerateResource.cache
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.CoreCompileInputs.cache
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.CopyComplete
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.dll
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.pdb
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\bin\Newtonsoft.Json.dll
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\bin\Newtonsoft.Json.xml
+N:\USUARIOS\PEDRO\00 SMARTH\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.AssemblyReference.cache
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\bin\ThermoWeb.dll.config
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\bin\ThermoWeb.dll
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\bin\ThermoWeb.pdb
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\bin\DocumentFormat.OpenXml.dll
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\bin\EPPlus.dll
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\bin\Newtonsoft.Json.dll
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\bin\Oracle.ManagedDataAccess.dll
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\bin\DocumentFormat.OpenXml.xml
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\bin\EPPlus.xml
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\bin\Newtonsoft.Json.xml
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.AssemblyReference.cache
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.Properties.Resources.resources
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.GenerateResource.cache
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.CoreCompileInputs.cache
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.csproj.Up2Date
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.dll
+C:\Smarth\Visual Studio\ThermoWeb\ThermoWeb\obj\Debug\ThermoWeb.pdb
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\ThermoWeb.dll.config
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\ThermoWeb.dll
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\ThermoWeb.pdb
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\DocumentFormat.OpenXml.dll
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\EPPlus.dll
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\Newtonsoft.Json.dll
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\Oracle.ManagedDataAccess.dll
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\DocumentFormat.OpenXml.xml
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\EPPlus.xml
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\Newtonsoft.Json.xml
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.csproj.AssemblyReference.cache
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.Properties.Resources.resources
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.csproj.GenerateResource.cache
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.csproj.CoreCompileInputs.cache
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.csproj.Up2Date
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.dll
+C:\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.pdb
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\ThermoWeb.dll.config
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\ThermoWeb.dll
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\ThermoWeb.pdb
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\DocumentFormat.OpenXml.dll
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\EPPlus.dll
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\Newtonsoft.Json.dll
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\Oracle.ManagedDataAccess.dll
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\DocumentFormat.OpenXml.xml
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\EPPlus.xml
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\bin\Newtonsoft.Json.xml
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.csproj.AssemblyReference.cache
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.Properties.Resources.resources
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.csproj.GenerateResource.cache
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.csproj.CoreCompileInputs.cache
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.csproj.Up2Date
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.dll
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\inetpub_thermoweb\ThermoWeb\obj\Debug\ThermoWeb.pdb
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\bin\ThermoWeb.dll.config
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\bin\ThermoWeb.dll
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\bin\ThermoWeb.pdb
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\bin\DocumentFormat.OpenXml.dll
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\bin\Newtonsoft.Json.dll
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\bin\DocumentFormat.OpenXml.xml
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\bin\EPPlus.xml
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\obj\Debug\ThermoWeb.csproj.AssemblyReference.cache
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\obj\Debug\ThermoWeb.Properties.Resources.resources
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\obj\Debug\ThermoWeb.csproj.GenerateResource.cache
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\obj\Debug\ThermoWeb.csproj.CoreCompileInputs.cache
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\obj\Debug\ThermoWeb.csproj.Up2Date
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\obj\Debug\ThermoWeb.dll
+C:\Users\f.munoz.THERMOLYMPIC\Desktop\Fran\Smarth\Visual Studio\ThermoWebSmarth\obj\Debug\ThermoWeb.pdb

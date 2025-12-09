@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/WSFunctionsAPP" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/WSFunctionsAPP" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/WSFunctionsAPP" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="ActualizaLinPedCompra">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="pedidoCompra" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="linCompra" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="qty_to_Receive" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ActualizaLinPedCompra_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ChangeLocationItem">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="pItem" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="pLocationIni" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="pLocationFin" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="pQuantity" type="decimal" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ChangeLocationItem_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CierraPedidoCompra">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="pedidoCompra" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="CierraPedidoCompra_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GeneraAlbaranVentaDesdePedido">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="pedido" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GeneraAlbaranVentaDesdePedido_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetProducto">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="no" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetProducto_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GrabarLineaServicio">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="pDocumento" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="cantidad" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="tipo" type="decimal" />
+            <element minOccurs="1" maxOccurs="1" name="codigo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GrabarLineaServicio_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReadStockLocation">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="pLocation" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="includeNegatives" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReadStockLocation_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReadStock">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="pItem" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="pLocation" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="ReadStock_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="ActualizaLinPedCompra">
+    <part name="parameters" element="tns:ActualizaLinPedCompra" />
+  </message>
+  <message name="ActualizaLinPedCompra_Result">
+    <part name="parameters" element="tns:ActualizaLinPedCompra_Result" />
+  </message>
+  <message name="ChangeLocationItem">
+    <part name="parameters" element="tns:ChangeLocationItem" />
+  </message>
+  <message name="ChangeLocationItem_Result">
+    <part name="parameters" element="tns:ChangeLocationItem_Result" />
+  </message>
+  <message name="CierraPedidoCompra">
+    <part name="parameters" element="tns:CierraPedidoCompra" />
+  </message>
+  <message name="CierraPedidoCompra_Result">
+    <part name="parameters" element="tns:CierraPedidoCompra_Result" />
+  </message>
+  <message name="GeneraAlbaranVentaDesdePedido">
+    <part name="parameters" element="tns:GeneraAlbaranVentaDesdePedido" />
+  </message>
+  <message name="GeneraAlbaranVentaDesdePedido_Result">
+    <part name="parameters" element="tns:GeneraAlbaranVentaDesdePedido_Result" />
+  </message>
+  <message name="GetProducto">
+    <part name="parameters" element="tns:GetProducto" />
+  </message>
+  <message name="GetProducto_Result">
+    <part name="parameters" element="tns:GetProducto_Result" />
+  </message>
+  <message name="GrabarLineaServicio">
+    <part name="parameters" element="tns:GrabarLineaServicio" />
+  </message>
+  <message name="GrabarLineaServicio_Result">
+    <part name="parameters" element="tns:GrabarLineaServicio_Result" />
+  </message>
+  <message name="ReadStockLocation">
+    <part name="parameters" element="tns:ReadStockLocation" />
+  </message>
+  <message name="ReadStockLocation_Result">
+    <part name="parameters" element="tns:ReadStockLocation_Result" />
+  </message>
+  <message name="ReadStock">
+    <part name="parameters" element="tns:ReadStock" />
+  </message>
+  <message name="ReadStock_Result">
+    <part name="parameters" element="tns:ReadStock_Result" />
+  </message>
+  <portType name="WSFunctionsAPP_Port">
+    <operation name="ActualizaLinPedCompra">
+      <input name="ActualizaLinPedCompra" message="tns:ActualizaLinPedCompra" />
+      <output name="ActualizaLinPedCompra_Result" message="tns:ActualizaLinPedCompra_Result" />
+    </operation>
+    <operation name="ChangeLocationItem">
+      <input name="ChangeLocationItem" message="tns:ChangeLocationItem" />
+      <output name="ChangeLocationItem_Result" message="tns:ChangeLocationItem_Result" />
+    </operation>
+    <operation name="CierraPedidoCompra">
+      <input name="CierraPedidoCompra" message="tns:CierraPedidoCompra" />
+      <output name="CierraPedidoCompra_Result" message="tns:CierraPedidoCompra_Result" />
+    </operation>
+    <operation name="GeneraAlbaranVentaDesdePedido">
+      <input name="GeneraAlbaranVentaDesdePedido" message="tns:GeneraAlbaranVentaDesdePedido" />
+      <output name="GeneraAlbaranVentaDesdePedido_Result" message="tns:GeneraAlbaranVentaDesdePedido_Result" />
+    </operation>
+    <operation name="GetProducto">
+      <input name="GetProducto" message="tns:GetProducto" />
+      <output name="GetProducto_Result" message="tns:GetProducto_Result" />
+    </operation>
+    <operation name="GrabarLineaServicio">
+      <input name="GrabarLineaServicio" message="tns:GrabarLineaServicio" />
+      <output name="GrabarLineaServicio_Result" message="tns:GrabarLineaServicio_Result" />
+    </operation>
+    <operation name="ReadStockLocation">
+      <input name="ReadStockLocation" message="tns:ReadStockLocation" />
+      <output name="ReadStockLocation_Result" message="tns:ReadStockLocation_Result" />
+    </operation>
+    <operation name="ReadStock">
+      <input name="ReadStock" message="tns:ReadStock" />
+      <output name="ReadStock_Result" message="tns:ReadStock_Result" />
+    </operation>
+  </portType>
+  <binding name="WSFunctionsAPP_Binding" type="tns:WSFunctionsAPP_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="ActualizaLinPedCompra">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WSFunctionsAPP:ActualizaLinPedCompra" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ActualizaLinPedCompra">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ActualizaLinPedCompra_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ChangeLocationItem">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WSFunctionsAPP:ChangeLocationItem" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ChangeLocationItem">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ChangeLocationItem_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="CierraPedidoCompra">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WSFunctionsAPP:CierraPedidoCompra" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="CierraPedidoCompra">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="CierraPedidoCompra_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GeneraAlbaranVentaDesdePedido">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WSFunctionsAPP:GeneraAlbaranVentaDesdePedido" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GeneraAlbaranVentaDesdePedido">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GeneraAlbaranVentaDesdePedido_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetProducto">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WSFunctionsAPP:GetProducto" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetProducto">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetProducto_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GrabarLineaServicio">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WSFunctionsAPP:GrabarLineaServicio" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GrabarLineaServicio">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GrabarLineaServicio_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReadStockLocation">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WSFunctionsAPP:ReadStockLocation" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReadStockLocation">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReadStockLocation_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReadStock">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/WSFunctionsAPP:ReadStock" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReadStock">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReadStock_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WSFunctionsAPP">
+    <port name="WSFunctionsAPP_Port" binding="tns:WSFunctionsAPP_Binding">
+      <address location="http://thermonav.thermolympic.local:7047/BC140/WS/THERMO/Codeunit/WSFunctionsAPP?wsdl" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>
