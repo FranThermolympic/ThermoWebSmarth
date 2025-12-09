@@ -32,84 +32,38 @@ namespace ThermoWeb.LIBERACIONES
         //private string orden = "";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack || Request.QueryString["ORDEN"] == null)
+            if (!IsPostBack)
             {
-                return;
+                CargarDrops();
+                if (Request.QueryString["ORDEN"] != null)
+                {
+
+                    CargarCabecera();
+                    Conexion_LIBERACIONES conexion = new Conexion_LIBERACIONES();
+                    DataSet existeorden = conexion.Consulta_existencia_liberacion(tbOrden.Text);
+                    if (existeorden.Tables[0].Rows.Count > 0)
+                    //EXISTE
+                    {
+                        CargarFichaLiberacion();
+                        CargarParametrosLiberacion();
+                        CargarCuestionariosLiberacion();
+                        CargarMateriasPrimasLiberacion();
+                        PintarCeldasDevacion();
+                        CargarResultados();
+                        CargarMantenimiento();
+                    }
+                    else
+                    //NO EXISTE
+                    {
+                        CargarParametros();
+                        CargarMateriasPrimas();
+                        //CargarTrabajadores(); prueba
+                        CargarMantenimiento();
+                        CrearLiberacion();
+                    }
+                }
             }
 
-            CargarDrops();
-            CargarCabecera();
-
-            Conexion_LIBERACIONES conexion = new Conexion_LIBERACIONES();
-            DataSet existeorden = conexion.Consulta_existencia_liberacion(tbOrden.Text);
-            if (existeorden.Tables[0].Rows.Count > 0)
-            {
-                CargarFichaLiberacion();
-                CargarParametrosLiberacion();
-                CargarCuestionariosLiberacion();
-                CargarMateriasPrimasLiberacion();
-                PintarCeldasDevacion();
-                CargarResultados();
-                CargarMantenimiento();
-            }
-            else
-            {
-                CargarParametros();
-                CargarMateriasPrimas();
-                //CargarTrabajadores(); prueba
-                CargarMantenimiento();
-                CrearLiberacion();
-            }
-        }
-
-        private static bool HasRows(DataSet dataSet)
-        {
-            return dataSet != null && dataSet.Tables.Count > 0 && dataSet.Tables[0].Rows.Count > 0;
-        }
-
-        private void AsignarCabecera(DataRow row)
-        {
-            tbMaquina.Text = row["C_MACHINE_ID"].ToString();
-            tbReferencia.Text = row["C_PRODUCT_ID"].ToString();
-            tbNombre.Text = row["C_PRODLONGDESCR"].ToString();
-            tbOrden.Text = row["C_ID"].ToString();
-            tbMolde.Text = row["C_TOOL_ID"].ToString();
-            tbFechaCambio.Text = row["C_ACTSTARTDATE"].ToString();
-        }
-
-        private void AsignarCabeceraHistorico(DataRow row)
-        {
-            tbMaquina.Text = row["Maquina"].ToString();
-            tbReferencia.Text = row["Referencia"].ToString();
-            tbNombre.Text = row["Descripcion"].ToString();
-            tbOrden.Text = row["Orden"].ToString();
-            tbMolde.Text = row["CodMolde"].ToString();
-            tbFechaCambio.Text = row["FechaApertura"].ToString();
-        }
-
-        private void MostrarHijos(DataSet hijos)
-        {
-            MostrarHijo(hijos, 0, tbOrden2, tbReferencia2, tbNombre2, tbOrdenTitulo2, tbReferenciaTitulo2);
-            MostrarHijo(hijos, 1, tbOrden3, tbReferencia3, tbNombre3, tbOrdenTitulo3, tbReferenciaTitulo3);
-            MostrarHijo(hijos, 2, tbOrden4, tbReferencia4, tbNombre4, tbOrdenTitulo4, tbReferenciaTitulo4);
-        }
-
-        private static void MostrarHijo(DataSet hijos, int index, TextBox orden, TextBox referencia, TextBox nombre, TextBox tituloOrden, TextBox tituloReferencia)
-        {
-            if (!HasRows(hijos) || hijos.Tables[0].Rows.Count <= index)
-            {
-                return;
-            }
-
-            DataRow row = hijos.Tables[0].Rows[index];
-            orden.Text = row["C_ID"].ToString();
-            referencia.Text = row["C_PRODUCT_ID"].ToString();
-            nombre.Text = row["C_LONG_DESCR"].ToString();
-            orden.Visible = true;
-            referencia.Visible = true;
-            nombre.Visible = true;
-            tituloOrden.Visible = true;
-            tituloReferencia.Visible = true;
         }
         public void CargarDrops()
         {
@@ -131,97 +85,96 @@ namespace ThermoWeb.LIBERACIONES
         // --- CABECERA Y SUBÓRDENES ---
         public void CargarCabecera()
         {
-            Conexion_LIBERACIONES conexion = new Conexion_LIBERACIONES();
-
             try
             {
-                DataSet ds = conexion.devuelve_detalles_orden(Request.QueryString["ORDEN"]);
-                if (HasRows(ds))
-                {
-                    AsignarCabecera(ds.Tables[0].Rows[0]);
-                    MostrarHijos(conexion.devuelve_hijos_orden(Request.QueryString["ORDEN"]));
-                }
-                else
-                {
-                    ds = conexion.devuelve_detalles_orden_HIST(Request.QueryString["ORDEN"]);
-                    if (HasRows(ds))
-                    {
-                        AsignarCabeceraHistorico(ds.Tables[0].Rows[0]);
-                    }
+                var conexion = new Conexion_LIBERACIONES();
+                string orden = Request.QueryString["ORDEN"];
+                var ds = conexion.devuelve_detalles_orden(orden);
 
-                    MostrarHijos(conexion.devuelve_hijos_orden(Request.QueryString["ORDEN"]));
-                }
+                if (ds.Tables[0].Rows.Count == 0)
+                    ds = conexion.devuelve_detalles_orden_HIST(orden);
 
-                //CambiadorHoras.Text = cambiador.Tables[0].Rows[0]["C_MACHINE_ID"].ToString();
+                if (ds.Tables[0].Rows.Count == 0) return;
+                var row = ds.Tables[0].Rows[0];
 
+                tbMaquina.Text = GetValor(row, new[] { "C_MACHINE_ID", "Maquina" });
+                tbReferencia.Text = GetValor(row, new[] { "C_PRODUCT_ID", "Referencia" });
+                tbNombre.Text = GetValor(row, new[] { "C_PRODLONGDESCR", "Descripcion" });
+                tbOrden.Text = GetValor(row, new[] { "C_ID", "Orden" });
+                tbMolde.Text = GetValor(row, new[] { "C_TOOL_ID", "CodMolde" });
+                tbFechaCambio.Text = GetValor(row, new[] { "C_ACTSTARTDATE", "FechaApertura" });
+
+                var hijos = conexion.devuelve_hijos_orden(orden);
+                CargarHijos(hijos);
             }
-            catch (Exception)
+            catch { }
+        }
+
+        // Devuelve el primer valor válido de una lista de posibles columnas
+        private string GetValor(DataRow row, string[] posiblesColumnas)
+        {
+            foreach (string col in posiblesColumnas)
+                if (row.Table.Columns.Contains(col))
+                    return row[col].ToString();
+            return "";
+        }
+
+        // Carga hasta 3 subórdenes hijas
+        private void CargarHijos(DataSet ds)
+        {
+            if (ds == null || ds.Tables.Count == 0) return;
+            var tabla = ds.Tables[0];
+
+            for (int i = 0; i < Math.Min(3, tabla.Rows.Count); i++)
             {
+                var r = tabla.Rows[i];
+                AsignarHijo(i + 2, r["C_ID"].ToString(), r["C_PRODUCT_ID"].ToString(), r["C_LONG_DESCR"].ToString());
             }
+        }
+
+        // Asigna datos y hace visibles los campos del hijo
+        private void AsignarHijo(int num, string orden, string referencia, string nombre)
+        {
+            var tbOrd = FindControl($"tbOrden{num}") as TextBox;
+            var tbRef = FindControl($"tbReferencia{num}") as TextBox;
+            var tbNom = FindControl($"tbNombre{num}") as TextBox;
+            var tbOrdTit = FindControl($"tbOrdenTitulo{num}");
+            var tbRefTit = FindControl($"tbReferenciaTitulo{num}");
+
+            if (tbOrd == null || tbRef == null || tbNom == null) return;
+
+            tbOrd.Text = orden;
+            tbRef.Text = referencia;
+            tbNom.Text = nombre;
+
+            tbOrd.Visible = tbRef.Visible = tbNom.Visible = true;
+            if (tbOrdTit != null) tbOrdTit.Visible = true;
+            if (tbRefTit != null) tbRefTit.Visible = true;
         }
 
         public void CargarTrabajadores()
         {
             try
             {
-                Conexion_LIBERACIONES conexion = new Conexion_LIBERACIONES();
-                DataSet calidadplanta = conexion.devuelve_calidadplanta_logueadoXMaquina(tbMaquina.Text);
-                if (HasRows(calidadplanta))
-                {
-                    CalidadNumero.Text = calidadplanta.Tables[0].Rows[0]["C_CLOCKNO"].ToString();
-                    CalidadNombre.Text = calidadplanta.Tables[0].Rows[0]["C_NAME"].ToString();
-                    calidadplanta = conexion.devuelve_horasXReferenciaXOperario(Convert.ToInt32(tbMolde.Text), Convert.ToInt32(CalidadNumero.Text));
-                    CalidadHoras.Text = HasRows(calidadplanta) ? calidadplanta.Tables[0].Rows[0]["TIEMPOHORAS"].ToString() : "0";
-                }
+                var conexion = new Conexion_LIBERACIONES();
+                string maq = tbMaquina.Text, molde = tbMolde.Text;
 
-                DataSet encargado = conexion.devuelve_encargado_logueadoXMaquina(tbMaquina.Text);
-                if (HasRows(encargado))
-                {
-                    EncargadoNumero.Text = encargado.Tables[0].Rows[0]["C_CLOCKNO"].ToString();
-                    EncargadoNombre.Text = encargado.Tables[0].Rows[0]["C_NAME"].ToString();
-                    encargado = conexion.devuelve_horasXReferenciaXOperario(Convert.ToInt32(tbMolde.Text), Convert.ToInt32(EncargadoNumero.Text));
-                    EncargadoHoras.Text = HasRows(encargado) ? encargado.Tables[0].Rows[0]["TIEMPOHORAS"].ToString() : "0";
-                }
+                // Cargar cada tipo de trabajador
+                CargarTrabajador(conexion, "calidad", maq, molde, CalidadNumero, CalidadNombre, CalidadHoras);
+                CargarTrabajador(conexion, "encargado", maq, molde, EncargadoNumero, EncargadoNombre, EncargadoHoras);
+                CargarTrabajador(conexion, "cambiador", maq, molde, CambiadorNumero, CambiadorNombre, CambiadorHoras);
 
-                DataSet operario = conexion.devuelve_operario_logueadoXMaquina(tbMaquina.Text);
-                if (HasRows(operario))
-                {
-                    Operario1Numero.Text = operario.Tables[0].Rows[0]["C_CLOCKNO"].ToString();
-                    Operario1Nombre.Text = operario.Tables[0].Rows[0]["C_NAME"].ToString();
-                    if (operario.Tables[0].Rows.Count > 1)
-                    {
-                        Operario2Numero.Text = operario.Tables[0].Rows[1]["C_CLOCKNO"].ToString();
-                        Operario2Nombre.Text = operario.Tables[0].Rows[1]["C_NAME"].ToString();
-                        Operario2Posicion.Visible = true;
-                        Operario2Nivel.Visible = true;
-                        Operario2Horas.Visible = true;
-                        Operario2Nombre.Visible = true;
-                        Operario2UltRevision.Visible = true;
-                        Operario2Numero.Visible = true;
-                        Operario2Notas.Visible = true;
-                    }
+                // Cargar operarios
+                CargarOperarios(conexion, maq, molde);
+            }
+            catch { }
+        }
 
-                    operario = conexion.devuelve_horasXReferenciaXOperario(Convert.ToInt32(tbMolde.Text), Convert.ToInt32(Operario1Numero.Text));
-                    if (HasRows(operario))
-                    {
-                        Operario1Horas.Text = operario.Tables[0].Rows[0]["TIEMPOHORAS"].ToString();
-                        //compruebo horas y asigno valor (revincular a aplicación)
-                        double DoubleOperarioHoras = Convert.ToDouble(Operario1Horas.Text);
-                        if (DoubleOperarioHoras < 10)
-                        {
-                            Operario1Nivel.SelectedValue = "I";
-                            alertaoperario.Visible = true;
-                        }
-                        if (DoubleOperarioHoras > 10 && DoubleOperarioHoras < 80)
-                        { Operario1Nivel.SelectedValue = "L"; }
-                        if (DoubleOperarioHoras > 80)
-                        { Operario1Nivel.SelectedValue = "U"; }
-                    }
-                    else
-                    {
-                        Operario1Horas.Text = "0";
-                        alertaoperario.Visible = true;
-                    }
+        private void CargarTrabajador(Conexion_LIBERACIONES conexion, string tipo, string maquina, string molde,
+                                      TextBox tbNumero, TextBox tbNombre, TextBox tbHoras)
+        {
+            DataSet ds = null;
+            tipo = tipo.ToLower();
 
             if (tipo == "calidad") ds = conexion.devuelve_calidadplanta_logueadoXMaquina(maquina);
             else if (tipo == "encargado") ds = conexion.devuelve_encargado_logueadoXMaquina(maquina);
